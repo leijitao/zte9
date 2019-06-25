@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta name="page-view-size" content="1280*720" />-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>搜索</title>
+    <link href="css/base.portal.css" rel="stylesheet" />
+    <script src="js/rem.js"></script>
+    <script src="js/core.portal.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/store.min.js"></script>
+    <script type="text/javascript">
+
+        // alert(document.referrer);
+        var dtNum;//数字键盘
+        var dtTK;//弹框选择
+        var dtRow;//结果选择
+
+        var page = 1;
+        var totalPage = 0;
+
+        var TKLeft = [0.50, 1.62, 2.74];
+        var TKTop = [2.50, 3.34, 4.17, 5.01];
+        var RowTop;
+        var key_x;
+        var key_y;
+        var ip_local=58+"."+20+"."+27+"."+15+":"+8080;
+        (function ScreenWidth(){
+            if(screen.width == 1280){
+                RowTop = [167, 245, 325, 405, 483, 563];
+            }else if(screen.width == 1920){
+                RowTop = [250.5, 367.5, 487.5, 607.5, 724.5, 844.5];
+            }
+        }());
+
+        window.onload = function () {
+            // alert(sessionStorage.getItem("userId"));
+            initRows();
+            initdtNum();
+        }
+
+        //初始化数字键事件
+        function initdtNum() {
+            dtNum = zte9.btn.init(4, 3);
+            dtNum[0][0] = setBtnForSH("javascript:doSearch('1')", "btn1");
+            dtNum[0][1] = setBtnForSH("javascript:initTK('2|A|B|C',0,1)", "btn2");
+            dtNum[0][2] = setBtnForSH("javascript:initTK('3|D|E|F',0,2)", "btn3");
+            dtNum[1][0] = setBtnForSH("javascript:initTK('4|G|H|I',1,0)", "btn4");
+            dtNum[1][1] = setBtnForSH("javascript:initTK('5|J|K|L',1,1)", "btn5");
+            dtNum[1][2] = setBtnForSH("javascript:initTK('6|M|N|O',1,2)", "btn6");
+            dtNum[2][0] = setBtnForSH("javascript:initTK('7|P|Q|R|S',2,0)", "btn7");
+            dtNum[2][1] = setBtnForSH("javascript:initTK('8|T|U|V',2,1)", "btn8");
+            dtNum[2][2] = setBtnForSH("javascript:initTK('9|W|X|Y|Z',2,2)", "btn9");
+            dtNum[3][0] = setBtnForSH("javascript:deleteKey(3,0)", "btndel");
+            dtNum[3][1] = setBtnForSH("javascript:doSearch('0')", "btn0");
+            dtNum[3][2] = setBtnForSH("javascript:clearKey(3,2)", "btnclear");
+            dtNum[0][2].MoveRight = dtNum[1][2].MoveRight = dtNum[2][2].MoveRight = dtNum[3][2].MoveRight = "javascript:goRows()";
+            zte9.btn.load(dtNum, 0, 0);
+        }
+
+        function goRows() {
+            if (totalPage > 0) {
+                zte9.btn.load(dtRow, 0, 0);
+            }
+        }
+
+        function goKey() {
+            zte9.btn.load(dtNum, 0, 0);
+        }
+
+        //弹框初始化
+        function initTK(_keyVal, _x, _y) {
+            for (var i = 0; i < 5; i++) {
+                H("btn_s_" + i);
+                G("div_tk_val_" + i).innerHTML = "";
+            }
+            G("divTK").style.left = TKLeft[_y] + "rem";
+            G("divTK").style.top = TKTop[_x] + "rem";
+            S("divTK");
+            var array = _keyVal.split('|');
+
+            dtTK = zte9.btn.init(1, array.length);
+            for (var i = 0; i < array.length; i++) {
+                G("div_tk_val_" + i).innerHTML = array[i];
+                dtTK[0][i] = setBtnForSH("javascript:doSearch('" + array[i] + "')", "btn_s_" + i);
+                dtTK[0][i].MoveDown = "javascript:HideTK(" + _x + "," + _y + ")";
+                key_x=_x;
+                key_y=_y;
+            }
+            zte9.btn.load(dtTK, 0, 0);
+            S("btn" + array[0]);
+        }
+
+        //清空查询键值
+        function clearKey(_x, _y) {
+            _rowIndex = _x;
+            _colIndex = _y;
+            G("divLetter").innerHTML = "";
+
+            page = 1;
+            initRows();
+        }
+
+        //删除查询键值
+        function deleteKey(_x, _y) {
+            _rowIndex = _x;
+            _colIndex = _y;
+            var _str = G("divLetter").innerHTML;
+            _str = _str.substr(0, _str.length - 1);
+            G("divLetter").innerHTML = _str;
+            page = 1;
+            initRows();
+        }
+
+
+        //隐藏弹框
+        function HideTK(_x, _y) {
+            H("divTK");
+            zte9.btn.load(dtNum, _x, _y);
+        }
+
+        //显示键入值
+        function doSearch(_val) {
+            G("divLetter").innerHTML += _val;
+            page = 1;
+            initRows();
+        }
+
+        //符合条件的查询结果绑定
+        function initRows() {
+            for (var i = 0; i < 6; i++) {
+                G("rowData" + i).innerHTML = "";
+            }
+            H("imgPre"); H("imgNext");
+            var letter = G("divLetter").innerHTML;
+            if(letter==""){
+                G("search_tit720").innerHTML="精彩推荐";
+            }else{
+                G("search_tit720").innerHTML="搜索结果";
+            }
+            var JsonData = Search(page, 6, letter, "jsUser");
+            totalPage = JsonData.total;
+            if (totalPage > 1) {
+                S("imgPre"); S("imgNext");
+            }
+            G("divPage").innerHTML = page + "/" + totalPage;
+            dtRow = zte9.btn.init(JsonData.rows.length, 1);
+            for (var i = 0; i < JsonData.rows.length; i++) {
+                G("rowData" + i).innerHTML = "0" + (i + 1) + "." + JsonData.rows[i].musicName;
+                dtRow[i][0] = setBtnForPos("javascript:jumpUrl(" + JSON.stringify(JsonData.rows[i]) + ")", "selRow", RowTop[i], 5.70+"rem");
+                dtRow[i][0].MoveDown = "javascript:pageNext()";
+                dtRow[i][0].MoveUp = "javascript:pagePre()";
+                dtRow[i][0].MoveLeft = "javascript:goKey()";
+            }
+
+
+        }
+            function jumpUrl(data) {
+                // J("play.html?musicId=" + data.musicId + "&contentId=" + data.contentId);
+                // alert("data.musicId:" + data.musicId +"data.contentId:"+data.contentId)
+                playVideo(data);
+            }
+
+
+
+        //下一页
+        function pageNext() {
+            page++;
+            if (page > totalPage) {
+                page = 1;
+            }
+            initRows();
+            zte9.btn.load(dtRow, 0, 0);
+        }
+        //上一页
+        function pagePre() {
+            page--;
+            if (page < 1) {
+                page = totalPage;
+            }
+            initRows();
+            zte9.btn.load(dtRow, 0, 0);
+        }
+    </script>
+
+</head>
+<body background="images/bg/bg_search.jpg" style="width:12.8rem;height:7.2rem;background-size:100%">
+<div id="divLetter" style="position: absolute; left: 1.10rem; top: 1.77rem; color: white"></div>
+<img id="btn1" src="images/search/1.png" style="position: absolute; left: 0.86rem; top: 2.97rem; display: none;width:0.89rem;height:0.66rem" />
+<img id="btn2" src="images/search/2.png" style="position: absolute; left: 1.98rem; top: 2.97rem; display: none;width:0.89rem;height:0.66rem" />
+<img id="btn3" src="images/search/3.png" style="position: absolute; left: 3.10rem; top: 2.97rem; display: none;width:0.89rem;height:0.66rem" />
+<img id="btn4" src="images/search/4.png" style="position: absolute; left: 0.86rem; top: 3.81rem; display: none;width:0.89rem;height:0.66rem" />
+<img id="btn5" src="images/search/5.png" style="position: absolute; left: 1.98rem; top: 3.81rem; display: none;width:0.89rem;height:0.66rem " />
+<img id="btn6" src="images/search/6.png" style="position: absolute; left: 3.10rem; top: 3.81rem; display: none;width:0.89rem;height:0.66rem " />
+<img id="btn7" src="images/search/7.png" style="position: absolute; left: 0.86rem; top: 4.64rem; display: none;width:0.89rem;height:0.66rem" />
+<img id="btn8" src="images/search/8.png" style="position: absolute; left: 1.98rem; top: 4.64rem; display: none;width:0.89rem;height:0.66rem " />
+<img id="btn9" src="images/search/9.png" style="position: absolute; left: 3.10rem; top: 4.64rem; display: none;width:0.89rem;height:0.66rem " />
+<img id="btndel" src="images/search/del.png" style="position: absolute; left: 0.86rem; top: 5.48rem; display: none;width:0.89rem;height:0.66rem" />
+<img id="btn0" src="images/search/0.png" style="position: absolute; left: 1.98rem; top: 5.48rem; display: none;width:0.89rem;height:0.66rem " />
+<img id="btnclear" src="images/search/clear.png" style="position: absolute; left: 3.10rem; top: 5.48rem; display: none;width:0.89rem;height:0.66rem " />
+
+<div id="divTK" style="position: absolute; display: none; width: 1.64rem;  text-align: center; background-image: url('images/search/bottom.png')">
+    <img id="btn_s_0" src="images/search/letter.png" style="position: relative; left: 0.01rem; top: 0.06rem; display: none;" />
+    <img id="btn_s_1" src="images/search/letter.png" style="position: relative; left: 0.34rem; top: 0.06rem; display: none;" />
+    <img id="btn_s_2" src="images/search/letter.png" style="position: relative; left: 0.67rem; top: 0.06rem; display: none;" />
+    <img id="btn_s_3" src="images/search/letter.png" style="position: relative; left: 1.00rem; top: 0.06rem; display: none;" />
+    <img id="btn_s_4" src="images/search/letter.png" style="position: relative; left: 1.33rem; top: 0.06rem; display: none;" />
+    <div id="div_tk_val_0" style="position: relative; left: 0.02rem; top: -0.20rem; width: 0.28rem; height: 0.28rem;"></div>
+    <div id="div_tk_val_1" style="position: relative; left: 0.35rem; top: -0.48rem; width: 0.28rem; height: 0.28rem;"></div>
+    <div id="div_tk_val_2" style="position: relative; left: 0.68rem; top: -0.76rem; width: 0.28rem; height: 0.28rem;"></div>
+    <div id="div_tk_val_3" style="position: relative; left: 1.01rem; top: -1.04rem; width: 0.28rem; height: 0.28rem;"></div>
+    <div id="div_tk_val_4" style="position: relative; left: 1.34rem; top: -1.32rem; width: 0.28rem; height: 0.28rem;"></div>
+</div>
+<img id="selRow" src="images/06search/sel_row.png" style="position: absolute; left: 5.70rem; top: 1.70rem; display: none;width:6.47rem;height:0.61rem;" />
+<div id="divPage" style="display: block; top: 1.10rem; width: 12.15rem; font-size: 0.23rem; text-align: right; color: #82f2fc"></div>
+<div id="rowData0" style="position: absolute; left: 5.80rem; top: 1.85rem; font-size: 0.20rem;"></div>
+<div id="rowData1" style="position: absolute; left: 5.80rem; top: 2.64rem; font-size: 0.20rem;"></div>
+<div id="rowData2" style="position: absolute; left: 5.80rem; top: 3.42rem; font-size: 0.20rem;"></div>
+<div id="rowData3" style="position: absolute; left: 5.80rem; top: 4.21rem; font-size: 0.20rem;"></div>
+<div id="rowData4" style="position: absolute; left: 5.80rem; top: 5.00rem; font-size: 0.20rem;"></div>
+<div id="rowData5" style="position: absolute; left: 5.80rem; top: 5.80rem; font-size: 0.20rem;"></div>
+<img id="imgPre" src="images/search/up.png" style="position: absolute; left: 8.70rem; top: 1.40rem; display: none; " />
+<img id="imgNext" src="images/search/down.png" style="position: absolute; left: 8.70rem; top: 6.40rem; display: none;" />
+
+<div id="search_tit720" style="position:absolute;top:1.1rem;left:5.7rem;font-size: 0.24rem;color:#6bc9d5;font-weight: bold">热门推荐</div>
+</body>
+<script src="js/WebViewJavascriptBridge.js"></script>
+<script src="js/all.js"></script>
+<script>
+    setTimeout(function () {
+        other_zte("搜索页");
+    },1000);
+
+    //返回首页处理
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.registerHandler('keyEventHandler', function (data, responseCallback) {
+            console.log("keyEventHandler :"+data);
+            if(data==4){
+                if(G("divTK").style.display=="block"){
+                    HideTK(key_x,key_y);
+                    console.log("display=none")
+                }else {
+                    var x=window.location.href;
+                    var y=x.split("html=");
+
+                    if(click_goback==false || x.indexOf("html=")==-1){
+                        window.location.href="http://" + ip_local + "/dianjing/index.html";
+                    }else if(click_goback==true && x.indexOf("html=")!=-1){
+                        window.location.href="http://" + ip_local + "/dianjing/"+y[1];
+                    }
+                }
+
+                responseCallback("true");
+            }
+
+
+        })
+
+    })
+// document.onkeydown=function(e) {
+//     e = window.event || e;
+//     /**
+//      * 37 左键盘
+//      * 38 上键盘
+//      * 39 右键盘
+//      * 40 下键盘
+//      * 13 回车键
+//      */
+//
+//     switch (e.keyCode) {
+//         case 0x8:
+//             console.log("1");
+//             break;
+//     }
+// }
+</script>
+</html>

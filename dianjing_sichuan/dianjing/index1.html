@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="page-view-size" content="1280*720" />
+    <title>Title</title>
+    <script src="js/core.portal.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="js/rem.js"></script>
+</head>
+<body style="position: relative;width: 1280px;height: 720px">
+<div id="player" class="video" style="width:577px;height: 348px;position:absolute;top:151px;left: 330px;overflow: hidden;">
+    <!--audio-->
+    <embed id="radioPlayer" autostart="true" hidden="no" loop="true" width="577" height="348" style="width:577px;height: 348px" type="application/yst-player"> </embed>
+</div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/Ysten.js"></script>
+<script type="text/javascript">
+    //小窗口播放
+    var list=[
+        {
+            "contentId": "37ac6fb2894d46c1958c0227c324f8d6",
+            "fhCDNPlayUrl": "http://223.87.4.83:8112/ystunity_hpd/m_ystunity_hpd000000000000565604",
+            "hwCDNPlayUrl": "http://223.87.5.102:8082/EDS/RedirectPlay/icntv/vod/p_cptynrpt0000000000000000558202/m_cptynrpt0000000000000000565604",
+            "id": "28",
+            "musicId": "580",
+            "musicName": "继续欢乐的螺旋跑酷！Rock练成了摔不死神功？",
+            "musicUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604",
+            "orderSeq": "2",
+            "playerName": "映霸",
+            "serviceId": "bd01a545c5224649a8848e47eff95efa",
+            "typeCode": "100110001000",
+            "typeOne": "",
+            "viodeoUrl": "http://112.18.251.15:5400/down1111111111111111111111",
+            "zxCDNPlayUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604"
+        },{
+            "contentId": "3bab7fbc577241199f5ade882e909c58",
+            "fhCDNPlayUrl": "http://223.87.4.83:8112/ystunity_hpd/m_ystunity_hpd000000000000565604",
+            "hwCDNPlayUrl": "http://223.87.5.102:8082/EDS/RedirectPlay/icntv/vod/p_cptynrpt0000000000000000558202/m_cptynrpt0000000000000000565604",
+            "id": "29",
+            "musicId": "97",
+            "musicName": "EU vs LG ECS S5 CSGO BO2 第一场",
+            "musicUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604",
+            "orderSeq": "3",
+            "playerName": "映霸",
+            "serviceId": "bd01a545c5224649a8848e47eff95efa",
+            "typeCode": "100110001000",
+            "typeOne": "",
+            "viodeoUrl": "http://112.18.251.15:5400/down/111.ts",
+            "zxCDNPlayUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604"
+        },{
+            "contentId": "3bab7fbc577241199f5ade882e909c58",
+            "fhCDNPlayUrl": "http://223.87.4.83:8112/ystunity_hpd/m_ystunity_hpd000000000000565604",
+            "hwCDNPlayUrl": "http://223.87.5.102:8082/EDS/RedirectPlay/icntv/vod/p_cptynrpt0000000000000000558202/m_cptynrpt0000000000000000565604",
+            "id": "29",
+            "musicId": "97",
+            "musicName": "EU vs LG ECS S5 CSGO BO2 第一场",
+            "musicUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604",
+            "orderSeq": "3",
+            "playerName": "映霸",
+            "serviceId": "bd01a545c5224649a8848e47eff95efa",
+            "typeCode": "100110001000",
+            "typeOne": "",
+            "viodeoUrl": "http://112.18.251.15:5400/down/111.ts",
+            "zxCDNPlayUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604"
+        },{
+            "contentId": "3bab7fbc577241199f5ade882e909c58",
+            "fhCDNPlayUrl": "http://223.87.4.83:8112/ystunity_hpd/m_ystunity_hpd000000000000565604",
+            "hwCDNPlayUrl": "http://223.87.5.102:8082/EDS/RedirectPlay/icntv/vod/p_cptynrpt0000000000000000558202/m_cptynrpt0000000000000000565604",
+            "id": "30",
+            "musicId": "97",
+            "musicName": "EU vs LG ECS S5 CSGO BO2 第一场",
+            "musicUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604",
+            "orderSeq": "4",
+            "playerName": "映霸",
+            "serviceId": "bd01a545c5224649a8848e47eff95efa",
+            "typeCode": "100110001000",
+            "typeOne": "",
+            "viodeoUrl": "http://112.18.251.15:5400/down/111.ts",
+            "zxCDNPlayUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604"
+        },{
+            "contentId": "3bab7fbc577241199f5ade882e909c58",
+            "fhCDNPlayUrl": "http://223.87.4.83:8112/ystunity_hpd/m_ystunity_hpd000000000000565604",
+            "hwCDNPlayUrl": "http://223.87.5.102:8082/EDS/RedirectPlay/icntv/vod/p_cptynrpt0000000000000000558202/m_cptynrpt0000000000000000565604",
+            "id": "30",
+            "musicId": "97",
+            "musicName": "EU vs LG ECS S5 CSGO BO2 第一场",
+            "musicUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604",
+            "orderSeq": "4",
+            "playerName": "映霸",
+            "serviceId": "bd01a545c5224649a8848e47eff95efa",
+            "typeCode": "100110001000",
+            "typeOne": "",
+            "viodeoUrl": "http://112.18.251.15:5400/down/111.ts",
+            "zxCDNPlayUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604"
+        },{
+            "contentId": "3bab7fbc577241199f5ade882e909c58",
+            "fhCDNPlayUrl": "http://223.87.4.83:8112/ystunity_hpd/m_ystunity_hpd000000000000565604",
+            "hwCDNPlayUrl": "http://223.87.5.102:8082/EDS/RedirectPlay/icntv/vod/p_cptynrpt0000000000000000558202/m_cptynrpt0000000000000000565604",
+            "id": "31",
+            "musicId": "97",
+            "musicName": "EU vs LG ECS S5 CSGO BO2 第一场",
+            "musicUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604",
+            "orderSeq": "5",
+            "playerName": "映霸",
+            "serviceId": "bd01a545c5224649a8848e47eff95efa",
+            "typeCode": "100110001000",
+            "typeOne": "",
+            "viodeoUrl": "http://112.18.251.15:5400/down/111.ts",
+            "zxCDNPlayUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604"
+        },{
+            "contentId": "3bab7fbc577241199f5ade882e909c58",
+            "fhCDNPlayUrl": "http://223.87.4.83:8112/ystunity_hpd/m_ystunity_hpd000000000000565604",
+            "hwCDNPlayUrl": "http://223.87.5.102:8082/EDS/RedirectPlay/icntv/vod/p_cptynrpt0000000000000000558202/m_cptynrpt0000000000000000565604",
+            "id": "31",
+            "musicId": "97",
+            "musicName": "EU vs LG ECS S5 CSGO BO2 第一场",
+            "musicUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604",
+            "orderSeq": "5",
+            "playerName": "映霸",
+            "serviceId": "bd01a545c5224649a8848e47eff95efa",
+            "typeCode": "100110001000",
+            "typeOne": "",
+            "viodeoUrl": "http://112.18.251.15:5400/down/111.ts",
+            "zxCDNPlayUrl": "http://223.87.20.83:8089/28000001/m_ystenvod0000000000000000565604"
+        }
+    ];
+    var playIndex=0;
+    function playVideoSm_homepage(url,name) {
+        console.log("playVideoSm_homepage ready");
+        console.log("videoWindow：video_width:"+$("#radioPlayer").width()+"video_height:"+$("#radioPlayer").height() +
+            "video_top:"+$("#radioPlayer").css("top")+"video_left:"+$("#radioPlayer").css("left"));
+        console.log("musicUrl  sm url:"+url);
+        console.log("musicUrl  sm name:"+name);
+        var opt = {
+            id: "radioPlayer", //播放控件ID
+            url: url, //视频地址
+            beginTime: 0,//开始播放时间
+            onOver: catchStateOver //视频播放结束时的回调函数
+        };
+        playerCore.ready(opt);
+    }
+    function catchStateOver() {
+        playIndex++;
+        console.log("playIndex now:"+playIndex);
+        if(playIndex>=list.length){
+            playIndex=0;
+        }
+        playerCore.stop();
+        playVideoSm_homepage(list[playIndex].musicUrl,list[playIndex].musicName);
+    }
+    playVideoSm_homepage(list[playIndex].musicUrl,list[playIndex].musicName);
+</script>
+</html>

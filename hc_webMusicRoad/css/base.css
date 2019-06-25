@@ -1,0 +1,1458 @@
+*{
+    margin:0;
+    padding:0;
+    border: none;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:white;
+}
+img{
+    display: inline-block;
+}
+body {
+    width: 12.8rem;
+    height: 7.2rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: #000;
+    background-size: 100%;
+    z-index: -100;
+    position: relative;
+}
+/*首页*/
+.weekSignIn{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    overflow: hidden;
+}
+.weekSignIn > div{
+    position: absolute;
+    overflow: hidden;
+    width:1.59rem ;
+    height: 1.54rem;
+}
+.weekSignIn_img1,.weekSignIn_img2{
+    width:0.9rem ;
+    height: 0.74rem;
+    position: absolute;
+    top:0.61rem;
+    left: 0.41rem;
+}
+.weekSignIn_img2{
+    display: none;
+}
+.weekSignIn_img3{
+    width: 1.4rem;
+    height: 1.34rem;
+    position: absolute;
+    top:0.2rem;
+    left: 0;
+    display: none;
+}
+.weekSignIn_img4{
+    width: 0.58rem;
+    height: 0.59rem;
+    position: absolute;
+    top:0.01rem;
+    left:0.41rem ;
+    display: none;
+}
+.weekSignIn_img5{
+    width: 0.42rem;
+    height: 0.49rem;
+    position: absolute;
+    top:0.11rem;
+    left: 0.49rem;
+    display: none;
+}
+.weekSignIn1{
+    top:1.56rem;
+    left:3.04rem;
+}
+.weekSignIn2{
+    top:1.96rem;
+    left:3.84rem;
+}
+.weekSignIn3{
+    top:2.86rem;
+    left:2.04rem;
+}
+.weekSignIn4{
+    top:3.76rem;
+    left:1.54rem;
+}
+.weekSignIn5{
+    top:4.7rem;
+    left:2.34rem;
+}
+.weekSignIn6{
+    top:4.88rem;
+    left:3.8rem;
+}
+.weekSignIn7{
+    top:3.8rem;
+    left:5.1rem;
+}
+.weekSignIn8{
+    top:2.9rem;
+    left:5.3rem;
+}
+.weekSignIn9{
+    top:2.3rem;
+    left:5.8rem;
+}
+.weekSignIn10{
+    top:2.3rem;
+    left:7.6rem;
+}
+.weekSignIn11{
+    top:2.8rem;
+    left:9.4rem;
+}
+.weekSignIn12{
+    top:3.4rem;
+    left:8rem;
+}
+.weekSignIn13{
+    top:4.6rem;
+    left:7rem;
+}
+.weekSignIn14{
+    top:4.2rem;
+    left:9.6rem;
+}
+.weekSignIn .buttonTop1{
+    position: absolute;
+    width: 2.23rem;
+    height: 0.52rem;
+    top:0.3rem;
+    left: 6.4rem;
+    background-image: url("../images/homepage/musicBeans.png");
+    background-size: 100%;
+}
+.buttonTop1 > p{
+    width: 0.8rem;
+    height: 0.52rem;
+    line-height: 0.5rem;
+    /*font-family: AdobeHeitiStd-Regular;*/
+    font-size: 0.2rem;
+    color: #4dc4e9;
+    position: absolute;
+    top:0;
+    left: 1.36rem;
+}
+.weekSignIn .buttonTop2{
+    width: 1.64rem;
+    height: 0.48rem;
+    position: absolute;
+    top:0.3rem;
+    left: 8.9rem;
+}
+.weekSignIn .buttonTop3{
+    width: 1.13rem;
+    height: 0.73rem;
+    position: absolute;
+    top:0.22rem;
+    left: 11rem;
+}
+.buttonTop3_1{
+    width: 1.03rem;
+    height: 0.63rem;
+    position: absolute;
+    top:0.1rem;
+    left: 0.06rem;
+}
+.buttonTop3_2{
+    width: 1.13rem;
+    height: 0.73rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.weekSignIn .buttonBottom1{
+    width: 1.94rem;
+    height: 1.44rem;
+    position: absolute;
+    top:5.82rem;
+    left: 5.77rem;
+}
+.buttonBottom1_1{
+    width: 1.14rem;
+    height: 0.78rem;
+    position:absolute;
+    top:0.34rem;
+    left: 0.4rem;
+}
+.buttonBottom1_2{
+    width: 1.94rem;
+    height: 1.44rem;
+    position:absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+.weekSignIn .buttonBottom4{
+    width: 1.94rem;
+    height: 1.44rem;
+    position: absolute;
+    top:5.82rem;
+    left: 9.12rem;
+}
+.buttonBottom4_1{
+    width: 1.14rem;
+    height: 0.78rem;
+    position:absolute;
+    top:0.34rem;
+    left: 0.4rem;
+}
+.buttonBottom4_2{
+    width: 1.94rem;
+    height: 1.44rem;
+    position:absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+.weekSignIn .buttonBottom2{
+    width: 1.94rem;
+    height: 1.44rem;
+    position: absolute;
+    top:5.82rem;
+    left: 7.43rem;
+}
+.buttonBottom2_1,.buttonBottom3_1{
+    width: 1.13rem;
+    height: 0.76rem;
+    position: absolute;
+    top:0.34rem;
+    left: 0.4rem;
+}
+.buttonBottom2_2,.buttonBottom3_2{
+    width: 1.94rem;
+    height: 1.44rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.weekSignIn .buttonBottom3{
+    width: 1.94rem;
+    height: 1.44rem;
+    position: absolute;
+    top:5.82rem;
+    left: 10.86rem;
+}
+.Notice{
+    background-image: url("../images/homepage/bgSm.png");
+    background-size: 100%;
+    position: absolute;
+    top:1.1rem;
+    left: 4rem;
+    width: 4.8rem;
+    height: 0.37rem;
+    line-height: 0.37rem;
+    font-size: 0.22rem;
+    text-align: center;
+    color: white;
+}
+.signIn{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 12.8rem;
+    height: 7.2rem;
+    overflow: hidden;
+    background-image: url("../images/homepage/signInBg.png");
+    background-size: 100%;
+    display: none;
+}
+.signInTxt{
+    width: 1.5rem;
+    height: 0.54rem;
+    line-height: 0.54rem;
+    font-size: 0.4rem;
+    color: #fef409;
+    position: absolute;
+    left: 6.26rem;
+    top:2.46rem;
+    text-align: center;
+}
+.signInOrder_mg{
+    width: 4.78rem;
+    height: 1.32rem;
+    position: absolute;
+    left:4.01rem;
+    top:3.7rem ;
+    display: none;
+}
+.signInOrder_hc{
+    width: 5.07rem;
+    height: 1.32rem;
+    position: absolute;
+    left:3.86rem;
+    top:3.7rem ;
+    display: none;
+}
+.signInBean{
+    width: 2.81rem;
+    height: 1.61rem;
+    position: absolute;
+    top:3.4rem;
+    left: 5rem;
+    display: none;
+}
+.orderButton{
+    width: 1.5rem;
+    height: 0.89rem;
+    position: absolute;
+    top:5.2rem;
+    left: 5.7rem;
+    display: none;
+}
+.sureButton{
+    width: 1.5rem;
+    height: 0.89rem;
+    position: absolute;
+    top:5.2rem;
+    left: 5.7rem;
+    display: none;
+}
+.goBack{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 12.8rem;
+    height: 7.2rem;
+    background-image: url("../images/homepage/gobackBg.png");
+    background-size: 100%;
+    overflow: hidden;
+    display: none;
+}
+.goBackMusic{
+    width:3.32rem;
+    height: 2.01rem;
+    position: absolute;
+    top:3rem;
+    left: 4.74rem;
+    display: none;
+}
+.goBackOrder{
+    width:3.59rem;
+    height: 2.01rem;
+    position: absolute;
+    top:3rem;
+    left: 4.6rem;
+    display: none;
+}
+.goBackButton1{
+    /*width: 1.61rem;*/
+    width: 1.85rem;
+    /*height: 0.66rem;*/
+    height: 0.88rem;
+    position: absolute;
+    overflow: hidden;
+    left: 4.46rem;
+    top:5.2rem
+}
+.goBackButton1_1,.goBackButton1_2,.goBackButton2_1{
+    width: 1.61rem;
+    height: 0.66rem;
+    position: absolute;
+    left: 0.12rem;
+    top:0.14rem;
+}
+.goBackButton1_1,.goBackButton1_2{
+    display: none;
+}
+.goBackButton1_3,.goBackButton2_2{
+    width: 1.85rem;
+    height: 0.88rem;
+    position: absolute;
+    left: 0;
+    top:0;
+    /*display: none;*/
+}
+.goBackButton2_2{
+   display: none;
+}
+.goBackButton2{
+    width: 1.85rem;
+    height: 0.88rem;
+    position: absolute;
+    overflow: hidden;
+    left: 6.49rem;
+    top:5.2rem
+}
+
+/*周签*/
+.weekSignIn_day{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-size: 100%;
+}
+.weekSignIn_dayTop{
+    width: 12.8rem;
+    height: 0.92rem;
+    position: absolute;
+    top:0.77rem;
+    left: 0;
+}
+.weekSignIn_day_guess{
+    width: 1.62rem;
+    height: 0.92rem;
+    position: absolute;
+    top:0;
+    left: 1rem;
+}
+.weekSignIn_day_guess :first-child,.weekSignIn_day_prize :first-child{
+    position: absolute;
+    top:0.28rem;
+    left: 0.26rem;
+    width: 1.1rem;
+    height: 0.36rem;
+}
+.weekSignIn_day_guess :first-child + img,.weekSignIn_day_prize :first-child + img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 1.62rem;
+    height: 0.92rem;
+    display: none;
+}
+.weekSignIn_day_prize{
+    width: 1.62rem;
+    height: 0.92rem;
+    position: absolute;
+    top:0;
+    left: 2.4rem;
+}
+.weekSignIn_day_beanNum{
+    width: 1rem;
+    height: 0.32rem;
+    position: absolute;
+    top:0.35rem;
+    left: 9.65rem;
+    color: #fef409;
+    font-size: 0.22rem;
+}
+.weekSignIn_day_chanceNum{
+    width: 1rem;
+    height: 0.32rem;
+    position: absolute;
+    top:0.35rem;
+    left: 11.55rem;
+    color: #fef409;
+    font-size: 0.22rem;
+}
+.weekSignInConDay{
+    width: 12.8rem;
+    height: 2.37rem;
+    position: absolute;
+    top:1.7rem;
+    left: 0;
+}
+.weekSignInConDay > div{
+    width: 2.079rem;
+    height: 2.133rem;
+    position: absolute;
+    top:0;
+}
+.weekSignInConDay img{
+    width: 2.079rem;
+    height: 2.133rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.weekSignInConDay1{
+    left: 0.28rem;
+}
+.weekSignInConDay2{
+    left: 1.94rem;
+}
+.weekSignInConDay3{
+    left: 3.6rem;
+}
+.weekSignInConDay4{
+    left: 5.26rem;
+}
+.weekSignInConDay5{
+    left: 6.92rem;
+}
+.weekSignInConDay6{
+    left: 8.58rem;
+}
+.weekSignInConDay7{
+    left: 10.24rem;
+}
+.noSignChance_jumpOrder{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/weekSignIn/noSign.png");
+    background-size: 100%;
+    display: none;
+}
+.noSignChance_jumpOrder :first-child{
+    position: absolute;
+    width: 5.06rem;
+    height: 1.47rem;
+    top:3.6rem;
+    left: 3.87rem;
+    display: none;
+}
+.noSignChance_jumpOrder :first-child + img{
+    position: absolute;
+    width: 5.38rem;
+    height: 1.47rem;
+    top:3.6rem;
+    left: 3.71rem;
+    display: none;
+}
+.rewardBeanNum{
+    color: white;
+    font-size: 0.5rem;
+    width: 2.31rem;
+    text-align: center;
+    height: 2.37rem;
+    line-height: 2.37rem;
+    position: absolute;
+    top:1.47rem;
+    opacity: 0;
+}
+/*.weekSignIn_dayBottom{*/
+    /*width: 2.79rem;*/
+    /*height: 1.59rem;*/
+    /*position: absolute;*/
+    /*top:5.2rem;*/
+    /*left: 5rem;*/
+/*}*/
+/*.weekSignIn_dayBottom :first-child{*/
+    /*width: 2.29rem;*/
+    /*height: 1.09rem;*/
+    /*position: absolute;*/
+    /*top:0.25rem;*/
+    /*left: 0.25rem;*/
+/*}*/
+/*.weekSignIn_dayBottom :first-child+img{*/
+    /*width: 2.79rem;*/
+    /*height: 1.59rem;*/
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left:0 ;*/
+    /*display: none;*/
+/*}*/
+.getPrize{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/weekSignIn/framebg.png");
+    display: none;
+}
+.getPrizeImg{
+    width: 1.58rem;
+    height: 1.58rem;
+    position: absolute;
+    top:2.4rem;
+    left: 5.55rem;
+}
+.getPrizePhoneNum{
+    width: 2.8rem;
+    height: 0.4rem;
+    position: absolute;
+    top:4.82rem;
+    left: 6rem;
+    font-size: 0.24rem;
+    line-height: 0.4rem;
+    color: white;
+    border: none;
+    outline:none;
+    background: none;
+}
+.getPrizeTxt{
+    position: absolute;
+    top:5.25rem;
+    left: 6rem;
+    color: red;
+    font-size: 0.22rem;
+    display: none;
+}
+.getPrizeSubmit{
+    width: 1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:5.5rem;
+    left: 4.34rem;
+}
+.getPrizeSubmit :first-child,.getPrizeClear :first-child{
+    width:1.63rem;
+    height: 0.81rem;
+    position: absolute;
+    top:0.13rem;
+    left: 0.1rem;
+}
+.getPrizeSubmit :first-child+img,.getPrizeClear :first-child+img{
+    width:1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+.getPrizeClear{
+    width: 1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:5.5rem;
+    left: 6.61rem;
+}
+
+
+/*竞猜*/
+.guess{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    /*background-image: url("../images/guess/bg.jpg");*/
+    background-size: 100%;
+}
+.guessQuestion_old{
+    position: absolute;
+    top:1.5rem;
+    left: 0.6rem;
+    font-size: 0.26rem;
+    color: #00fffc;
+    width: 10rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    background-image: url("../images/guess/optionBg.png");
+    background-size: 100% 100%;
+}
+.guessAnswer_old{
+    position: absolute;
+    top:2rem;
+    left: 0.6rem;
+    font-size: 0.28rem;
+    color: white;
+    width: 3.5rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    background-image: url("../images/guess/optionBg.png");
+    background-size: 100% 100%;
+}
+.guessAnswer_new{
+    position: absolute;
+    top:3.7rem;
+    left: 0.6rem;
+    font-size: 0.48rem;
+    color: #f4eb00;
+    width: 10rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    background-image: url("../images/guess/optionBg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.answerAll{
+    width: 1.29rem;
+    height: 0.53rem;
+    position: absolute;
+}
+.answerAll p{
+    width: 1.05rem;
+    height: 0.53rem;
+    line-height: 0.53rem;
+    font-size: 0.2rem;
+    color: white;
+    position: absolute;
+    left: 0.12rem;
+    top:0;
+    overflow: hidden;
+}
+.answerAll img{
+    width: 1.29rem;
+    height: 0.53rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.answerA{
+    top:6.45rem;
+    left: 2.73rem;
+}
+.answerB{
+    top:6.45rem;
+    left: 3.96rem;
+}
+.answerC{
+    top: 6.45rem;
+    left:5.2rem;
+}
+.answerD{
+    top: 6.45rem;
+    left:6.46rem;
+}
+.moreMarvellous{
+    width: 1.76rem;
+    height: 0.7rem;
+    position: absolute;
+    top:5.1rem;
+    left: 10.3rem;
+}
+.moreMarvellous :first-child{
+    width: 1.76rem;
+    height: 0.7rem;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.moreMarvellous :first-child + img{
+    width: 1.71rem;
+    height: 0.62rem;
+    position: absolute;
+    top:0.04rem;
+    left:0.03rem;
+    display: none;
+}
+.guessRuleButton{
+    width: 1.36rem;
+    height: 0.55rem;
+    position: absolute;
+    top:0.6rem;
+    left: 10.4rem;
+}
+.moreRecord{
+    width: 1.36rem;
+    height: 0.55rem;
+    position: absolute;
+    top:1.2rem;
+    left: 10.4rem;
+}
+.guessRuleButton :first-child,.moreRecord :first-child{
+    width: 1.22rem;
+    height: 0.38rem;
+    position: absolute;
+    top:0.07rem;
+    left: 0.08rem;
+}
+.guessRuleButton :first-child + img,.moreRecord :first-child + img{
+    width: 1.36rem;
+    height: 0.55rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.winPrizeNum{
+    font-size: 0.28rem;
+    color: white;
+    position: absolute;
+    top:6.24rem;
+    left: 10.8rem;
+}
+.beanNumNow{
+    font-size: 0.28rem;
+    color: white;
+    position: absolute;
+    top:6.66rem;
+    left: 11.7rem;
+}
+.guessFrame{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/guess/frameBg.png");
+    background-size: 100%;
+    display: none;
+}
+.guessFrame div{
+    width: 1.13rem;
+    height: 1.95rem;
+    position: absolute;
+}
+.guessFrame :first-child{
+    position: absolute;
+    top:4.21rem;
+    left: 5.26rem;
+}
+.guessFrame :first-child + div{
+    position: absolute;
+    top:4.21rem;
+    left: 6.09rem;
+}
+.guessFrame :first-child + div + div{
+    position: absolute;
+    top:4.21rem;
+    left: 6.89rem;
+}
+.guessFrame div :first-child{
+    width: 0.94rem;
+    height: 1.75rem;
+    position: absolute;
+    top:0.18rem;
+    left: 0.12rem;
+}
+.guessFrame div :first-child+img{
+    width: 1.13rem;
+    height: 1.95rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.guessRuleFrame{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+    background-image: url("../images/guess/guessRuleBg.jpg");
+    background-size: 100%;
+}
+.guessRecordFrame{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/guess/guessRecordFrame.jpg");
+    display: none;
+}
+.guessRecordFrameBeanNum{
+    width: 0.8rem;
+    height: 0.32rem;
+    font-size: 0.22rem;
+    color:#4dc4e9 ;
+    line-height: 0.32rem;
+    position: absolute;
+    left: 6.7rem;
+    top:0.37rem;
+}
+.guessRecordVipLv{
+    width: 1.64rem;
+    height: 0.48rem;
+    position: absolute;
+    left:9.2rem;
+    top:0.27rem;
+}
+.guessRecordVipLv img{
+    width: 1.64rem;
+    height: 0.48rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.guessRecordArea{
+    width: 10.3rem;
+    height: 3rem;
+    position: absolute;
+    top:2.52rem;
+    left:1.42rem ;
+    overflow: hidden;
+}
+.guessRecordArea > div{
+    width: 10.3rem;
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+.guessRecordArea > div > div{
+    width: 10.3rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    font-size: 0.22rem;
+}
+.guessRecordArea > div >div p{
+    float: left;
+}
+.guessRecordFrameGuessNum{
+    width: 0.8rem;
+    height: 0.22rem;
+    position: absolute;
+    top:6.1rem;
+    left: 3.2rem;
+    font-size: 0.22rem;
+    color: white;
+    text-align: center;
+}
+.guessRecordFrameWinNum{
+    width: 0.8rem;
+    height: 0.22rem;
+    position: absolute;
+    top:6.1rem;
+    left: 5.65rem;
+    font-size: 0.22rem;
+    color: white;
+    text-align: center;
+}
+.guessRecordFrameGetBean{
+    width: 0.8rem;
+    height: 0.22rem;
+    position: absolute;
+    top:6.1rem;
+    left: 8.05rem;
+    font-size: 0.22rem;
+    color: white;
+    text-align: center;
+}
+.noGuess{
+    background-image: url("../images/guess/beanNotEnough.png");
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.noGuess :first-child{
+    width: 5.06rem;
+    height: 1.4rem;
+    position: absolute;
+    top:3.5rem;
+    left: 3.87rem;
+    display: none;
+}
+.noGuess :first-child+img{
+    width: 5.38rem;
+    height: 1.4rem;
+    position: absolute;
+    left:3.71rem;
+    top:3.5rem;
+    display: none;
+}
+.frameTxt{
+    width: 4rem;
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: white;
+    position: absolute;
+    top:3.2rem;
+    left: 4.4rem;
+    font-size: 0.24rem;
+    background-image: url("../images/guess/bg_toast.png");
+    background-size: 100%;
+    display: none;
+}
+/*积分兑换*/
+.exchangePrize{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: relative;
+    background-image: url("../images/exchange/bg.png");
+}
+.musicBeanNum{
+    font-size: 0.2rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    position: absolute;
+    top:0.34rem;
+    left: 9.45rem;
+    color:#4dc4e9 ;
+}
+.vipLv{
+    width: 1.64rem;
+    height: 0.48rem;
+    position: absolute;
+    left:10.47rem;
+    top:0.27rem;
+}
+.vipLv img{
+    width: 1.64rem;
+    height: 0.48rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.winAwardNotice{
+    position: absolute;
+    color: #ffffff;
+    opacity: 0.7;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.28rem;
+    top:0.89rem;
+    left: 2.79rem;
+    width: 9.5rem;
+    overflow: hidden;
+}
+.winAwardNotice > p{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 1.5rem;
+    height: 0.6rem;
+}
+.winAwardNoticeArea{
+    position: absolute;
+    top:0;
+    left: 1.5rem;
+    width: 8rem;
+}
+.winAwardNoticeArea p{
+    height: 0.6rem;
+    width: 8rem;
+}
+.prizeShow{
+    width: 11.9rem;
+    height: 4.52rem;
+    position: absolute;
+    top:1.5rem;
+    left: 0.45rem;
+    overflow: hidden;
+}
+.prizeShow > div{
+    width: 1.9rem;
+    height: 1.9rem;
+    margin:0.18rem 0.24rem;
+    background-image: url("../images/exchange/prizeBg.png");
+    background-size: 100%;
+    float: left;
+    position: relative;
+}
+.prizeShowFocus{
+    width: 2.44rem;
+    height: 2.48rem;
+    position: absolute;
+    top:-0.29rem;
+    left: -0.27rem;
+    display: none;
+}
+.prizePicture{
+    width: 1.58rem;
+    height: 1.58rem;
+    position: absolute;
+    top:0;
+    left: 0.15rem;
+}
+.exchangePrizeBeanNum{
+    font-size: 0.18rem;
+    color: white;
+    top:1.66rem;
+    left: 0.28rem;
+    width: 0.9rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    position: absolute;
+}
+.exchangePrizeNum{
+    font-size: 0.18rem;
+    color: white;
+    top:1.66rem;
+    left: 1.55rem;
+    width: 0.38rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    overflow: hidden;
+    position: absolute;
+}
+.prizeOrder{
+    width: 1.81rem;
+    height: 0.87rem;
+    position: absolute;
+    top:5.91rem;
+    left:0.52rem;
+    display: none;
+}
+.exchangeSubmitPhomeFrame{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/exchange/submitPhone.png");
+    display: none;
+}
+.exchangeSubmitPhomeFrame input{
+    width: 2.5rem;
+    height: 0.38rem;
+    color: white;
+    position: absolute;
+    top:4.59rem;
+    left: 5.8rem;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.22rem;
+}
+.validatePhone{
+    position: absolute;
+    left: 5.8rem;
+    top:5.1rem;
+    height: 0.2rem;
+    width: 2rem;
+    color: red;
+    font-size: 0.2rem;
+    display: none;
+}
+.exchangeSubmitPhomeFramePrizePic{
+    width: 1.59rem;
+    height: 1.58rem;
+    position: absolute;
+    top:2.5rem;
+    left: 5.6rem;
+}
+.exchangeSubmitPhome{
+    width: 1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:5.5rem;
+    left: 4.56rem;
+}
+.exchangeClearPhome{
+    width: 1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:5.5rem;
+    left: 6.9rem;
+}
+.exchangeSubmitPhome :first-child,.exchangeClearPhome :first-child{
+    width: 1.63rem;
+    height: 0.81rem;
+    position: absolute;
+    top:0.15rem;
+    left: 0.1rem;
+}
+.exchangeSubmitPhome :first-child +img,.exchangeClearPhome :first-child +img{
+    width: 1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.notExchange{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/exchange/exchangeError.png");
+    display: none;
+}
+.ExchangeSuccess{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/exchange/exchangeSuccess.png");
+    display: none;
+}
+/*.prizeOrderVip{*/
+    /*width: 12.8rem;*/
+    /*height: 7.2rem;*/
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left: 0;*/
+    /*background-image: url("../images/exchange/exchangeSuccess.png");*/
+    /*display: none;*/
+/*}*/
+/*.prizeOrderVip :first-child{*/
+    /*position: absolute;*/
+    /*width: 5.06rem;*/
+    /*height: 1.47rem;*/
+    /*top:3.6rem;*/
+    /*left: 3.87rem;*/
+    /*display: none;*/
+/*}*/
+/*.prizeOrderVip :first-child + img{*/
+    /*position: absolute;*/
+    /*width: 5.38rem;*/
+    /*height: 1.47rem;*/
+    /*top:3.6rem;*/
+    /*left: 3.71rem;*/
+    /*display: none;*/
+/*}*/
+
+/*我的奖品*/
+.myPrize{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: relative;
+    background-image: url("../images/rule_prizeRecord/record_bg.png");
+}
+.myPrizeBeanNum{
+    width: 0.8rem;
+    height: 0.32rem;
+    font-size: 0.22rem;
+    color:#4dc4e9 ;
+    line-height: 0.32rem;
+    position: absolute;
+    left: 9.15rem;
+    top:0.34rem;
+}
+.myPrizeVipLv{
+    width: 1.64rem;
+    height: 0.48rem;
+    position: absolute;
+    left:10.5rem;
+    top:0.26rem;
+}
+.myPrizeVipLv img{
+    width: 1.64rem;
+    height: 0.48rem;
+    position: absolute;
+    left:0;
+    top:0;
+    display: none;
+}
+.myPrizeRecordArea{
+    width: 10.2rem;
+    height: 3rem;
+    position: absolute;
+    top:2.6rem;
+    left: 1.45rem;
+    overflow: hidden;
+}
+.myPrizeRecordArea > div{
+    width: 10.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.myPrizeRecordArea > div >div{
+    width: 10.2rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.22rem;
+    color: white;
+    text-align: center;
+}
+.myPrizePhoneNum{
+    width: 2.5rem;
+    height: 0.38rem;
+    position: absolute;
+    top:5.82rem;
+    left: 5.2rem;
+    font-size: 0.22rem;
+    line-height: 0.38rem;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+
+}
+.myPrizeModifyButton{
+    width: 1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:5.55rem;
+    left: 8.35rem;
+}
+.myPrizeModifyButton :first-child,.myPrizeModifyButton :first-child+img{
+    width: 1.63rem;
+    height: 0.81rem;
+    position: absolute;
+    top:0.15rem;
+    left: 0.08rem;
+    display: none;
+}
+.myPrizeModifyButton :first-child +img+img{
+    width: 1.83rem;
+    height: 1.01rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    /*display: none;*/
+}
+.modifyPhone{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url("../images/rule_prizeRecord/frameBg.png");
+    display: none;
+}
+.modifyPhoneKey{
+    width: 1.86rem;
+    height: 2.47rem;
+    position: absolute;
+    top:1.5rem;
+    left:5.47rem;
+}
+.modifyPhoneKeyFocus{
+    width: 0.83rem;
+    height: 0.85rem;
+    position: absolute;
+    /*top:1.38rem;*/
+    /*top:2.01rem;*/
+    /*top:2.64rem;*/
+    /*top:3.27rem;*/
+    /*left: 5.35rem;*/
+    /*left: 5.98rem;*/
+    /*left: 6.61rem;*/
+    display: none;
+}
+.newPhoneNum{
+    width: 2.65rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.22rem;
+    color: white;
+    padding-left: 0.2rem;
+    background-image: url("../images/rule_prizeRecord/textarea.png");
+    position: absolute;
+    top:4.5rem;
+    left: 4.6rem;
+    border: none;
+    outline: none;
+}
+.submitButton{
+    width: 1.34rem;
+    height: 0.77rem;
+    position: absolute;
+    top:4.4rem;
+    left: 7.6rem;
+}
+.submitButton :first-child{
+    width: 1.26rem;
+    height: 0.67rem;
+    position: absolute;
+    top:0.12rem;
+    left: 0.05rem;
+}
+.submitButton :first-child +img{
+    width: 1.34rem;
+    height: 0.77rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.remindPhone{
+    font-size: 0.2rem;
+    color: red;
+    position: absolute;
+    top:4.2rem;
+    left: 4.8rem;
+    display: none;
+}
+.remindPhoneError{
+    font-size: 0.2rem;
+    color: red;
+    position: absolute;
+    top:5.5rem;
+    left: 5.2rem;
+    display: none;
+}
+.guessFrameBack{
+    width: 0.65rem;
+    height: 0.65rem;
+    position: absolute;
+    top:6.26rem;
+    left:6.34rem;
+}
+
+/*红包*/
+.weekSignIn .redEnvelopesEntrance{
+    width: 1.7rem;
+    height: 2.07rem;
+    position: absolute;
+    top:3.4rem;
+    left: 11rem;
+    display: none;
+}
+.redEnvelopesEntrance :first-child{
+    width: 1.51rem;
+    height: 1.64rem;
+    position: absolute;
+    top:0.2rem;
+    left: 0.2rem;
+}
+.redEnvelopesEntrance :first-child+img{
+    width: 1.7rem;
+    height: 2.07rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.getRedEnvelopes{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-size: 100%;
+    display: none;
+    z-index: 999;
+    overflow: hidden;
+}
+.offLineFrame{
+    width: 12.8rem;
+    height: 7.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-size: 100%;
+    display: none;
+    z-index: 999;
+    overflow: hidden;
+    background-image: url("../images/homepage/offLineFrame/bg.png");
+}
+.offLineFrameD1{
+    width: 1.86rem;
+    height: 0.96rem;
+    position: absolute;
+    overflow: hidden;
+    top:4.75rem;
+    left: 4.06rem;
+}
+.offLineFrameD2{
+    width: 1.86rem;
+    height: 0.96rem;
+    position: absolute;
+    overflow: hidden;
+    top:4.75rem;
+    left: 6.88rem;
+}
+.offLineFrameD1 :first-child,.offLineFrameD2 :first-child{
+    width: 1.62rem;
+    height: 0.67rem;
+    position: absolute;
+    top:0.15rem;
+    left:0.14rem;
+}
+.offLineFrameD1 :first-child+img,.offLineFrameD2 :first-child+img{
+    width: 1.86rem;
+    height: 0.96rem;
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}

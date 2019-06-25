@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="87099d48-5bde-4706-9279-eb85d00433ee" name="local" url="http://192.168.0.88:8080">
+        <fileTransfer host="192.168.0.88" port="8080">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="8080" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

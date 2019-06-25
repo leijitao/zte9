@@ -1,0 +1,102 @@
+@charset "utf-8";
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,input,select,textarea,form{margin: 0; padding: 0;}
+ul,ol{list-style: none;}
+img{border: none;}
+input,select,textarea{outline: none; border:none; background-color: transparent;}
+textarea{resize: none;}
+a{cursor:pointer;text-decoration: none;}
+h1,h2,h3,h4,h5,h6{font-size: 1em;}
+em,i{font-style: normal;}
+body{font:12px/1.5 "微软雅黑";color:#444444;}
+
+
+/*浮动*/
+.fl{float: left;}
+.fr{float: right;}
+.clearfix:after,
+.clearfix:before{content: "";display: table;}
+.clearfix:after{clear: both;}
+.clearfix{*zoom:1;}
+
+/*文本*/
+.tl{text-align:left}
+.tc{text-align:center}
+.tr{text-align:right}
+.ht{text-indent:-9999px;overflow:hidden}
+
+
+.fw{font-weight: bold;}
+.vam{vertical-align: middle;}
+.vat{vertical-align: top;}
+.vab{vertical-align: bottom;}
+.dib{display: inline-block;}
+
+
+
+.shu{padding: 0 0.10rem;}
+/*<span class="shu">|</span>*/
+
+/*文字颜色*/
+a{color:#575757;}
+.orangeRed{ color:#fc4604}
+.red{color:#FF0000;}
+.green{color:#37BD09;}
+.orange{ color:#F60}
+.blue{color:#0064CD}
+.lblue{color:#00FCFF;}
+.gray{ color:#999}
+.violet{color:#B300FF;}
+.pink{color:#FF6868;}
+.white{color:#fff;}
+.qpink{color:#FFA5A4;}
+.yellow{color:#FF9B00}
+
+/*背景颜色*/
+.bgcgrey{background-color: #FBFBFB;}
+.bgcblue{background-color: #0199DC}
+.bgcyellow{background-color: #fff8d6}
+.bgcpink{background-color: #ffeeee}
+/*定位*/
+.pr{position:relative}
+.pa{position:absolute}
+.pt100{padding-top:1.00rem;}
+.p75{padding-left: 0.75rem;padding-right:0.75rem;}
+.mc{margin:0 auto}
+.mg0{margin:0;}
+.mrf30{margin-right:-0.30rem;}
+.mt10{margin-top: 0.10rem;}
+.mb10{margin-bottom: 0.10rem;}
+.mb20{margin-bottom: 0.20rem;}
+.mb30{margin-bottom: 0.30rem;}
+.mb50{margin-bottom: 0.50rem;}
+.mr20{margin-right:0.20rem;}
+.zoom{zoom:1}
+.hide{display: none;}
+.show{display: block;}
+
+/*布局*/
+.w240{ width:2.40rem}
+.Grid5{ width:3.30rem}
+.Grid7{ width:4.70rem}
+.w740{ width:7.40rem}
+.w1000{ width:10.00rem;}
+.w1038{ width:10.38rem;}
+.w1200{ width:12.00rem;}
+.h560{height:4.60rem;}
+.mwidth{width: 10.38rem;
+	margin: auto auto;}
+
+
+
+/*详细规则页面*/
+.xxguize h4{
+	font-size:0.47rem;
+	line-height: 0.90rem;
+	text-align: center;
+	color:#fff;}
+.xxguize div{
+	font-size:0.35rem;
+	line-height: 0.60rem;
+	color:#fff;
+	margin-top: 0.3rem;
+}

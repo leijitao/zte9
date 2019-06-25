@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding:0;
+}
+.title_first{
+    overflow: hidden;
+    position: relative;
+    height: 1rem;
+}
+.bg_select_always{
+    width: 1.23rem;
+    height: 0.43rem;
+    position: absolute;
+    top:0.48rem;
+    z-index: -1;
+}
+.bg_select{
+    width: 1.66rem;
+    height: 0.58rem;
+    position: absolute;
+    top:0.4rem;
+    display: none;
+}
+.bg_select_one{
+    left: 2.25rem;
+}
+.bg_select_two{
+    left: 3.91rem;
+}
+.bg_select_three{
+    left: 5.57rem;
+}
+.bg_select_four{
+    left: 7.23rem;
+}
+.bg_select_five{
+    left: 8.89rem;
+}
+.bg_select_six{
+    width: 1.04rem;
+    height: 0.23rem;
+    position: absolute;
+    top:0.58rem;
+    left: 10.6rem;
+    display: none;
+}
+.bg_select_seven{
+    width: 1rem;
+    height: 0.23rem;
+    position: absolute;
+    top:0.58rem;
+    left: 10.86rem;
+    display: none;
+}

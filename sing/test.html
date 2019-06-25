@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script>
+    (function() {
+        // console.log("singwithme_userId"+userId);
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            // url: "http://" + ip + "/singwithme/user/overNum",
+            url: "http://175.6.223.26:8088/test_singwithme/user/overNum",
+            data: {
+                "userId": "spcs03",
+            },
+            success:function (msg) {
+                var vip = msg.data.membershipType;
+                console.log("singwithme_vipType:"+vip);
+                console.log(msg);
+                if(vip == 0 || vip==1){
+                    $(".homepage_up").show();
+                    homepage_up=false;
+                    homepage_upx=0;
+                }else if(vip==2){
+                    $(".homepage_up").show();
+                    homepage_up=false;
+                    homepage_upx=1;
+                    reset_up();
+                    $(".homepage_up2").children().eq(1).show();
+                    $(".homepage_up2").children().eq(0).hide();
+                }
+            }
+        })
+
+    }());
+</script>
+</html>

@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="1000000000000" />
+	<package name="action" namespace="/" extends="json-default">
+		<!-- 登录 -->
+		<action name="LoginAction" class="com.fdo.action.LoginUserAction" method="loginUser">
+			<result name="success">/admin/home.jsp</result>
+			<result name="cplogin">/user/cplogin.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<!-- 大类 -->
+		<action name="RTTJWAction" class="com.fdo.action.RTAction" method="bigClass">
+			<result name="success">/admin/home_tuijianwei.jsp</result>
+		</action>
+		<!-- 小类 -->
+		<action name="RTTJClassWAction" class="com.fdo.action.RTAction" method="smallClass">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">musicRecoms</param>
+			</result>
+		</action>
+		<!-- 级联-统计 -->
+		<action name="RTTJTongJiWAction" class="com.fdo.action.RTAction" method="tongji">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">clickVOs</param>
+			</result>
+		</action>
+		<!-- 推荐位明细导出 -->
+		<action name="TJWExcelAction" class="com.fdo.action.RTAction" method="tjwExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">RTTJWAction</param>
+			</result>
+		</action>
+		<!-- 推荐位明细总计 -->
+		<action name="TJWAssAction" class="com.fdo.action.RTAction" method="tjwAss">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">clickVO</param>
+			</result>
+		</action>
+		<!-- 二级全部统计 -->
+		<action name="RTAllAction" class="com.fdo.action.RTAction" method="erjiAll">
+			<result name="success">/admin/home_tuijianwei3.jsp</result>
+		</action>
+		<!-- 二级全部图表 -->
+		<action name="JMTJEJAllAction" class="com.fdo.action.RTAction" method="ejAlltb">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 二级全部总计 -->
+		<action name="JMTJEJAllAssAction" class="com.fdo.action.RTAction" method="ejAllZJ">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">clickVO</param>
+			</result>
+		</action>
+		<!-- 二级全部统计导出 -->
+		<action name="JMTJEJAllExcelAction" class="com.fdo.action.RTAction" method="ejAllDC">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">RTAllAction</param>
+				<param name="className">${className}</param>
+			</result>
+		</action>
+		<!-- 各类推荐位 -->
+		<action name="RTTJWTwoAction" class="com.fdo.action.RTAction" method="tjwtwo">
+			<result name="success">/admin/home_tuijianwei2.jsp</result>
+		</action>
+		<!-- 界面推荐位统计 -->
+		<action name="JMTJWTJAction" class="com.fdo.action.RTAction" method="jmtjwtjtb">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 界面推荐位点击量统计 -->
+		<action name="recClicksStat" class="com.fdo.action.RTAction" method="recClicksStat">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">recClicks</param>
+			</result>
+		</action>
+		<!-- 界面统计推荐位总计 -->
+		<action name="JMTJTJWAssAction" class="com.fdo.action.RTAction" method="jmtjwzj">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">clickVO</param>
+			</result>
+		</action>
+		<!-- 界面统计推荐位导出 -->
+		<action name="JMTJTJWExcelAction" class="com.fdo.action.RTAction" method="jmtjdc">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">RTTJWTwoAction</param>
+				<param name="className">${className}</param>
+			</result>
+		</action>
+		<!-- 明细 -->
+		<!-- <action name="ClicksDateAction" class="com.fdo.action.RTAction" method="mingxi"> <result name="success" type="json"> 
+			<param name="excludeNullProperties">true</param> <param name="ignoreHierarchy">false</param> <param name="root">clickDateVOs</param> 
+			</result> </action> -->
+		<!-- 统计图表 -->
+		<action name="LoginTestAction" class="com.fdo.action.LoginTestAction" method="test">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- LoginTestSanAction -->
+	<!-- 	<action name="LoginTestSanAction" class="com.fdo.action.LoginTestAction" method="sanshi">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action> -->
+		<!-- TotalAction -->
+		<!-- <action name="TotalAction" class="com.fdo.action.RTAction" method="total">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">clickVO</param>
+			</result>
+		</action> -->
+		<!-- 活跃用户统计图表 -->
+		<action name="LoginHYTJAction" class="com.fdo.action.ActiveStatAction" method="activeTongji">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 活跃明细导出 -->
+		<action name="ActiveExcelAction" class="com.fdo.action.ActiveStatAction" method="activeExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">HYTJAction</param>
+			</result>
+		</action>
+		<action name="HYAssAction" class="com.fdo.action.ActiveStatAction" method="activeAss">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">activeVO</param>
+			</result>
+		</action>
+		<!-- 活跃统计明细 -->
+		<!-- <action name="HYTJMXAction" class="com.fdo.action.ActiveStatAction" method="mingxi"> <result name="success" type="json"> 
+			<param name="excludeNullProperties">true</param> <param name="ignoreHierarchy">false</param> <param name="root">activeDateVOs</param> 
+			</result> </action> -->
+		<!-- 曲目统计图表 -->
+		<action name="LoginQMTJAction" class="com.fdo.action.QMSongSumAction" method="qumutongji">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 曲目综合统计饼图表 -->
+		<action name="LoginQMBTTJAction" class="com.fdo.action.QMSongSumAction" method="bttongji">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 曲目饼图导出 -->
+		<action name="QMZHBTExcelAction" class="com.fdo.action.QMSongSumAction" method="qmbtExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">QMTJAction</param>
+			</result>
+		</action>
+		<!-- 曲目明细导出 -->
+		<action name="QMZHExcelAction" class="com.fdo.action.QMSongSumAction" method="qmExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">QMTJAction</param>
+			</result>
+		</action>
+		<!-- 曲目明细总计 -->
+		<action name="QMAssAction" class="com.fdo.action.QMSongSumAction" method="qmAssAll">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">songVO</param>
+			</result>
+		</action>
+		<!-- 曲目明细 -->
+		<!-- <action name="QMClicksDateAction" class="com.fdo.action.QMSongSumAction" method="mingxi"> <result name="success" type="json"> 
+			<param name="excludeNullProperties">true</param> <param name="ignoreHierarchy">false</param> <param name="root">yearMonDateVOs</param> 
+			</result> </action> -->
+		<!-- 入口点击 -->
+		<action name="EJJDTJAction" class="com.fdo.action.EJJDTJAction" method="zhuye">
+			<result name="success">/admin/home_newonline2.jsp</result>
+		</action>
+		<!-- 入口点击图表 -->
+		<action name="ELJDTJTBAction" class="com.fdo.action.EJJDTJAction" method="tubiaotongji">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 结算 -->
+		<action name="JieSuanAction" class="com.fdo.action.ShouRuAction" method="jiesuan">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">renewLog</param>
+			</result>
+		</action>
+		<!-- 阈值 -->
+		<action name="YUJieSuanAction" class="com.fdo.action.ShouRuAction" method="yuzhi">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">onclicks</param>
+			</result>
+		</action>
+		<!-- 入口点击明细导出 -->
+		<action name="RKDJExcelAction" class="com.fdo.action.EJJDTJAction" method="rkExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">EJJDTJAction</param>
+			</result>
+		</action>
+		<!-- 二级入口点击总数 -->
+		<action name="RJRKAssAction" class="com.fdo.action.EJJDTJAction" method="rkAss">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">clickVO</param>
+			</result>
+		</action>
+		<!-- 入口点击明细 -->
+		<!-- <action name="EJMLMXAction" class="com.fdo.action.EJJDTJAction" method="mingxi"> <result name="success" type="json"> 
+			<param name="excludeNullProperties">true</param> <param name="ignoreHierarchy">false</param> <param name="root">clickDateVOs2</param> 
+			</result> </action> -->
+		<!-- 收入统计图表 -->
+		<action name="SRTJTBAction" class="com.fdo.action.ShouRuAction" method="tongji">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 收入明细导出 -->
+		<action name="SRExcelAction" class="com.fdo.action.ShouRuAction" method="mxExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">SRTJAction</param>
+			</result>
+		</action>
+		<!-- 收入明细总计对象 -->
+		<action name="SRAssAction" class="com.fdo.action.ShouRuAction" method="assAll">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">srdvoDateVO</param>
+			</result>
+		</action>
+		<!-- 收入饼图表 -->
+		<action name="LoginSRBTTJAction" class="com.fdo.action.ShouRuAction" method="shourubt">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 收入饼图导出 -->
+		<action name="SRBTExcelAction" class="com.fdo.action.ShouRuAction" method="btExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">SRTJAction</param>
+			</result>
+		</action>
+		<!-- 收入结算管理 -->
+		<action name="SRTJJSGLAction" class="com.fdo.action.ShouRuAction" method="srtjjsgl">
+			<result name="success">/admin/home_srgl_jsgl.jsp</result>
+		</action>
+		<!-- 收入包月总结算管理 -->
+		<!-- <action name="BYZJSGLAction" class="com.fdo.action.ShouRuAction" method="byzjsgl"> <result name="success" type="json"> 
+			<param name="excludeNullProperties">true</param> <param name="ignoreHierarchy">false</param> <param name="root">result</param> 
+			</result> </action> -->
+		<!-- 收入结算管理导出 -->
+		<action name="JSGLExcelAction" class="com.fdo.action.ShouRuAction" method="jsglExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">SRTJJSGLAction</param>
+			</result>
+		</action>
+		<!-- 订购记录导出 -->
+		<action name="SRMXDCExcelAction" class="com.fdo.action.ShouRuAction" method="dgExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">SRTJDGAction</param>
+			</result>
+		</action>
+		<!-- 收入统计明细 -->
+		<!-- <action name="SRTJMXAction" class="com.fdo.action.ShouRuAction" method="mingxi"> <result name="success" type="json"> 
+			<param name="excludeNullProperties">true</param> <param name="ignoreHierarchy">false</param> <param name="root">yearMonsr</param> 
+			</result> </action> -->
+		<!-- 活跃统计 -->
+		<action name="HYTJAction" class="com.fdo.action.ActiveStatAction" method="zheye">
+			<result name="success">/admin/home_hytj_all.jsp</result>
+		</action>
+		<!-- 曲目统计 -->
+		<action name="QMTJAction" class="com.fdo.action.QMSongSumAction" method="zhuye">
+			<result name="success">/admin/home_qmtj_all.jsp</result>
+		</action>
+		<!-- 查看全部歌曲 -->
+		<action name="FindMusicAllAction" class="com.fdo.action.QMSongSumAction" method="findMusic">
+			<result name="success">/admin/home_find_music.jsp</result>
+		</action>
+		<!-- 模糊查询曲目 -->
+		<action name="FindMusicName" class="com.fdo.action.QMSongSumAction" method="findMusicName">
+			<result name="success">/admin/home_find_music.jsp</result>
+		</action>
+		<!-- 收入统计 -->
+		<action name="SRTJAction" class="com.fdo.action.ShouRuAction" method="zhuye1">
+			<result name="success">/admin/home_gcw_zlm.jsp</result>
+		</action>
+		<action name="SRTJxxAction" class="com.fdo.action.ShouRuAction" method="zhuye2">
+			<result name="success">/admin/home_gcw_zlm2.jsp</result>
+		</action>
+		<!-- 订购记录 -->
+		<action name="SRTJDGAction" class="com.fdo.action.ShouRuAction" method="dinggou">
+			<result name="success">/admin/home_find_product.jsp</result>
+		</action>
+		<action name="FindTBillMonthInfo" class="com.fdo.action.ShouRuAction" method="dingGouInfo">
+			<result name="success">/admin/home_find_product2.jsp</result>
+		</action>
+		<action name="FindTBMI" class="com.fdo.action.ShouRuAction" method="findTBMI">
+			<result name="success">/admin/home_find_product2.jsp</result>
+		</action>
+		<action name="FindTBillMonthLogInfo" class="com.fdo.action.ShouRuAction" method="dingGouLogInfo">
+			<result name="success">/admin/home_find_product.jsp</result>
+		</action>
+		<!-- 退订记录 -->
+		<action name="SRTDJLAction" class="com.fdo.action.ShouRuAction" method="tdjl">
+			<result name="success">/admin/home_find_product3.jsp</result>
+		</action>
+		<!-- 新建用户 -->
+		<action name="NewUserAction" class="com.fdo.action.LoginUserAction" method="newUser">
+			<result name="success">/admin/home_new_user.jsp</result>
+		</action>
+		<!-- 新建用户 -->
+		<action name="NewUserInfoAction" class="com.fdo.action.LoginUserAction" method="newUserInfo">
+			<result name="success" type="chain">NewUserAction</result>
+		</action>
+		<!-- 删除用户 -->
+		<action name="DeleteUserInfoAction" class="com.fdo.action.LoginUserAction" method="deleteUserInfo">
+			<result name="success" type="chain">NewUserAction</result>
+		</action>
+		<!-- 修改用户 -->
+		<action name="UpdateUserInfoAction" class="com.fdo.action.LoginUserAction" method="updateUserInfo">
+			<result name="success">/admin/home_update_user.jsp</result>
+		</action>
+		<!-- 修改用户 -->
+		<action name="UpdateUserAction" class="com.fdo.action.LoginUserAction" method="updateUsers">
+			<result name="success" type="chain">NewUserAction</result>
+		</action>
+		<!-- 曲目详情id -->
+		<action name="FindMusicInfoAction" class="com.fdo.action.QMSongSumAction" method="findMusicId">
+			<result name="success">/admin/home_qm_xqym.jsp</result>
+		</action>
+		<!-- 单曲统计图表 -->
+		<action name="LoginQMTJGLXQAction" class="com.fdo.action.QMSongSumAction" method="findMusicObject">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 曲目详情导出 -->
+		<action name="QMXQGLZHExcelAction" class="com.fdo.action.QMSongSumAction" method="qmxqExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">QMTJAction</param>
+			</result>
+		</action>
+		<!-- 单曲详情总计 -->
+		<action name="QMXQAssGLAction" class="com.fdo.action.QMSongSumAction" method="musicZong">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">songVO</param>
+			</result>
+		</action>
+
+		<!-- UserCP -->
+		<!-- CP综合统计 -->
+		<action name="QMTJUserCPAction" class="com.fdo.action.QMSongSumAction" method="UserCPIndex">
+			<result name="success">/user/home_qmtj_all.jsp</result>
+		</action>
+		<!-- CP综合统计图表 -->
+		<action name="QMUserCPAction" class="com.fdo.action.QMSongSumAction" method="UserCPTongji">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- CP综合统计导出 -->
+		<action name="QMUserCPZHExcelAction" class="com.fdo.action.QMSongSumAction" method="userCPExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">QMTJUserCPAction</param>
+			</result>
+		</action>
+		<!-- CP综合统计总计 -->
+		<action name="QMUserCPAssAction" class="com.fdo.action.QMSongSumAction" method="userCPTo">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">songVO</param>
+			</result>
+		</action>
+		<!-- CP曲目查找 -->
+		<action name="FindUserCPMusicAllAction" class="com.fdo.action.QMSongSumAction" method="findUserCPMusic">
+			<result name="success">/user/home_find_music.jsp</result>
+		</action>
+		<!-- CP曲目模糊查询 -->
+		<action name="FindUserCPMusicName" class="com.fdo.action.QMSongSumAction" method="findUserCPMusics">
+			<result name="success">/user/home_find_music.jsp</result>
+		</action>
+		<!-- CP查找曲目详情id -->
+		<action name="FindMusicInfoIdAction" class="com.fdo.action.QMSongSumAction" method="findUCPMId">
+			<result name="success">/user/home_qm_xqym.jsp</result>
+		</action>
+		<!-- CP单曲详情 -->
+		<action name="LoginQMTJXQAction" class="com.fdo.action.QMSongSumAction" method="qmxqtj">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- CP曲目详情导出 -->
+		<action name="QMUserCPXQExcelAction" class="com.fdo.action.QMSongSumAction" method="qmcpxqExcel">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">2048</param>
+				<param name="actionName">FindUserCPMusicAllAction</param>
+			</result>
+		</action>
+		<!-- CP单曲详情总计 -->
+		<action name="QMXQAssAction" class="com.fdo.action.QMSongSumAction" method="qmxqzj">
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="root">songVO</param>
+			</result>
+		</action>
+	</package>
+</struts>    

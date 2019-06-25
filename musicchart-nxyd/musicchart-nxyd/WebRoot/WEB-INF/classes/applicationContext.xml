@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<!-- 本地开发环境数据库 -->
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/nxyd_music_ceshi?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+		<!-- 宁夏移动测试环境数据库 -->
+		<!-- <property name="url" value="jdbc:mysql://10.233.239.116:4402/nxyd_music_ceshi?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"></property> 
+			<property name="username" value="root"></property> <property name="password" value="BJchuanyun252db"></property> -->
+		<!-- 宁夏移动生产环境数据库 -->
+		<!-- <property name="url" value="jdbc:mysql://10.233.239.116:4402/nxyd_music?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"></property> 
+			<property name="username" value="root"></property> <property name="password" value="BJchuanyun252db"></property> -->
+
+		<property name="initialSize" value="10"></property>
+		<property name="maxIdle" value="60"></property>
+		<property name="minIdle" value="10"></property>
+		<property name="maxActive" value="150"></property>
+		<!-- 设置在自动回收超时连接的时候打印连接的超时错误 -->
+		<property name="logAbandoned" value="true" />
+		<!-- 设置自动回收超时连接 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 自动回收超时时间(以秒数为单位) -->
+		<property name="removeAbandonedTimeout" value="180" />
+		<!-- 毫秒检查一次连接池中空闲的连接 -->
+		<property name="timeBetweenEvictionRunsMillis" value="12000"></property>
+		<!-- 把空闲时间超过minEvictableIdleTimeMillis毫秒的连接断开, 直到连接池中的连接数到minIdle为止 连接池中连接可空闲的时间,毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="120000"></property>
+		<property name="maxWait" value="3000"></property>
+		<property name="defaultAutoCommit" value="false" />
+		<property name="numTestsPerEvictionRun" value="10"></property>
+		<property name="validationQuery">
+			<value>SELECT 1</value>
+		</property>
+		<property name="testOnBorrow">
+			<value>true</value>
+		</property>
+		<property name="testOnReturn">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- set the max upload size100MB -->
+		<property name="maxUploadSize">
+			<value>10000000000000000</value>
+		</property>
+		<property name="maxInMemorySize">
+			<value>40960</value>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- hibernate方言配置，这里指定事MySQL -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<!-- 是否打印真实SQL -->
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- 是否格式化打印的SQL -->
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:com/fdo/hum/*.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.orm.hibernate3.HibernateTransactionManager" id="txManger">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="txManger">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="*" rollback-for="Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut expression="execution (* com.fdo.service.*.*(..))" id="serviceMethod" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
+	</aop:config>
+
+	<!-- 音乐统计dao -->
+	<bean class="com.fdo.dao.impl.SysUserDaoImpl" id="sysUserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean class="com.fdo.dao.impl.MuSicTypeDaoImpl" id="muSicTypeDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean class="com.fdo.dao.impl.MusicRecomDaoImpl" id="musicRecomDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean class="com.fdo.dao.impl.CountMusicRecDaoImpl" id="countMusicRecDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean class="com.fdo.dao.impl.CountMusicVisitDaoImpl" id="countMusicVisitDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean class="com.fdo.dao.impl.CountMusicCategoryDaoImpl" id="countMusicCategoryDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean class="com.fdo.dao.impl.CountMusicPlayDaoImpl" id="countMusicPlayDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean class="com.fdo.dao.impl.CountBillMonthDaoImpl" id="countBillMonthDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 音乐统计service -->
+	<bean class="com.fdo.service.impl.CountBillMonthServiceImpl" id="countBillMonthService">
+		<property name="countBillMonthDao" ref="countBillMonthDao"></property>
+	</bean>
+	<bean class="com.fdo.service.impl.CountMusicPlayServiceImpl" id="countMusicPlayService">
+		<property name="countMusicPlayDao" ref="countMusicPlayDao"></property>
+	</bean>
+	<bean class="com.fdo.service.impl.CountMusicCategoryServiceImpl" id="countMusicCategoryService">
+		<property name="countMusicCategoryDao" ref="countMusicCategoryDao"></property>
+	</bean>
+	<bean class="com.fdo.service.impl.CountMusicVisitServiceImpl" id="countMusicVisitService">
+		<property name="countMusicVisitDao" ref="countMusicVisitDao"></property>
+	</bean>
+	<bean class="com.fdo.service.impl.CountMusicRecServiceImpl" id="countMusicRecService">
+		<property name="countMusicRecDao" ref="countMusicRecDao"></property>
+	</bean>
+	<bean class="com.fdo.service.impl.MusicRecomServiceImpl" id="musicRecomService">
+		<property name="musicRecomDao" ref="musicRecomDao"></property>
+	</bean>
+	<bean class="com.fdo.service.impl.MuSicTypeServiceImpl" id="muSicTypeService">
+		<property name="muSicTypeDao" ref="muSicTypeDao"></property>
+	</bean>
+	<bean class="com.fdo.service.impl.SysUserServiceImpl" id="sysUserService">
+		<property name="sysUserDao" ref="sysUserDao"></property>
+	</bean>
+
+</beans>

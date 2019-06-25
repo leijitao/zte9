@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+    <link rel="stylesheet" href="css/comman.css">
+    <script src="js/jquery-1.11.0.js"></script>
+</head>
+<body>
+<section class="bg-container">
+	<section class="container">
+		<section class="payCon">
+			<h1>支付方式</h1>
+			<section class="payStep">
+				<ul>
+					<li><span>确认产品</span></li>
+					<li><span class="current">确认支付</span></li>
+					<li><span>支付完成</span></li>				
+				</ul>
+			</section>
+			<section class="proCon">
+				<p id="skuname"></p>
+				<p id="memo"></p>
+				<div id="fees" class="proPrice"></div>
+			</section>
+			<section class="payWay">
+				<div class="payWX" id="payWX">
+					<img id="qrcode" /> 
+					<p>扫我进入支付宝或微信支付</p>
+				</div>
+				<input type="button" class="payAccount" id="payAccount" value="账户支付" >
+			</section>
+			<div class="btnsRow">
+			    <input type="button" class="btnsh" id="btnBook" value="订购" onClick="order_click();">
+			    <input type="button" class="btnsh" id="btnBack" value="返回" onClick="return_click();">
+			</div>
+			<div class="btips"><span>为避免儿童误操作而产生服务费用，您可以</span>
+				<input type="button" class="btns" id="btnSet" value="设置童锁" onClick="childLock();" >
+			</div>
+			<!--loading-->
+			<div class="loading">
+				<img src="images/loading.gif" />
+			</div>
+			<div class="ptips">
+				<p>备注:</p>
+				<p>可在首页-我的-消费记录查看该订单详情。</p>
+			</div>	
+		</section>
+	</section>
+</section>
+</body>
+<script src="js/utils.js"></script>
+<script src="js/webview.js"></script>
+<script src="js/pay.js"></script>
+<script src="js/Keyboard.js"></script>
+</html>

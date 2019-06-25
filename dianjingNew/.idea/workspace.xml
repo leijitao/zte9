@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27e2dfb5-e263-44e9-93bc-fc776797225f" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="dianjing" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="order.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/order.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="166" column="15" selection-start-line="166" selection-start-column="15" selection-end-line="166" selection-end-column="15" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="278" column="5" lean-forward="true" selection-start-line="278" selection-start-column="5" selection-end-line="278" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/all.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>$(&quot;.ztlist2_con_rightBig&quot;).children().eq(list2_num).children(&quot;.ztlist2_con_rightBig_img2&quot;).show();</find>
+      <find>$(&quot;.ztlist2_con_rightBig&quot;).children().eq(0).children(&quot;.ztlist2_con_rightBig_img2&quot;).show();</find>
+      <find>loading</find>
+      <find>stopPlayVideoHandler</find>
+      <find>订购失败</find>
+      <find>keyEventBack</find>
+      <find>Search</find>
+      <find>jump</find>
+      <find>15</find>
+      <find>jumpor</find>
+      <find>body</find>
+      <find>bg_select_seven</find>
+      <find>ztlist_title</find>
+      <find>ztlist_box</find>
+      <find>saishi</find>
+      <find>订购</find>
+      <find>alert</find>
+      <find>InitHead</find>
+      <find>1.png</find>
+      <find>focusImageConfig</find>
+      <find>100</find>
+      <find>zIndex</find>
+      <find>top</find>
+      <find>child-pwd</find>
+      <find>order</find>
+      <find>gokeyvalue</find>
+      <find>handler</find>
+      <find>ztList2_con_focus</find>
+      <find>ztlist2_con_rightBig</find>
+      <find>palyVideoAndList</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../dianjing000/search.html" />
+        <option value="$USER_HOME$/Desktop/文本对比工具/Beyond Compare 2/outJump.html" />
+        <option value="$PROJECT_DIR$/../dianjing000/index.html" />
+        <option value="$USER_HOME$/Desktop/dianjing(4)/ztlist.html" />
+        <option value="$USER_HOME$/Desktop/singwithme_api/src/main/webapp/js/top.js" />
+        <option value="$USER_HOME$/Desktop/singwithme_api/src/main/webapp/js/index1.js" />
+        <option value="$USER_HOME$/Desktop/dianjing(4)/index.html" />
+        <option value="$USER_HOME$/Desktop/echo1.html" />
+        <option value="F:/QQ/record/936395101/FileRecv/order.js" />
+        <option value="F:/QQ/record/936395101/FileRecv/order_view.js" />
+        <option value="F:/QQ/record/936395101/FileRecv/webview.js" />
+        <option value="$PROJECT_DIR$/js/core.portal.js" />
+        <option value="$USER_HOME$/Desktop/dianjing/order.html" />
+        <option value="$USER_HOME$/Desktop/dianjing/js/ajax.js" />
+        <option value="$USER_HOME$/Desktop/dianjing/ztlist.html" />
+        <option value="$USER_HOME$/Desktop/dianjing/js/saishi-hot-zongyi.js" />
+        <option value="$USER_HOME$/Desktop/dianjing/index.html" />
+        <option value="$USER_HOME$/Desktop/dianjing (1)/js/all.js" />
+        <option value="$USER_HOME$/Desktop/dianjing (1)/ztlist.html" />
+        <option value="$USER_HOME$/Desktop/dianjing (1)/js/saishi-hot-zongyi.js" />
+        <option value="$USER_HOME$/Desktop/dianjing/js/all.js" />
+        <option value="$USER_HOME$/Desktop/dianjing (1)/index.html" />
+        <option value="G:/dianjing/zhubo.html" />
+        <option value="$PROJECT_DIR$/search.html" />
+        <option value="$PROJECT_DIR$/hotgame.html" />
+        <option value="$PROJECT_DIR$/saishi.html" />
+        <option value="$PROJECT_DIR$/zongyi.html" />
+        <option value="$PROJECT_DIR$/js/head.js" />
+        <option value="$USER_HOME$/Desktop/8/8/assets/sources/js/qcast_comm/config.js" />
+        <option value="$USER_HOME$/Desktop/8/8/assets/sources/js/qcast_comm/focus.js" />
+        <option value="$USER_HOME$/Desktop/8/assets/sources/js/managers/rpjs.manager.input.js" />
+        <option value="$USER_HOME$/Desktop/8/assets/sources/js/qcast_comm/focus.js" />
+        <option value="$PROJECT_DIR$/css/base.portal.css" />
+        <option value="$PROJECT_DIR$/js/carousel.js" />
+        <option value="$PROJECT_DIR$/../lottery/activity.html" />
+        <option value="$PROJECT_DIR$/js/saishi-hot-zongyi.js" />
+        <option value="$PROJECT_DIR$/zhubo.html" />
+        <option value="$PROJECT_DIR$/../lottery/js/all.js" />
+        <option value="$PROJECT_DIR$/../lottery/js/activity.js" />
+        <option value="$USER_HOME$/Desktop/game.html" />
+        <option value="$PROJECT_DIR$/ztlist.html" />
+        <option value="$PROJECT_DIR$/js/all.js" />
+        <option value="$PROJECT_DIR$/js/ajax.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/order.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="191" />
+    <option name="width" value="1028" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dianjing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dianjing" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27e2dfb5-e263-44e9-93bc-fc776797225f" name="Default" comment="" />
+      <created>1530843265659</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1530843265659</updated>
+      <workItem from="1530843268460" duration="12494000" />
+      <workItem from="1531098938663" duration="18647000" />
+      <workItem from="1531185730095" duration="24780000" />
+      <workItem from="1531273416932" duration="14548000" />
+      <workItem from="1531359575206" duration="17005000" />
+      <workItem from="1531446996432" duration="16539000" />
+      <workItem from="1531540737740" duration="5039000" />
+      <workItem from="1531705096551" duration="19773000" />
+      <workItem from="1531790983338" duration="26252000" />
+      <workItem from="1531876045896" duration="2011000" />
+      <workItem from="1531878159090" duration="25372000" />
+      <workItem from="1531963859871" duration="21677000" />
+      <workItem from="1532049676820" duration="20767000" />
+      <workItem from="1532227419537" duration="15128000" />
+      <workItem from="1532310156863" duration="19552000" />
+      <workItem from="1532395051161" duration="23567000" />
+      <workItem from="1532486551454" duration="62013000" />
+      <workItem from="1532655810321" duration="430000" />
+      <workItem from="1532657772048" duration="4889000" />
+      <workItem from="1532673221740" duration="13728000" />
+      <workItem from="1532745369642" duration="17104000" />
+      <workItem from="1532915643448" duration="29421000" />
+      <workItem from="1532999966580" duration="23731000" />
+      <workItem from="1533088861924" duration="5333000" />
+      <workItem from="1533099642481" duration="39077000" />
+      <workItem from="1533176441328" duration="3771000" />
+      <workItem from="1533198070398" duration="20829000" />
+      <workItem from="1533517952963" duration="9094000" />
+      <workItem from="1533623072874" duration="8894000" />
+      <workItem from="1533692152009" duration="3887000" />
+      <workItem from="1534226235656" duration="2257000" />
+      <workItem from="1534300676834" duration="4408000" />
+      <workItem from="1534901231474" duration="3698000" />
+      <workItem from="1534921776166" duration="7079000" />
+      <workItem from="1534986741180" duration="14670000" />
+      <workItem from="1535072302498" duration="3977000" />
+      <workItem from="1535331405934" duration="3177000" />
+      <workItem from="1535418352165" duration="12474000" />
+      <workItem from="1535504936710" duration="5979000" />
+      <workItem from="1535533312576" duration="688000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="583759000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834985" visible="true" weight="0.12723215" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" weight="0.12723215" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" sideWeight="0.50165015" side_tool="true" weight="0.12723215" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18374817" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Desktop/dianjing/hotgame.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/search.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/zongyi.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/order.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/zhubo.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/saishi.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/ztlist.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/js/ajax.js" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/js/saishi-hot-zongyi.js" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/index.html" />
+    <entry file="file://$PROJECT_DIR$/ztlist0.html" />
+    <entry file="file://$USER_HOME$/Desktop/echo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="160" column="40" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/dianjing (1)/js/ajax.js" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing (1)/ztlist.html" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing (1)/js/saishi-hot-zongyi.js" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing (1)/js/all.js" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing/js/all.js" />
+    <entry file="file://$USER_HOME$/Desktop/dianjing (1)/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/head_index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="55" lean-forward="true" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/dianjing/zhubo.html" />
+    <entry file="file://$PROJECT_DIR$/js/core.portal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="312" column="4" selection-start-line="312" selection-start-column="4" selection-end-line="312" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotgame.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/head.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="144" lean-forward="true" selection-start-line="6" selection-start-column="144" selection-end-line="6" selection-end-column="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/8/8/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="283" column="93" lean-forward="true" selection-start-line="283" selection-start-column="93" selection-end-line="283" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zongyi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="68" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/支付方式.html" />
+    <entry file="file://$USER_HOME$/Desktop/支付方式_files/hm.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/支付方式_files/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="75" column="22" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/支付方式_files/order_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/8/8/assets/sources/js/qcast_comm/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3266">
+          <caret line="142" column="81" lean-forward="true" selection-start-line="142" selection-start-column="81" selection-end-line="142" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/8/8/assets/sources/js/qcast_comm/focus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/8/assets/sources/js/qcast_comm/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/8/8/assets/sources/js/qcast_comm/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/8/assets/sources/js/managers/rpjs.manager.input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4610">
+          <caret line="323" column="33" lean-forward="true" selection-start-line="323" selection-start-column="33" selection-end-line="323" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/8/assets/sources/js/qcast_comm/focus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/base.portal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saishi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="897">
+          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/saishi-hot-zongyi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="395" column="85" selection-start-line="395" selection-start-column="85" selection-end-line="395" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhubo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="277" column="66" lean-forward="true" selection-start-line="277" selection-start-column="66" selection-end-line="277" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-1.11.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="4" column="7262" selection-start-line="4" selection-start-column="7262" selection-end-line="4" selection-end-column="7262" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../lottery/js/all.js" />
+    <entry file="file://$PROJECT_DIR$/../lottery/js/activity.js" />
+    <entry file="file://$PROJECT_DIR$/../lottery/activity.html" />
+    <entry file="file://$PROJECT_DIR$/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="190" column="51" lean-forward="true" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="177" column="29" selection-start-line="177" selection-start-column="29" selection-end-line="177" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ztlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="379" column="50" selection-start-line="379" selection-start-column="50" selection-end-line="379" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="278" column="5" lean-forward="true" selection-start-line="278" selection-start-column="5" selection-end-line="278" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="166" column="15" selection-start-line="166" selection-start-column="15" selection-end-line="166" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

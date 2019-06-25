@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订购</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <link href="css/base.portal.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div style="background-image: url('images/ztNew/order_new.jpg');background-size: 100%;width: 12.8rem;height: 7.2rem;position: relative">
+        <!--<img id="sure" src="images/button/order-sure.png" alt="" style="height: 0.81rem;width: 2.53rem;position: absolute;top:4.9rem;left:5.18rem ;">-->
+        <!--<img id="back" src="images/button/order-back.png" alt="" style="height: 0.6rem;width: 0.57rem;position: absolute;top:6.42rem;left:12.03rem;display: none">-->
+        <div class="orderPrompt" style="display: none;position: absolute;width: 4rem;height:0.8rem;top:50%;left: 50%;margin-left:-2rem;margin-top: -0.4rem;background-image: url('images/ztNew/bg_toast1.png');background-size: 100% 100%">
+            <p class="orderPromptText" style="position: absolute;width: 4rem;height:0.8rem;top:0;left: 0;line-height: 0.8rem;font-size: 0.24rem;text-align: center;margin:0;">订购成功</p>
+        </div>
+    </div>
+</body>
+<script src="js/WebViewJavascriptBridge.js"></script>
+<script src="js/all.js"></script>
+<script>
+
+    // function $(id) { return document.getElementById(id); }
+    // $("sure").style.display="none";
+    var x=0;
+    document.onkeydown=function(e){
+        e=window.event||e;
+        /**
+         * 37 左键盘
+         * 38 上键盘
+         * 39 右键盘
+         * 40 下键盘
+         * 13 回车键
+         */
+
+        switch(e.keyCode){
+            // case 37:
+            //     x=0;
+            //     $("#sure").show();
+            //     $("#back").hide();
+            // break;
+            // case 38:
+            //     x=0;
+            //     $("#sure").show();
+            //     $("#back").hide();
+            // break;
+            // case 39:
+            //     x=1;
+            //     $("#sure").hide();
+            //     $("#back").show();
+            // break;
+            // case 40:
+            //     x=1;
+            //     $("#sure").hide();
+            //     $("#back").show();
+            // break;
+            case 13:
+                if($('.orderPrompt').css("display")=="none"){
+                authenticationGetUrl("","",20,"YYS.8.0.0.Y28.0.HNLT.0.0_Pre_Release",20,1,"d34cc6f39bf242e18248b944bf3cbff0");
+                                        // (typeCode,contentId,UrlFromsource,version,authFromsource,isGetUrl,serviceId)
+                    // order();
+                    // alert("订购")
+                // }else if(x==1){
+                //     // goback();
+                //     window.location.href="http://" + ip_local + "/dianjing/index.html";
+                }else {
+                    $('.orderPrompt').css({display:"none"});
+                }
+            break;
+        }
+    }
+
+</script>
+
+<script>
+    stopPlayVideoHandler();
+
+    setTimeout(function () {
+        other_zte("订购页")
+    },1000);
+
+    //返回首页处理
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.registerHandler('keyEventHandler', function (data, responseCallback) {
+            console.log("keyEventHandler :"+data);
+            if(data==4){
+                // goback();
+                if($('.orderPrompt').css("display")=="none") {
+                    statisticsOrder();
+
+                    var x = window.location.href;
+                    var y = x.split("html=");
+
+                    if (click_goback == false || x.indexOf("html=") == -1) {
+                        window.location.href = "http://" + ip_local + "/dianjing/index.html?html=order.html";
+                    } else if (click_goback == true && x.indexOf("html=") != -1) {
+                        window.location.href = "http://" + ip_local + "/dianjing/" + y[1];
+                    }
+
+                    responseCallback("true");
+                }else {
+                    $('.orderPrompt').css({display:"none"});
+                }
+            }
+
+
+        })
+
+    })
+
+//  订购
+//     var ip=
+    function order() {
+        // alert(userId_mg);
+        // alert(userToken);
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            // url:"http://"+ip +"/hnmg/hnmgOrderMonthly",
+            url:"http://"+ip_local+"/hnmgGaming_pay/hnmg/hnmgOrderMonthly",
+            data:{
+                'userId':userId_mg,
+                'usertoken':userToken_mg,
+                'version':"YYS.8.0.0.Y28.0.HNLT.0.0_Pre_Release",
+                'isRenew':1,
+                'ip':userIp_mg,
+                'mac':userMacAddress_mg,
+            },
+            success:function(msg){
+                // alert(1);
+                // console.log(msg);
+                console.log("ordermsg success:"+ JSON.stringify(msg));
+                // alert(msg.data.data);
+                if (msg.data.result==0){
+                    console.log("order data:"+msg.data.data);
+                    window.location.href=msg.data.data;
+                }else{
+                    $('.orderPrompt').css({display:"block"});
+                    $('.orderPromptText').html("订购失败，请稍后重试");
+                    setTimeout(function(){
+                        $('.orderPrompt').css({display:"none"});
+                    },5000);
+                }
+
+
+            },
+            error:function (msg) {
+                console.log("ordermsg error:"+ JSON.stringify(msg));
+
+            }
+        })
+    }
+//    返回订购结果
+    (function fun() {
+        var url=window.location.href;
+        console.log(url);
+        if(url.indexOf("payStatus=") != -1){
+            var n=url.split("payStatus=");
+            if(n[1]==0){
+                keyEventBack("-1");
+                $('.orderPrompt').css({display:"block"});
+                $('.orderPromptText').html("订购成功");
+                setTimeout(function(){
+                    $('.orderPrompt').css({display:"none"});
+                },2000);
+
+                $.ajax({
+                    type:"GET",
+                    dataType:"json",
+                    url:"http://58.20.27.15:8080/hncj_api_v2/store/game/v3.1/user/activityStatus",
+                    data:{},
+                    success:function(msg){
+                        console.log("activity time:"+JSON.stringify(msg));
+                        if(msg.code==1){
+                            windowStopPlayVideo();
+                            window.location.href=msg.data.accessAddress+"?url="+url;
+                        }else if(msg.code==2){
+                            console.log("activity end");
+                        }
+                    },
+                    error:function (msg) {
+                        console.log("activity time error:"+JSON.stringify(msg));
+                    }
+                })
+
+            }else if(n[1]==9314){
+                keyEventBack("-1");
+                // alert("取消订购")
+            }else{
+                keyEventBack("-1");
+                $('.orderPrompt').css({display:"block"});
+                $('.orderPromptText').html("订购失败：错误代码"+ n[1]);
+                $('.orderPromptText').css({fontSize:"0.24rem"});
+                setTimeout(function(){
+                    $('.orderPrompt').css({display:"none"});
+                },5000);
+                // alert("订购失败错误代码："+n[1])
+            }
+        }
+
+    }())
+
+    function keyEventBack(data) {
+        bridge.callHandler('keyHandlerIdBridgeHandler', data, function (response) {
+            console.log("keyHandlerIdBridgeHandler:" + response);
+        })
+    }
+
+
+</script>
+</html>

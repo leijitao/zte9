@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3a6c6e0c-4430-4962-bf46-cef0a10380fd" name="scyd_dianjing" url="http://192.168.0.89:8080">
+        <fileTransfer port="0" mountedRoot="E:\dev\code\apache-tomcat-9.0.8\webapps\ROOT\projectAll\zte9frontend\dianjing_sichuan\dianjing" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

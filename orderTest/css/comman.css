@@ -1,0 +1,277 @@
+*{margin: 0; padding: 0;}
+html, body{margin: 0; padding: 0; overflow: hidden; font-family:"Microsoft YaHei","Helvetica"; font-size: 24px}
+ul{list-style: none; margin: 0; padding: 0;}
+.h10{width: 100%;height:10px;font-size: 0;line-height: 0;clear: both;}
+article, aside, canvas, figure, figure img, figcaption, footer, header, nav, section, audio, video{display: block;}
+body{width: 100%; height: 100%; background:transparent;color: #fff;}
+a{text-decoration: none;}
+/*å©Šæ°¬å§©é‰ï¿½*/
+/*å¦²ï¿½*/
+::-webkit-scrollbar{width: 0px;}
+::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); border-radius:0px;}
+::-moz-scrollbar{width: 0px;}
+::-moz-scrollbar-track{-moz-box-shadow: inset 0 0 6px rgba(0,0,0,0); border-radius: 0px;}
+::-ms-scrollbar{width: 0px;}
+::-ms-scrollbar-track{-ms-box-shadow: inset 0 0 3px rgba(0,0,0,0); border-radius: 0px;}
+::-o-scrollbar{width: 0px;}
+::-o-scrollbar-track{-o-box-shadow: inset 0 0 0px rgba(0,0,0,0); border-radius: 0px;}
+/*é‰â„ƒç²¦é§ï¿½*/
+::-webkit-scrollbar-thumb{border-radius: 0px; background: rgba(0,0,0,0); -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0);}
+::-webkit-scrollbar-thumb:window-inactive{background: rgba(0,0,0,0);}
+::-moz-scrollbar-thumb{border-radius: 0px; background: rgba(0,0,0,0); -moz-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);}
+::-moz-scrollbar-thumb:window-inactive{background: rgba(0,0,0,0);}
+::-ms-scrollbar-thumb{border-radius: 0px; background: rgba(0,0,0,0); -ms-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);}
+::-ms-scrollbar-thumb:window-inactive{background: rgba(0,0,0,0);}
+::-o-scrollbar-thumb{border-radius: 0px; background: rgba(0,0,0,0); -o-box-shadow: inset 0 0 0px rgba(0,0,0,0);}
+::-o-scrollbar-thumb:window-inactive{background: rgba(0,0,0,0);}
+/* end*/
+.bg-container{background: url('../images/videobg.jpg') no-repeat;height: 100%;width: 100%;position: absolute;top: 0;left: 0;background-size: cover;}
+.container{width: 1280px; height: 720px; position: fixed; z-index: 1; top: 50%; left: 50%; margin-top: -360px; margin-left: -640px;}
+.container div img{ max-width: 100%;vertical-align: middle;}
+.container div{ text-align: center; vertical-align: middle;}
+.device1080{-webkit-transform: scale(1.5); -ms-transform: scale(1.5); -o-transform: scale(1.5); transform: scale(1.5);}
+input{background: #484848;color: #fff; border: 1px solid #aaa;height: 30px;line-height: 30px;padding: 8px 10px; font-size: 21px;}
+h1{ font-weight: normal;}
+
+.btnsRow{ width:100%; margin:0 auto; clear: both;    display: inline-block;}
+.btnsRow .btn{border: none;text-align: center; margin: 0 auto;background:url('../images/sabtn.png') no-repeat; font-size: 24px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 218px; float: left;    outline: none;
+    border: none;}
+.btnsRow .btn.current,.btnsRow .btn:hover{ background:url('../images/sabtn1.png') no-repeat;}
+.btnsRow input:focus.btn{background:url('../images/sabtn1.png') no-repeat;}
+.btnsRow .btnMid{text-align: center; margin: 0 auto;background:url('../images/btnMid.png') no-repeat; font-size: 24px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 328px; float: left;}
+.btnsRow .btnMid.current,.btnsRow .btnMid:hover{ background:url('../images/btnMid1.png') no-repeat;}
+.btnsRow input:focus.btnMid{background:url('../images/btnMid1.png') no-repeat;}
+input[type="button"]{ border: none; outline: none;    box-shadow: none;}
+/*é§è¯²ç¶*/
+.loginCon{width: 800px; height: 370px; margin: auto; position: absolute; top:0; left: 0; bottom: 0; right: 0; text-align:center; color: #fff;}
+.loginCon h1{ font-size: 27px; height: 60px; line-height: 60px;}
+.loginCon .loginInput{position: relative; margin: 15px auto;display: block;height: 54px;line-height: 54px;}
+.loginForm{ width: 66%; float: left;}
+.loginCon .loginInput label{ font-size: 24px;width: 20%;float: left;text-align: right;}
+.loginCon .loginInput input{font-size: 24px; background: #484848; width: 74%; border:2px solid #aaa; color: #7c7c80; padding:16px 10px 6px 10px;float: left;}
+.loginCon .loginInput input.current,.loginCon .loginInput input:hover{box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.loginCon .btnsRow{/*display:-webkit-box;display:flex; display:-ms-flex;display:-webkit-flex;*/width: 78%; margin:50px auto 40px auto; clear: both}
+.loginCon .loginInput input.phoneNum{border: none; outline: none; box-shadow: none;position: absolute;right: -280px;bottom: -48px; float: right;height: 110px; width: 272px; line-height: 74px;background: url('../images/phoNumBtn.png') no-repeat; font-size: 21px}
+
+.loginCon .loginInput input.phoneNum.current,.loginCon .loginInput input.phoneNum:hover{background: url('../images/phoNumBtn1.png') no-repeat;    box-shadow: none;border: none; outline: none }
+.loginCon .loginInput input.phoneNum:focus{background: url('../images/phoNumBtn1.png') no-repeat;    box-shadow: none;border: none; outline: none}
+.loginCon .btnsRow .btn{border: none; background:url('../images/btn.png') no-repeat; font-size: 27px;    text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 228px; float: left;}
+.loginCon .btnsRow .btn.current,.loginCon .btnsRow .btn:hover{ background:url('../images/btn1.png') no-repeat;}
+.loginCon1 .btnsRow{/*display:-webkit-box;display:flex;display:-ms-flex;display:-webkit-flex; */width:100%; margin:0 auto; clear: both}
+.loginCon1 .btnsRow .btn{ background:url('../images/btn.png') no-repeat; font-size: 27px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 228px; float: left;}
+.loginCon1 .btnsRow .btn.current,.loginCon1 .btnsRow .btn:hover{ background:url('../images/btn1.png') no-repeat;}
+.loginCon1 .loginForm{ width: 75%; float: left;margin:10px auto 20px auto; }
+.loginCon1 .btnPhone{margin-top: 0; float: right;height: 110px; width: 318px; line-height: 74px;background: url('../images/btnMid.png') no-repeat; font-size: 27px}
+.loginCon1 .btnPhone.current,.loginCon1 .btnPhone:hover{background: url('../images/btnMid1.png') no-repeat; }
+.loginCon1 .btnsRow input.btnReset:focus{background: url('../images/btn1.png') no-repeat;}
+.loginCon1 .btnsRow input.btnLogin:focus{background: url('../images/btn1.png') no-repeat;}
+.loginCon1 .btnsRow input.btnPhone:focus{background: url('../images/btnMid1.png') no-repeat;}
+.loginCon .btnsRow input:focus{background: url('../images/btn1.png') no-repeat;}
+/*ç’ï¸½åŸ›*/
+.identityCon{ position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 820px; height: 600px;}
+.identityCon h1{ text-align: center;}
+.identityCon .idRow{ background: #464950; border-radius: 6px; margin:16px auto;    display: block; /*display:-webkit-box;display:flex;display:-ms-flex;display:-webkit-flex; */ width: 790px; height: 276px; -webkit-box-shadow: 0 0 14px rgba(0,0,0,.5);-moz-box-shadow: 0 0 14px rgba(0,0,0,.5) ;box-shadow:  0 0 14px rgba(0,0,0,.5);}
+.identityCon .idRow .idName{ width: 60%; line-height: 276px; font-size: 27px;float: left;}
+.identityCon .idRow .idScode{width: 240px; height: 240px; margin: 18px 36px; float: right;}
+.identityCon .idRow .idScode img,.identityCon .idRow .idScode canvas{ width: 200px; height: 200px;     border: 20px solid #fff;}
+.identityCon .btnsRow{ border: none;/*display:-webkit-box;display:flex;display:-ms-flex;display:-webkit-flex;*/ width:90%; margin:0 auto 0 90px; clear: both}
+.identityCon .btnsRow .btn{border: none; margin: 0 auto;background:url('../images/btnMid.png') no-repeat; font-size: 27px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 318px; float: left;}
+.identityCon .btnsRow .btn.current,.identityCon .btnsRow .btn:hover{ background:url('../images/btnMid1.png') no-repeat;}
+.identityCon .btnsRow input.btn:focus{background:url('../images/btnMid1.png') no-repeat;}
+/*.identityCon .btnsRow .btnReTry{background:url('../images/csBtn.png') no-repeat;}
+.identityCon .btnsRow .btnReTry:hover{background:url('../images/csBtn1.png') no-repeat;}
+.identityCon .btnsRow .btnset{background:url('../images/szBtn.png') no-repeat;}
+.identityCon .btnsRow .btnset:hover{background:url('../images/szBtn1.png') no-repeat;}*/
+.outTips{ padding:30px 0 0 80px; font-size: 21px}
+.overPlay{ display: none;background: rgba(0,0,0,.8); z-index: 99; position: absolute;top:0; left: 0; height: 720px; width: 1280px; }
+.popPass{ display: none;background: #4b4b4d; width: 690px; height: 280px;border-radius: 6px; border: 2px solid #fff; z-index: 100; position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0;}
+.popPass p{ text-align: left; width: 80%; margin: 30px auto 0px auto}
+.popPass input{ background: #484848; border: 1px solid #aaa;height: 36px;line-height: 36px;padding:16px 10px 6px 10px;width: 74%;margin: 20px 10%;color: #fff;font-size: 24px;}
+.popPass input.current,.popPass input:hover{box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.popPass .btnsRow{ /*display:-webkit-box;display:flex;display:-ms-flex;display:-webkit-flex;*/ width:94%; margin:0 27px; clear: both}
+.popPass .btnsRow .btn{border: none;text-align: center; margin: 0 auto;background:url('../images/btnMid.png') no-repeat; font-size: 27px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 318px; float: left;}
+.popPass .btnsRow input.current,.popPass .btnsRow input:hover{ background:url('../images/btnMid1.png') no-repeat; outline: none;box-shadow: none; border: none}
+.popPass .btnsRow input:focus{background:url('../images/btnMid1.png') no-repeat; outline: none;box-shadow: none; border: none}
+/*ç»”ãƒ©æ”£*/
+.creatLockCon{ height: 280px; width: 460px; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0;}
+.creatLockCon .btn{border: none;text-align: center; margin: 40px 0;background:url('../images/btn.png') no-repeat; font-size: 27px;height: 110px; line-height: 70px; width: 228px; float: left;}
+.creatLockCon .btn.current,.creatLockCon .btn:hover{background:url('../images/btn1.png') no-repeat; }
+.creatLockCon .creatLockBtn.btn{text-align: center; margin: 40px 110px;}
+.creatLockCon .tips{ display: block;clear: both; padding: 10px 0;font-size: 20px;}
+
+.RetryCon{ height: 280px; width: 460px; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0;}
+.RetryCon .btn{border: none;text-align: center; margin: 40px 0;background:url('../images/btn.png') no-repeat; font-size: 27px;height: 110px; line-height: 70px; width: 228px; float: left;}
+.RetryCon .btn.current,.RetryCon .btn:hover{background:url('../images/btn1.png') no-repeat; }
+.RetryCon .RetryCon.btn{text-align: center; margin: 40px 110px;}
+.RetryCon .tips{ display: block;clear: both; padding: 10px 0;font-size: 20px;}
+
+.closeLockCon{text-align: center;position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 740px; height: 380px;}
+.closeLockCon .closeInput input{width: 50%; border: 2px solid #a5a5a5;padding:16px 10px 6px 10px; font-size: 21px; margin:36px 10px; color: #fff;  height: 30px; line-height: 30px; background:#4e4e50 }
+.closeLockCon .closeInput input.current,.closeLockCon .closeInput input:hover{box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.closeLockCon .closeInput label{ padding: 6px 0}
+.setLockCon,.RetryCon{background: #58585a; border: 2px solid #d2d2d2; text-align: center; border-radius: 6px;position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 740px; height: 380px;}
+.setLockCon .btnsRow,.closeLockCon .btnsRow,.RetryCon .btnsRow{ /*display:-webkit-box;display:flex;display:-ms-flex;display:-webkit-flex; */width:64%; margin:0 auto; clear: both}
+.setLockCon .btnsRow .btn,.closeLockCon .btnsRow .btn{border: none;text-align: center; margin: 0 auto;background:url('../images/btn.png') no-repeat; font-size: 27px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 228px; float: left;}
+/*.setLockCon .btnsRow .btn.current,.closeLockCon .btnsRow .btn.current,.setLockCon .btnsRow .btn:hover,.closeLockCon .btnsRow .btn:hover{ background:url('../images/btn1.png') no-repeat;}
+.setLockCon .btnsRow input:focus,.RetryCon .btnsRow input:focus,.closeLockCon .btnsRow input:focus{background:url('../images/btn1.png') no-repeat;}*/
+.setLockCon .setInputs input{text-align: center; border: 2px solid #a5a5a5; padding: 8px; font-size: 24px; margin:36px 10px 10px 10px; color: #fff; width: 36px; height: 36px; line-height: 36px; background:#4e4e50 }
+.setLockCon .setInputs input.current,.setLockCon .setInputs input:hover{box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.setLockCon .setInputs .numInput{display: inline-block;text-align: center; border: 2px solid #a5a5a5; padding: 8px; font-size: 24px; margin:36px 10px; color: #fff; width: 36px; height: 36px; line-height: 36px; background:#4e4e50}
+.setLockCon .setInputs .numInput.highLight{ box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.setLockCon .setInputs .numInput4{border: 2px solid transparent;background: transparent;font-size: 27px;color: #fff;height: 36px;line-height: 36px;position: absolute;width: 270px;overflow:hidden; letter-spacing: 75px; text-align:left;left:222px;top: 0;}
+.setLockCon .setInputs .numInput4.current{box-shadow: 0 0 4px transparent;border: 2px solid transparent}
+.setLockCon h1,.closeLockCon h1,.RetryCon h1{ font-size: 27px; margin-top: 40px; letter-spacing: 2px;}
+.setLockCon h1 span,.closeLockCon h1 span,,.RetryCon h1 span{ font-size: 18px;}
+.RetryCon .btnsRow input{ letter-spacing: 0}
+.RetryCon h1{ font-size:30px;}
+.RetryCon .outTips{padding: 70px 0 }
+.RetryCon .btnsRow{margin-left: 32px;}
+.tipsCon{position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 850px; height: 450px;}
+.tipsCon .tlTip{ font-size: 21px;  text-align: left;}
+.tipsCon .centerTip{ font-size: 30px;  text-align: center;height: 340px;line-height: 340px;}
+.tipsCon .boTip{ font-size: 21px;  text-align: center;}
+.changeLockCon{height: 350px; width: 520px; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0;}
+.changeLockCon h1{ font-size: 30px;margin-bottom: 30px}
+.changeLockCon .lockInput div{ margin: 15px auto;/*display:-webkit-box;display:flex; display:-ms-flex;display:-webkit-flex;*/}
+.changeLockCon .lockInput label{ float: left; width: 24%; text-align: right; padding: 6px 0}
+.changeLockCon .lockInput input{padding: 18px 10px 6px 10px; border: 2px solid transparent;width: 70%; /*flex:1;-ms-flex:1;-webkit-flex:1;-webkit-box-flex:1;*/}
+.changeLockCon .lockInput input.current,.changeLockCon .lockInput input:hover{ box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.changeLockCon p{ margin: 15px auto;}
+.changeLockCon .btnsRow{ width:88%; margin:12px 40px 0 66px; clear: both}
+.changeLockCon .btnsRow .btn{border: none;text-align: center; margin: 0 auto;background:url('../images/sabtn.png') no-repeat; font-size: 24px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 218px; float: left;}
+.changeLockCon .btnsRow .btn.current,.changeLockCon .btnsRow .btn:hover{ background:url('../images/sabtn1.png') no-repeat;}
+.changeLockCon .btnsRow input:focus{background:url('../images/sabtn1.png') no-repeat;}
+/*ç¼æˆç•¾éŽµå¬«æº€é™ï¿½/
+.setBindCon{background: #58585a; border: 2px solid #d2d2d2; text-align: center; border-radius: 6px;position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 660px; height: 340px;}
+.setBindCon h1{ margin:30px 0 20px 0; font-size: 27px}
+.setBindCon .setBindInput{margin: 15px auto; text-align: left;width: 70%;}
+.setBindCon .setBindInput input{ width: 70%;border: 2px solid transparent}
+.setBindCon .setBindInput input.current,.setBindCon .setBindInput input:hover{ box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.setBindCon .setNumInput{margin: 15px auto;text-align: left;width: 70%;position: relative;}
+.setBindCon .setNumInput input{width: 35%;border: 2px solid transparent}
+.setBindCon .setNumInput input.current,.setBindCon .setNumInput input:hover{ box-shadow: 0 0 4px #fd245b; border: 2px solid #fd245b}
+.setBindCon .setNumInput .btnGetN{text-align: center; margin: 0 auto;background:url('../images/sabtn.png') no-repeat; font-size: 24px;height: 110px; line-height: 70px; width: 218px;position: absolute;right: -30px;top: -33px;}
+.setBindCon .setNumInput .btnGetN.current,.setBindCon .setNumInput .btnGetN:hover{box-shadow:none;border: 2px solid transparent;background:url('../images/sabtn1.png') no-repeat;}
+.setBindCon .setNumInput input.btnGetN:focus{box-shadow: none; border: 2px solid transparent;background: url('../images/sabtn1.png') no-repeat;}
+.setBindCon .btnsRow{width: 68%;}
+.flexCon{position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 900px; height: 480px;}
+.flexCon .flexLeft{ width:350px; float: left; margin: 60px 20px;}
+.flexCon .flexLeft p{ margin-bottom: 60px;}
+.flexCon .flexRight{width: 510px;float: right;}
+.flexCon .flexRight .tipCon{ margin-top: 120px;}
+.flexCon .flexRight .tipCon p{ line-height: 30px; }
+.flexCon .flexRight .tipCon p:first-child{ margin-left: -40px}
+.flexLeft .btn{background:url('../images/btn.png') no-repeat; font-size: 24px;height: 110px; line-height: 70px; width: 228px; margin-top: 20px;}
+.flexLeft .btn.current{background:url('../images/btn1.png') no-repeat; }
+.flexLeft input.btn:focus{background:url('../images/btn1.png') no-repeat; }
+.flexCon .flexRight .listCon{ height: 290px;overflow: auto; margin-top: 40px}
+.flexCon .flexRight .bookBtn{ display: block;background:url('../images/btn.png') no-repeat; font-size: 24px;height: 110px; line-height: 70px; width: 228px; margin: 20px auto;}
+.flexCon .flexRight input.bookBtn:focus{background:url('../images/btn1.png') no-repeat; }
+.flexCon .listRow{ margin: 15px auto 30px auto}
+.flexCon .listRow .proName{ text-align: left;}
+.flexCon .listRow .proName p{height: 40px; line-height: 40px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; }
+.flexCon .listRow .proName i{vertical-align: bottom;height: 40px; width: 50px; line-height: 40px; display: inline-block;background: url('../images/radioCheck.png') no-repeat;}
+.flexCon .listRow .proName.current i{background: url('../images/radioChecked.png') no-repeat;}
+.flexCon .listRow .proInfo{ margin-left: 50px; font-size: 18px;}
+.contectCon{position: absolute; text-align: center; margin: auto; top:0; left:0; right:0; bottom: 0; width: 760px; height: 480px;}
+.contectCon img{ height: 260px; width: 300px; margin:20px 30px}
+.contectCon .tips{ text-align: left; margin-left: 50px; font-size: 20px}
+.contectCon .btnsRow{margin: 20px auto;width: 58%;}
+.contectCon .btnsRow input:focus{    background: url('../images/sabtn1.png') no-repeat; }
+/*é€îˆ™ç²¯*/
+.payCon{position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 1080px; height: 610px;}
+.payCon h1{ font-size: 32px; color: #a9a9a9}
+.payCon .payStep{ position: relative;width: 94%;display: inline-block;margin: 20px 0 10px 6%}
+.payCon .proCon{ background: #484b51;width:84%; margin-left:6%; border-radius: 6px; padding: 15px 20px; font-size: 18px; position: relative;}
+.payCon .proPrice{ position: absolute; right: 12px; font-size: 30px; top: 17px; }
+.payCon .payWay .payWX{display: inline-block; float: left;}
+.payCon .payWay .payWX p{ font-size: 16px; margin: 6px auto}
+.payCon .payWay .payWX img,.payCon .payWay .payWX canvas{border-radius: 10px; border: 4px solid #fff; height: 180px; width:180px;}
+.payCon .payWay .payAccount{margin: 0 10px; border-radius: 10px; border:2px solid transparent;  background: #494c53; width: 188px; height: 188px; /*line-height: 118px;*/ font-size: 21px}
+.payCon .payWay .payAccount.current,.payCon .payWay .payAccount:hover{border:2px solid #fdc645; background: #fd2c67 url('../images/selected.png') bottom right no-repeat;}
+.payCon .payWay input.payAccount:focus{border:2px solid #fdc645; background: #fd2c67 url('../images/selected.png') bottom right no-repeat;}
+.payCon .payWay input.payAccount.check{border:2px solid #fdc645; background: #fd2c67 url('../images/selected.png') bottom right no-repeat;}
+.payCon .ptips,.canCon .ptips{color: #a9a9a9; position: absolute;left: 0; font-size: 18px; text-align: left; bottom: 0}
+.btnsRow .btnsh{border: none;background:url('../images/btnShort.png') no-repeat; font-size: 24px;height: 110px; line-height: 80px; width: 168px;margin: -25px 0 0 0;}
+.btnsRow .btnsh.current,.btnsRow .btnsh:hover{background:url('../images/btnShort1.png') no-repeat;}
+.btnsRow input.btnsh:focus{background:url('../images/btnShort1.png') no-repeat;}
+.btnsRow input.btnsh.change{background:url('../images/btnShort1.png') no-repeat;}
+.payCon .payWay input.payAccount.check1{background:url('../images/btnShort1.png') no-repeat;}
+.btips input.btns.change1{background:url('../images/btnShort1.png') no-repeat;}
+.payCon .btnsRow{width: 60%;margin: 26px 20% 0 20%;}
+.payCon .btnsRow #btnBook{ float: left;}
+.payCon .btnsRow #btnBack{ float: right;}
+.payCon .ptips{ bottom: -33px;}
+.payCon .btips{width: 92%;font-size: 18px;margin: 0 auto}
+.payCon .btips .btns{border: none;background:url('../images/btnShort.png') no-repeat;font-size: 21px;height: 110px; line-height: 80px; width: 168px;}
+.payCon .btips .btns.current,.payCon .btips .btns:hover{background:url('../images/btnShort1.png') no-repeat;}
+.payCon .btips input.btns:focus{background:url('../images/btnShort1.png') no-repeat;}
+.payCon .payWay{/*margin: 0 auto;width: 32%;*/ margin:15px auto 2px 6%;width: 94%;display:inline-block}
+.payStep  ul li span {float: left;margin-right: 30px;display: inline-block;position: relative;height: 30px;padding: 10px 0;text-align: center;background-color: #43464c;color: #fff;text-decoration: none;width: 290px;}
+.payStep  ul li span:after {content: "";border-left: 20px solid #43464c;border-top: 25px solid transparent;border-bottom: 25px solid transparent;position: absolute;right: -20px;top: 0;}
+.payStep ul li span:before {content: "";border-top: 25px solid #43464c;border-bottom: 25px solid #43464c;border-left: 20px solid transparent;position: absolute;top: 0;left: -20px;}
+.payStep ul li:first-child span:before {display: none;}
+.payStep ul li span.current {background-color: #373a42; font-weight: bold}
+.payStep ul li span.current:after {border-left-color: #373a42;}
+.payStep ul li span.current:before {border-top-color: #373a42;border-bottom-color: #373a42;}
+.payCon .proTb{background: #3e3e40;-webkit-box-shadow: 0 0 14px rgba(0,0,0,.5);-moz-box-shadow: 0 0 14px rgba(0,0,0,.5);box-shadow:  0 0 14px rgba(0,0,0,.5);height: 300px;width: 790px;margin:30px auto 0 auto;padding:30px;border-radius: 6px;}
+.payCon .proTb p{ line-height: 35px}
+
+.loading{display: none;position: absolute; width: 100px; height: 100px; margin:auto; left: 0; right: 0; top: 0; bottom: 0;z-index: 1001;text-align:center;}
+.outCon{display: none;background: #4b4b4d;width: 690px;height: 280px;border-radius: 6px;border: 2px solid #fff;z-index: 100;position: absolute;margin: auto;top: 0;left: 0;right: 0;bottom: 0;}
+.outCon p{position: absolute;top: 44%; width: 690px;height: 280px;font-size: 32px;}
+/*é–¿î†¾æ´*/
+.outKeyset{ display: none;padding: 30px 0 10px 0; height: 180px; width: 100%; background:#58595d; position: absolute;bottom:-100px; left: 0}
+.outKeyset input{font-size: 24px; background:#686b74;text-align: center; padding: 0px 23px;height: 60px;line-height: 60px;margin: 8px;border-radius: 6px;}
+.outKeyset input:focus,.outKeyset input:hover{ background: #fd245b}
+.rechargeCon{ height: 540px; width: 600px; position: absolute; margin: auto; top:0; bottom: 0; left: 0; right:0;}
+.rechargeScode{ margin: 25px auto; height: 300px; width: 300px;}
+.rechargeScode img{ border: 10px solid #fff;height: 280px; width: 280px; border-radius: 6px;}
+.rechargeCon .btnsRow input.btnBack{margin-left: 198px;}
+.rechargeCon .tips{ padding: 4px 0;}
+.tindent{ text-indent: 40px}
+
+.conTop{height: 70px; line-height: 70px; padding:20px 10% 8px 10%;background:rgba(0,0,0,.1);}
+.conTop .logo-tv{ float: left;}
+.conTop .logo-LT{ float: right;}
+.conTop img{vertical-align: middle;}
+.canCon{position: absolute; margin: auto; top:0; left:0; right:0; bottom: 0; width: 880px; height: 520px;}
+.canCon .canTb{ background: #3e3e40;-webkit-box-shadow: 0 0 14px rgba(0,0,0,.5);-moz-box-shadow: 0 0 14px rgba(0,0,0,.5) ;box-shadow:  0 0 14px rgba(0,0,0,.5); height: 220px; width:650px; margin:30px auto 0 auto; padding:30px 40px; border-radius: 6px;}
+.canCon .canTb p{ line-height: 38px}
+.canCon .canTb  .canTbTip{margin-top: 25px}
+.conBottom{display: block;position: absolute;bottom: 0;padding:0 10% 15px 10%;width: 80%;background:rgba(0,0,0,.1);text-align: center;}
+.conBottom .conBotTip{ font-size: 24px}
+.conBottom .conBotTip span.btnshort{display: inline-block; width:140px;line-height: 90px;background: url(../images/btnShort.png) no-repeat;    background-size: cover;}
+.conBottom .conBotTip span.btnmid{display: inline-block; width:180px;line-height: 90px;background: url(../images/btn.png) no-repeat;    background-size: cover;}
+.canCon .nobtnsRow{width: 50%; margin:0px 25%; clear: both; }
+.canCon .nobtnsRow .btn{text-indent: 0;letter-spacing: 0;}
+.canCon .ptips{bottom: 30px;color: #e7e6e6}
+.canCon .ptips p:last-child{ text-indent:20px}
+
+.nobtnsRow{ width:100%; margin:0 auto; clear: both;    display: inline-block;}
+.nobtnsRow .btn{border: none;text-align: center; margin: 0 auto;background:url('../images/sabtn.png') no-repeat; font-size: 24px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 218px; float: left;    outline: none;
+    border: none;}
+.nobtnsRow .btn.current,.nobtnsRow .btn:hover{ background:url('../images/sabtn1.png') no-repeat;}
+.nobtnsRow .btnMid{text-align: center; margin: 0 auto;background:url('../images/btnMid.png') no-repeat; font-size: 24px;text-indent: 14px; letter-spacing: 14px; height: 110px; line-height: 70px; width: 328px; float: left;}
+.nobtnsRow .btnMid.current,.nobtnsRow .btnMid:hover{ background:url('../images/btnMid1.png') no-repeat;}
+.nobtnsRow input:focus.btnMid{background:url('../images/btnMid1.png') no-repeat;}
+.nobtnsRow .btnsh{border: none;background:url('../images/btnShort.png') no-repeat; font-size: 24px;height: 110px; line-height: 80px; width: 168px;margin: -25px 0 0 0;}
+.nobtnsRow .btnsh.current,.nobtnsRow .btnsh:hover{background:url('../images/btnShort1.png') no-repeat;}
+.nobtnsRow input.btnsh:focus{background:url('../images/btnShort1.png') no-repeat;}
+.nobtnsRow input.btnsh.change{background:url('../images/btnShort1.png') no-repeat;}
+
+.payBox{ background: #484b51; width: 908px; height:330px;  padding: 50px 20px 0 20px;margin: 0 auto; border-radius: 8px}
+.payBox .payScode{ width: 250px; float: left;margin-left: 40px;}
+.payBox .payScode .payTip{ text-align: center; color: #fff; font-size: 18px }
+.payBox .payScode .payImg{  width: 220px; height: 220px; border:10px solid #fff; margin-top:15px;border-radius: 14px}
+.payBox .payScode img{ width: 220px; height: 220px;}
+.payBox .payInfo{ float: right;color: #fff;text-align: left;width: 580px;}
+.payBox .payInfo .payTit{font-size:28px; margin: 50px 0 30px 10px;}
+.payBox .payInfo .payDel{font-size: 18px;margin: 50px 0 30px 10px;}
+.payBox .payInfo .payMoney{margin: 50px 0 30px 10px;}
+.payBox .payInfo .payMoney span{font-size:46px}
+.payBox .payInfo .payMoney small{font-size: 18px}
+
+.payCon .accountName{font-size: 27px;color: #fff;background: #484b51;border-radius:  6px;width: 910px;margin: 65px auto 0 auto;padding: 8px 20px;font-weight: bold;}
+.payCon .accountName i{border-radius: 50%;background: #fff;width: 10px;height: 10px;display: inline-block;margin: 5px 15px 5px 10px;}
+.accountTop{margin-top: 20px;}

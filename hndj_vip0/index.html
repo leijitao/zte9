@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>首页</title>
+    <link href="css/base.css" rel="stylesheet" />
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="js/WebViewJavascriptBridge.js"></script>
+    <script src="js/all.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        input{
+            border: none;
+            outline: none;
+            background: none;
+            color: white;
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color:#fef7c1;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:#fef7c1;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:#fef7c1;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:#fef7c1;
+        }
+
+    </style>
+</head>
+<body>
+<div style="width: 12.8rem;height: 7.2rem;position: relative;overflow: hidden;background-image: url('images/bg.jpg')">
+    <div class="base">
+        <img src="images/dreamFocus.png" style='width: 2.49rem;height: 0.99rem;position: absolute;left: 5.15rem;top:5.94rem'>
+        <img src="images/goOutButton.png" style='width: 1.66rem;height: 0.65rem;position: absolute;left: 10.84rem;top:4.2rem;display: none'>
+        <img src="images/awardButton.png" style='width: 1.66rem;height: 0.65rem;position: absolute;left: 10.84rem;top:3.43rem;display: none'>
+        <img src="images/ruleButton.png" style='width: 1.66rem;height: 0.65rem;position: absolute;left: 10.84rem;top:2.66rem;display: none'>
+    </div>
+    <div class="ruleFrame" style="width: 12.8rem;height: 7.2rem;position: absolute;top:0;left: 0;display: none;background-image: url('images/ruleBg.png')"></div>
+    <div class="vipFrame" style="width: 12.8rem;height: 7.2rem;position: absolute;top:0;left: 0;background-image: url('images/vipFrame.png');display: none">
+        <img src="images/goOrder.png" alt="" style="width: 1.7rem;height: 0.69rem;position: absolute;top:5.03rem;left: 4.48rem;display: none">
+        <img src="images/goHome.png" alt="" style="width: 1.7rem;height: 0.69rem;position: absolute;top:5.03rem;left: 6.58rem;display: none">
+    </div>
+    <div class="awardFrame" style="background-image: url('images/awardFrame.png');width: 12.8rem;height: 7.2rem;position: absolute;top:0;left: 0;display: none">
+        <p class="awardFramePhone" style="width: 2.68rem;height: 0.4rem;position: absolute;top:4.4rem;left: 4.5rem;font-size: 0.22rem;line-height: 0.4rem;color: white">请输入手机号码</p>
+        <img src="images/clearFocus.png" alt="" style="width: 0.95rem;height: 0.69rem;position: absolute;top:4.24rem;left: 7.63rem;display: none">
+        <img src="images/sureButton.png" alt="" style="width: 1.7rem;height: 0.69rem;position: absolute;top:5.01rem;left: 4.48rem;display: none">
+        <img src="images/backButton.png" alt="" style="width: 1.7rem;height: 0.69rem;position: absolute;top:5.01rem;left: 6.58rem;display: none">
+        <p class="awardFrameTxt" style="font-size: 0.2rem;color: red;position: absolute;top:4.8rem;left: 4.5rem;display: none">手机号格式不正确，请重新输入</p>
+        <img src="images/1.png" alt="" class="awardFramePrizeImg" style="width: 2.33rem;height:2.07rem;position: absolute;top:2rem;left: 5.24rem">
+        <!--<img src="images/1.png" alt="" class="awardFramePrizeImg" style="width: 1.88rem;height:1.68rem;position: absolute;top:2.5rem;left: 5.46rem">-->
+    </div>
+    <div class="submitSuccessFrame" style="width: 12.8rem;height: 7.2rem;position: absolute;top:0;left: 0;background-image: url('images/submitSuccessFrame.png');display: none"></div>
+</div>
+</body>
+<script src="js/index.js"></script>
+</html>

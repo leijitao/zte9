@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta name="page-view-size" content="1280*720" />-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>精彩赛事</title>
+    <link href="css/base.portal.css" rel="stylesheet" />
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="js/WebViewJavascriptBridge.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/ajax.js"></script>
+    <!--<script src="js/carousel.js"></script>-->
+    <!--<script src="js/core.portal.js"></script>-->
+</head>
+<body class="saishi">
+<div class="title_first">
+    <img src="images/new/4.png" alt="" class="bg_select_always" style="left: 7.39rem;">
+    <img src="images/ztNew/tuijian.png" alt="" class="bg_select_one bg_select">
+    <img src="images/ztNew/saishi.png" alt="" class="bg_select_two bg_select">
+    <img src="images/ztNew/youxi.png" alt="" class="bg_select_three bg_select">
+    <img src="images/ztNew/zhubo.png" alt="" class="bg_select_four bg_select" style="display: block">
+    <img src="images/ztNew/zongyi.png" alt="" class="bg_select_five bg_select">
+    <!--<img src="images/ztNew/search.png" alt="" class="bg_select_six">-->
+    <img src="images/menu/order.png" alt="" class="bg_select_seven">
+</div>
+<div class="zhubo_content" style="position:relative;margin-top:1rem">
+    <div class="zhubo_content1" style="position:absolute;top:0;left: 0;height: 5rem;width: 100%">
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 1.5rem;width: 2.67rem;height: 3.768rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.12rem;left: 4.73rem;width: 3.34rem;height: 4.71rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 8.63rem;width: 2.67rem;height: 3.768rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 8.63rem;width: 2.67rem;height: 3.768rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 8.63rem;width: 2.67rem;height: 3.768rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 8.63rem;width: 2.67rem;height: 3.768rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 8.63rem;width: 2.67rem;height: 3.768rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 8.63rem;width: 2.67rem;height: 3.768rem">-->
+        <!--<img src="images/game/7.png" alt="" style="position: absolute;top:0.62rem;left: 8.63rem;width: 2.67rem;height: 3.768rem">-->
+    </div>
+    <img class="zhubo_content_border" src="images/04zmzb/sel_zhubo.png" alt="" style="position: absolute;top:0;left: 4.615rem;width: 3.57rem;height: 4.95rem;display:none;z-index: 100">
+</div>
+</body>
+
+
+<script>
+    setTimeout(function () {
+        category_zte(100810001000,"知名主播");
+    },1000);
+
+    var fir_x=3;
+    var zhubo_conx=4;
+    var typeCode=100810001000;
+    var port= "/music/concert";
+    var zhubo_nav=true;
+    var zhubo_con=false;
+    var flag=true;
+    var list_zhubo;
+    function resetStyle() {
+       $(".zhubo_content1").children().css({position:"absolute",});
+       $(".zhubo_content1").children().eq(0).css({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:1});
+       $(".zhubo_content1").children().eq(1).css({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:2});
+       $(".zhubo_content1").children().eq(2).css({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:3});
+       $(".zhubo_content1").children().eq(3).css({top:0.4+"rem",left: 2.56+"rem",width: 2.92+"rem",height: 4.16+"rem",zIndex:4});
+       $(".zhubo_content1").children().eq(4).css({top:0.12+"rem",left: 4.73+"rem",width: 3.34+"rem",height: 4.71+"rem",zIndex:5});
+       $(".zhubo_content1").children().eq(5).css({top:0.4+"rem",left: 7.27+"rem",width: 2.92+"rem",height: 4.16+"rem",zIndex:4});
+       $(".zhubo_content1").children().eq(6).css({top:0.59+"rem",left: 9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:3});
+       $(".zhubo_content1").children().eq(7).css({top:0.59+"rem",left: 9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:2});
+       $(".zhubo_content1").children().eq(8).css({top:0.59+"rem",left: 9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:1});
+    }
+    function animateleft() {
+        if(flag==true){
+            $(".zhubo_content1").children().eq(8).clone().insertBefore($(".zhubo_content1").children().eq(0));
+            $(".zhubo_content1").children().eq(9).remove();
+            $(".zhubo_content1").children().css({position:"absolute",});
+            $(".zhubo_content1").children().eq(0).stop().animate({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:1},500);
+            $(".zhubo_content1").children().eq(1).stop().animate({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:2},500);
+            $(".zhubo_content1").children().eq(2).stop().animate({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:3},500);
+            $(".zhubo_content1").children().eq(3).stop().animate({top:0.4+"rem",left: 2.56+"rem",width: 2.92+"rem",height: 4.16+"rem",zIndex:4},500);
+            $(".zhubo_content1").children().eq(4).stop().animate({top:0.12+"rem",left: 4.73+"rem",width: 3.34+"rem",height: 4.71+"rem",zIndex:5},500);
+            $(".zhubo_content1").children().eq(5).stop().animate({top:0.4+"rem",left: 7.27+"rem",width: 2.92+"rem",height: 4.16+"rem",zIndex:4},500);
+            $(".zhubo_content1").children().eq(6).stop().animate({top:0.59+"rem",left:9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:3},500);
+            $(".zhubo_content1").children().eq(7).stop().animate({top:0.59+"rem",left: 9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:2},500);
+            $(".zhubo_content1").children().eq(8).stop().animate({top:0.59+"rem",left: 9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:1},500);
+            flag=false;
+            $(".zhubo_content_border").hide();
+            setTimeout(function(){
+                flag=true;
+                $(".zhubo_content_border").show();},500);
+
+        }
+    }
+    function animateRight() {
+        if(flag==true){
+            $(".zhubo_content1").children().eq(0).clone().insertAfter($(".zhubo_content1").children().eq(8));
+            $(".zhubo_content1").children().eq(0).remove();
+            $(".zhubo_content1").children().css({position:"absolute",});
+            $(".zhubo_content1").children().eq(0).stop().animate({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:1},500);
+            $(".zhubo_content1").children().eq(1).stop().animate({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:2},500);
+            $(".zhubo_content1").children().eq(2).stop().animate({top:0.59+"rem",left: 1.12+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:3},500);
+            $(".zhubo_content1").children().eq(3).stop().animate({top:0.4+"rem",left: 2.56+"rem",width: 2.92+"rem",height: 4.16+"rem",zIndex:4},500);
+            $(".zhubo_content1").children().eq(4).stop().animate({top:0.12+"rem",left: 4.73+"rem",width: 3.34+"rem",height: 4.71+"rem",zIndex:5},500);
+            $(".zhubo_content1").children().eq(5).stop().animate({top:0.4+"rem",left: 7.27+"rem",width: 2.92+"rem",height: 4.16+"rem",zIndex:4},500);
+            $(".zhubo_content1").children().eq(6).stop().animate({top:0.59+"rem",left:9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:3},500);
+            $(".zhubo_content1").children().eq(7).stop().animate({top:0.59+"rem",left: 9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:2},500);
+            $(".zhubo_content1").children().eq(8).stop().animate({top:0.59+"rem",left: 9.07+"rem",width: 2.65+"rem",height: 3.77+"rem",zIndex:1},500);
+            flag=false;
+            $(".zhubo_content_border").hide();
+            setTimeout(function(){
+                flag=true;
+                $(".zhubo_content_border").show();},500);
+        }
+    }
+
+    function reset_fir(num){
+        $('.title_first').children().hide();
+        $('.title_first').children().eq(0).show();
+        $('.title_first').children().eq(num+1).show();
+    }
+    //获取主播海报
+    (function() {
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:"http://"+ip + port,
+            data:{
+                typeCode:typeCode,
+            },
+            success:function(msg){
+                console.log(msg);
+
+                var list=msg.data.musicRecommed;
+                store.set("list_zhubo",list);
+                list_zhubo=store.get("list_zhubo");
+                for(var integra in list){
+                    var lis='<img src="'+ list[integra].picUrl + '"alt="">';
+                    $(".zhubo_content1").append(lis);
+                }
+                resetStyle();
+
+            },
+            error:function (msg) {
+
+            }
+        })
+    }());
+    document.onkeydown=function(e) {
+        e = window.event || e;
+        /**
+         * 37 左键盘
+         * 38 上键盘
+         * 39 右键盘
+         * 40 下键盘
+         * 13 回车键
+         */
+
+        switch (e.keyCode) {
+            case 37:
+                if(zhubo_nav==true){
+
+                        fir_x--;
+                        if (fir_x <= 0) {
+                            fir_x = 0;
+                        }
+                        reset_fir(fir_x);
+
+                }else if(zhubo_con==true) {
+                    if (flag == true) {
+                        zhubo_conx--;
+                        if (zhubo_conx < 0) {
+                            zhubo_conx = 8
+                        }
+                        animateleft();
+                    }
+                }
+                break;
+            case 38:
+                if(zhubo_con==true){
+                    zhubo_con=false;
+                    zhubo_nav=true;
+                    reset_fir(fir_x);
+                    $(".zhubo_content_border").hide();
+                }
+                break;
+            case 39:
+                if(zhubo_nav==true){
+                        fir_x++;
+                        if (fir_x >= 5) {
+                            fir_x = 5;
+                        }
+                        reset_fir(fir_x);
+
+                }else if(zhubo_con==true){
+                    if(flag==true) {
+                        zhubo_conx++;
+                        if (zhubo_conx > 8) {
+                            zhubo_conx = 0
+                        }
+                        animateRight();
+                    }
+
+                }
+                break;
+             case 40:
+                if(zhubo_nav==true){
+                    zhubo_con=true;
+                    zhubo_nav=false
+                    $('.title_first').children().hide();
+                    $('.title_first').children().eq(0).show();
+                    resetStyle();
+                    $(".zhubo_content_border").show();
+                }
+                break
+            case 13:
+                if(zhubo_nav==true){
+                    if(click_goback==false){
+                        click_goback=true;
+                    }
+                    if(fir_x==0){
+                        window.location.href="http://" + ip_local + "/dianjing/index.html?html=zhubo.html";
+                    }else if(fir_x==1){
+                        window.location.href="http://" + ip_local + "/dianjing/saishi.html?html=zhubo.html";
+                    }else if(fir_x==2){
+                        window.location.href="http://" + ip_local + "/dianjing/hotgame.html?html=zhubo.html";
+                    }else if(fir_x==3){
+                        window.location.href="http://" + ip_local + "/dianjing/zhubo.html?html=zhubo.html";
+                    }else if(fir_x==4){
+                        window.location.href="http://" + ip_local + "/dianjing/zongyi.html?html=zhubo.html";
+                    }
+                    // else if(fir_x==5){
+                    //     window.location.href="http://" + ip_local + "/dianjing/search.html?html=zhubo.html";
+                    // }
+                    else if(fir_x==5){
+                        window.location.href="http://" + ip_local + "/dianjing/order.html?html=zhubo.html";
+                    }
+                }else if(zhubo_con==true){
+                    if(list_zhubo[zhubo_conx].activityType==6){
+                        //专题
+                        recClick_zte(list_zhubo[zhubo_conx].id,list_zhubo[zhubo_conx].specialName);
+                        function newURl() {
+                            bridge.callHandler('newURlBridgeHandler', "http://"+ip_local+"/dianjing/ztlist.html?recomId=" +  list_zhubo[zhubo_conx].id, function (response) {
+                                console.log("newURlBridgeHandler:" + response);
+                            })
+                        }
+                        newURl();
+                        // alert(data.id);
+                        // // J("ztlist.html?recomId=" + list_zhubo[zhubo_conx].id);
+                        //
+                        // J("http://192.168.1.112:8080/dianjing/ztlist.html?recomId=" + data.id);
+                        // window.location.href="http://" + ip_local + "/dianjing/ztlist.html?recomId=" + list_zhubo[zhubo_conx].id
+
+                        // alert(data.id)
+
+                    }else if (list_zhubo[zhubo_conx].activityType == 2){
+                        //下载apk
+                        installPackageAndLaunch(list_zhubo[zhubo_conx].packageNames,list_zhubo[zhubo_conx].classNames);
+                    }else if(list_zhubo[zhubo_conx].activityType == 3){
+                        //当地ktv广告位
+                    }else if(list_zhubo[zhubo_conx].activityType == 4){
+                        //直接播放
+                        playVideo(JSON.stringify(list_zhubo[zhubo_conx]));
+                    }else if(list_zhubo[zhubo_conx].activityType == 5){
+                        //自己的activityType
+                    }
+                }
+                break;
+        }
+        console.log(zhubo_conx);
+    }
+    //判断返回处理;
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.registerHandler('keyEventHandler', function (data, responseCallback) {
+            console.log("keyEventHandler :"+data);
+            if(data==4){
+                var x=window.location.href;
+                var y=x.split("html=");
+
+                if(click_goback==false || x.indexOf("html=")==-1){
+                    window.location.href="http://" + ip_local + "/dianjing/index.html?html=zhubo.html";
+                }else if(click_goback==true && x.indexOf("html=")!=-1){
+                    window.location.href="http://" + ip_local + "/dianjing/"+y[1];
+                }
+
+            }
+
+
+        })
+
+    })
+
+</script>
+</html>

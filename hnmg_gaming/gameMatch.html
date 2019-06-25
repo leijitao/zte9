@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>游戏比赛</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/WebViewJavascriptBridge.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/keypadAdaptation.js"></script>
+</head>
+<body>
+<div id="gameMatchBg" class="gameMatchBg1">
+    <div id="gameMatchContArea" class="gameMatchContArea">
+        <div id="gameMatchNav" class="gameMatchNav">
+            <div class="gameMatchNavBtn gameMatchNavBtnFocus0">赛程</div>
+            <div class="gameMatchNavBtn">榜单</div>
+            <div class="gameMatchNavBtn">周边</div>
+            <div class="gameMatchNavBtn">队伍</div>
+        </div>
+        <div id="gameMatchCont0" class="gameMatchCont gameMatchCont0" style="display: block">
+            <div class="gameMatchCont0_left">
+                <!--<div class="homePageCont2_vs1">
+                    <img class="homePageCont2_vs1_logo1" src="images/home/saishi/EDG.png" alt="">
+                    <p class="homePageCont2_vs1_mark1">0</p>
+                    <p class="homePageCont2_vs1_mark2">2</p>
+                    <img class="homePageCont2_vs1_logo2" src="images/home/saishi/EDG.png" alt="">
+                    <p class="homePageCont2_vs1_matchTime0">2019-2-28</p>
+                    <p class="homePageCont2_vs_name0">英雄联盟</p>
+                </div>
+                <div class="homePageCont2_vs2">
+                    <img class="homePageCont2_vs1_logo1" src="images/home/saishi/EDG.png" alt="">
+                    <div class="homePageCont2_vs2_tit">
+                        <p class="homePageCont2_vs2_tit_p">英雄联盟总决赛第一场</p>
+                    </div>
+                    <p class="homePageCont2_vs2_type1">观看视频</p>
+                    <p class="homePageCont2_vs1_matchTime1">2019-2-28</p>
+                    <p class="homePageCont2_vs1_matchTim2">14:30</p>
+                    <p class="homePageCont2_vs_name1">英雄联盟</p>
+                </div>
+                <div class="homePageCont2_vs3">
+                    <img class="homePageCont2_vs1_logo1" src="images/home/saishi/EDG.png" alt="">
+                    <img class="homePageCont2_vs2_logoVS" src="images/home/saishi/vs.png" alt="">
+                    <p class="homePageCont2_vs2_type2">即将开始</p>
+                    <img class="homePageCont2_vs1_logo2" src="images/home/saishi/EDG.png" alt="">
+                    <p class="homePageCont2_vs1_matchTime1">2019-2-28</p>
+                    <p class="homePageCont2_vs1_matchTim2">14:30</p>
+                    <p class="homePageCont2_vs_name1">DOTA2</p>
+                </div>
+                <div class="homePageCont2_vs1">
+                    <img class="homePageCont2_vs1_logo1" src="images/home/saishi/EDG.png" alt="">
+                    <p class="homePageCont2_vs1_mark1">0</p>
+                    <p class="homePageCont2_vs1_mark2">2</p>
+                    <img class="homePageCont2_vs1_logo2" src="images/home/saishi/EDG.png" alt="">
+                    <p class="homePageCont2_vs1_matchTime0">2019-2-28</p>
+                    <p class="homePageCont2_vs_name0">英雄联盟</p>
+                </div>
+                <div class="homePageCont2_vs2">
+                    <img class="homePageCont2_vs1_logo1" src="images/home/saishi/EDG.png" alt="">
+                    <div class="homePageCont2_vs2_tit">
+                        <p class="homePageCont2_vs2_tit_p">英雄联盟总决赛第一场</p>
+                    </div>
+                    <p class="homePageCont2_vs2_type1">观看视频</p>
+                    <p class="homePageCont2_vs1_matchTime1">2019-2-28</p>
+                    <p class="homePageCont2_vs1_matchTim2">14:30</p>
+                    <p class="homePageCont2_vs_name1">英雄联盟</p>
+                </div>
+                <div class="homePageCont2_vs3">
+                    <img class="homePageCont2_vs1_logo1" src="images/home/saishi/EDG.png" alt="">
+                    <img class="homePageCont2_vs2_logoVS" src="images/home/saishi/vs.png" alt="">
+                    <p class="homePageCont2_vs2_type2">即将开始</p>
+                    <img class="homePageCont2_vs1_logo2" src="images/home/saishi/EDG.png" alt="">
+                    <p class="homePageCont2_vs1_matchTime1">2019-2-28</p>
+                    <p class="homePageCont2_vs1_matchTim2">14:30</p>
+                    <p class="homePageCont2_vs_name1">DOTA2</p>
+                </div>-->
+            </div>
+            <div class="gameMatchCont0_right">
+                <!--<div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>
+                <div class="gameMatchCont0_right_d">
+                    <p class="gameMatchCont0_right_p1">周三</p>
+                    <p class="gameMatchCont0_right_p2">15:40</p>
+                </div>-->
+            </div>
+        </div>
+        <div id="gameMatchCont1" class="gameMatchCont gameMatchCont1">
+            <div class="gameMatchCont1_nav">
+                <!--<p class="gameMatchCont1_nav_p gameMatchCont1_nav_pFocus1">上海赛区</p>
+                <p class="gameMatchCont1_nav_p">成都赛区</p>
+                <p class="gameMatchCont1_nav_p">长沙赛区</p>-->
+            </div>
+            <div class="gameMatchCont1_cont">
+                <div class="gameMatchCont1_cont_nav">
+                    <p class="gameMatchCont1_cont_nav1">排名</p>
+                    <p class="gameMatchCont1_cont_nav2">战队</p>
+                    <p class="gameMatchCont1_cont_nav3">场次</p>
+                    <p class="gameMatchCont1_cont_nav3">胜</p>
+                    <p class="gameMatchCont1_cont_nav3">负</p>
+                    <p class="gameMatchCont1_cont_nav3">平</p>
+                    <p class="gameMatchCont1_cont_nav3">积分</p>
+                </div>
+                <div class="gameMatchCont1_cont_cont">
+                    <div>
+                        <!--<div class="gameMatchCont1_cont_cont_d gameMatchCont1_cont_cont_dBg1">
+                            <p class="gameMatchCont1_cont_cont1">1</p>
+                            <img class="gameMatchCont1_cont_cont_logo" src="" alt="">
+                            <p class="gameMatchCont1_cont_cont2">EDG</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <img class="gameMatchCont1_cont_cont_underline" src="images/gameMatch/underline.png" alt="">
+
+                        </div>
+                        <div class="gameMatchCont1_cont_cont_d gameMatchCont1_cont_cont_dBg2">
+                            <p class="gameMatchCont1_cont_cont1">2</p>
+                            <img class="gameMatchCont1_cont_cont_logo" src="" alt="">
+                            <p class="gameMatchCont1_cont_cont2">EDG</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <img class="gameMatchCont1_cont_cont_underline" src="images/gameMatch/underline.png" alt="">
+                        </div>
+                        <div class="gameMatchCont1_cont_cont_d gameMatchCont1_cont_cont_dBg3">
+                            <p class="gameMatchCont1_cont_cont1">3</p>
+                            <img class="gameMatchCont1_cont_cont_logo" src="" alt="">
+                            <p class="gameMatchCont1_cont_cont2">EDG</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <img class="gameMatchCont1_cont_cont_underline" src="images/gameMatch/underline.png" alt="">
+                        </div>
+                        <div class="gameMatchCont1_cont_cont_d">
+                            <p class="gameMatchCont1_cont_cont1">4</p>
+                            <img class="gameMatchCont1_cont_cont_logo" src="" alt="">
+                            <p class="gameMatchCont1_cont_cont2">EDG</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <img class="gameMatchCont1_cont_cont_underline" src="images/gameMatch/underline.png" alt="">
+                        </div>
+                        <div class="gameMatchCont1_cont_cont_d">
+                            <p class="gameMatchCont1_cont_cont1">5</p>
+                            <img class="gameMatchCont1_cont_cont_logo" src="" alt="">
+                            <p class="gameMatchCont1_cont_cont2">EDG</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <img class="gameMatchCont1_cont_cont_underline" src="images/gameMatch/underline.png" alt="">
+                        </div>
+                        <div class="gameMatchCont1_cont_cont_d">
+                            <p class="gameMatchCont1_cont_cont1">6</p>
+                            <img class="gameMatchCont1_cont_cont_logo" src="" alt="">
+                            <p class="gameMatchCont1_cont_cont2">EDG</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <img class="gameMatchCont1_cont_cont_underline" src="images/gameMatch/underline.png" alt="">
+                        </div>
+                        <div class="gameMatchCont1_cont_cont_d">
+                            <p class="gameMatchCont1_cont_cont1">6</p>
+                            <img class="gameMatchCont1_cont_cont_logo" src="" alt="">
+                            <p class="gameMatchCont1_cont_cont2">EDG</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <p class="gameMatchCont1_cont_cont3">2</p>
+                            <img class="gameMatchCont1_cont_cont_underline" src="images/gameMatch/underline.png" alt="">
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameMatchCont2" class="gameMatchCont gameMatchCont2">
+            <div>
+               <!-- <div class="gameClassContent_d">
+                    <img class="gameClassContent_d_i" src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p class="gameMatchCont2_p">开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒成盒成盒成盒成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div id="gameMatchCont3" class="gameMatchCont gameMatchCont3">
+            <div class="gameMatchCont3_left">
+                <!--<div class="gameClassContent_d">
+                    <img class="gameClassContent_d_i" src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒成盒成盒成盒成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>
+                <div class="gameClassContent_d">
+                    <img src="images/gameClass/0.jpg" alt="">
+                    <img class="gameClassContent_d_iFocus" src="images/gameClass/bigFocus.png" alt="">
+                    <div>
+                        <p>开心主播，落地成盒</p>
+                    </div>
+                </div>-->
+            </div>
+            <div class="gameMatchCont3_right">
+               <!-- <div class="gameMatchCont3_right_d ">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div></div>
+                </div>
+                <div class="gameMatchCont3_right_d">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div></div>
+                </div>
+                <div class="gameMatchCont3_right_d ">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div class=""></div>
+                </div>
+                <div class="gameMatchCont3_right_d">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div></div>
+                </div>
+                <div class="gameMatchCont3_right_d ">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div class=""></div>
+                </div>
+                <div class="gameMatchCont3_right_d">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div></div>
+                </div>
+                <div class="gameMatchCont3_right_d ">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div class=""></div>
+                </div>
+                <div class="gameMatchCont3_right_d">
+                    <img src="images/home/zhubo/2.png" alt="">
+                    <div></div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/gameMatch.js"></script>
+</html>

@@ -1,0 +1,466 @@
+@charset "utf-8";
+html{
+    font-size: 100px;
+}
+.wp{
+    width:19.2rem;
+    height:10.8rem;
+    background:url(../images/mdpi/bg_four.png) center no-repeat;
+    -webkit-background-size: cover;
+     -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+    }
+
+/*弹框*/
+.alert_box412,.alert_box_t412{
+    width:19.2rem;
+    height:10.8rem;
+    background-color:rgba(0,0,0,0.7);
+    font-size: 0.3rem;
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+    text-align: center;
+    border-radius: 0.1rem;
+    z-index: 100;
+}
+.alert_box412 div,.alert_box_t412 div{
+    width:5.2rem;
+    height: 5.33rem;
+    background-image: url(../images/mdpi/bg_exit.png);
+    background-size:5.2rem 5.33rem;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -2.66rem;
+    margin-left: -2.6rem;
+}
+.alert_box412 p,.alert_box_t412 p{
+    width:5.2rem;
+    height: 1rem; 
+    line-height: 1rem;
+    color:#c37e43;
+    margin-top:2.5rem; 
+}
+.alert_box_t412 p{
+    line-height: 0.5rem;
+}
+.alert_box412 button,.alert_box_t412 button{
+    width:2rem;
+    height: 0.8rem; 
+    line-height: 0.8rem;
+    margin-top:0.5rem;
+    outline: none;
+    border:none;
+    background-color:transparent;
+    background-image: url(../images/mdpi/btn_yellow_normal.png);
+    background-size: 2rem 0.8rem;
+    color: white;
+}
+
+
+.frame{
+    width: 15.6rem;
+    height: 8.58rem;
+    margin:0 auto;
+    position: relative;/*top:50%;transform: translateY(-50%);*/
+    background:url(../images/mdpi/background_frame.png) center no-repeat;
+    -webkit-background-size: 100%;
+     -o-background-size: 100%100%100%;
+        background-size: 100%100%100%;
+    }
+.toolbtn{
+    width:9.204rem;
+    text-align:right;
+    /*margin: 0.50rem 0 0 6.06rem;*/
+}
+.toolbtn div{
+    float: left;
+}
+.btn{
+    font-size:0.3rem;
+    color:#fff;
+    text-align: center;
+    display: inline-block;
+    width:3.068rem;
+    height:1.339rem;
+    line-height:1.339rem;
+    background:url(../images/mdpi/btn_yellow_normal.png) center no-repeat;
+    -webkit-background-size:3.068rem 1.339rem;
+     -o-background-size:3.068rem 1.339rem;
+        background-size:3.068rem 1.339rem;
+    }
+.btn_other_normal{
+    font-size:0.22rem;
+    color:#fff;
+    text-align: center;
+    display: inline-block;
+    width:1.57rem;
+    height: 0.687rem;
+    line-height: 0.687rem;
+    background:url(../images/mdpi/btn_yellow_normal.png) center no-repeat;
+    -webkit-background-size:1.57rem 0.687rem;
+     -o-background-size:1.57rem 0.687rem;
+        background-size:1.57rem 0.687rem;
+    margin-left: 0.56rem;
+    }
+.btn_other_focus{
+    font-size:0.22rem;
+    color:#fff;
+    text-align: center;
+    display: inline-block;
+    width:1.57rem;
+    height: 0.687rem;
+    line-height: 0.687rem;
+    background:url(../images/mdpi/btn_yellow_normal.png) center no-repeat;
+    -webkit-background-size:1.57rem 0.687rem;
+     -o-background-size:1.57rem 0.687rem;
+        background-size:1.57rem 0.687rem;
+    margin:0.2rem 0 0 0.56rem;
+    }
+
+.quit_btn,.music_btn{
+    font-size:0.3rem;
+    color:#fff;
+    text-align: center;
+    display: inline-block;
+    width: 3.068rem;
+    height: 1.339rem;
+    line-height: 1.339rem;
+    background:url(../images/mdpi/btn_bule_normal.png) center no-repeat;
+    -webkit-background-size:3.068rem 1.339rem;
+     -o-background-size:3.068rem 1.339rem;
+        background-size:3.068rem 1.339rem;
+    }
+.frame .userbox{
+    position: absolute;
+    right:0.45rem;top:0.8rem;
+    font-size:0.2rem;
+    color:#FEC90C;
+}
+.frame .leftbox{
+    float: left;
+    width: 10.01rem;
+    height: 5.915rem;
+    margin-top: 1.95rem;
+    margin-left: 0.65rem;
+}
+.frame .leftbox .ttbg{
+    background:url(../images/mdpi/bg_cover.png) left top no-repeat;
+    height: 0.65rem;
+    -webkit-background-size: contain;
+     -o-background-size: contain;
+        background-size: contain;
+    }
+.frame .leftbox p{
+    color:#C17232;
+    height: 0.39rem;
+    line-height:0.39rem;
+    font-size:0.325rem;
+    margin-top: 0.26rem;
+}
+.frame .leftbox .gamebox{
+    background:url(../images/mdpi/background_egg.png) left bottom no-repeat;
+    height: 3.9rem;
+    background-size: contain;
+}
+.frame .rightsbox{
+    float: right;
+    background:url(../images/mdpi/background_rule.png) left top no-repeat;
+    -webkit-background-size: contain;
+     -o-background-size: contain;
+     background-size: 3.38rem 6.37rem;
+     width: 3.38rem;
+     height: 6.37rem;
+     position: absolute;
+     right: 0.741rem;
+     top: 1.651rem;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 0.26rem;}
+.frame .rightsbox .guiz{
+    margin-top: 1.04rem;
+    height:3.64rem;
+    overflow: hidden;}
+.frame .rightsbox .guiz h4{
+    font-size:0.39rem;
+    line-height:0.52rem;
+    text-align: center;
+    color:#fff;
+}
+.frame .rightsbox .guiz div{
+    width:2rem;
+    height:2rem;
+    margin:0.3rem 0.1rem;
+}
+.frame .rightsbox .guiz div img{
+    width:2.6rem;
+    height:2.6rem;
+}
+.rightsbox .btn{
+    width: 2.86rem;
+}
+.gamebox .egg{
+    float: left;
+    width: 2.6rem;
+    height: 3.666rem;
+    background: url(../images/mdpi/btn_egg_normal.png) center bottom no-repeat;
+    background-size: 100%;
+    margin-left: 0.52rem;
+}
+.gamebox .egg .hand{
+    height: 1.43rem;
+    margin-left: 0.39rem;
+    width:50%;
+    display: none;
+}
+.gamebox .egg:hover,.gamebox .egg.active{
+    background-image:url(../images/mdpi/btn_egg_focus.png);
+    background-size: 100%;
+}
+.bottom_416{
+    overflow: hidden;
+}
+.toolbtn{
+    float: right;
+    margin: 0.2rem 1rem 0 0;
+}
+
+/*详细规则页面返回按钮*/
+.toolbtnxxgz{
+    width: 80%;
+    margin:0 auto;
+    text-align: right;
+}
+.btnxxgz{
+    font-size:0.32rem;
+    color:#fff;
+    text-align: center;
+    display: inline-block;
+    width: 2.36rem;
+    height: 1.03rem;
+    line-height: 1.03rem;
+    background:url(../images/mdpi/btn_yellow_focus.png) center no-repeat;
+    -webkit-background-size:2.36rem 1.03rem;
+     -o-background-size:2.36rem 1.03rem;
+        background-size:2.36rem 1.03rem;
+    }
+		
+		
+/*中奖页面返回按钮*/
+.toolbtnzj{
+    width: 70%;
+    margin:0 auto;
+    text-align: right;
+}
+.btnzj{
+    font-size:0.32rem;
+    color:#fff;
+    text-align: center;
+    display: inline-block;
+    width: 2.36rem;
+    height: 1.03rem;
+    line-height: 1.03rem;
+    background:url(../images/mdpi/btn_yellow_focus.png) center no-repeat;
+    -webkit-background-size:100%;
+     -o-background-size:100%;
+        background-size:100%;
+        margin-top: 0.5rem;
+    }
+
+
+/*中奖纪录页面*/		
+.framezj{
+    width: 14.4rem;
+    height: 7.92rem;
+    margin:0 auto;
+    position: relative;/*top:50%;transform: translateY(-50%);*/background:url(../images/mdpi/bg_prize_info_frame.png) center no-repeat;-webkit-background-size: contain;
+     -o-background-size: contain;
+        background-size: contain;
+    }		
+.framezj .rightsbox{
+    float: right;
+    background:url(../images/mdpi/background_rule.png) left top no-repeat;
+    -webkit-background-size: contain;
+     -o-background-size: contain;
+     background-size: contain;
+     width: 3.12rem;
+     height: 6.24rem;
+     position: absolute;
+     right: 0.684rem;top: 1.284rem;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 0.24rem;}
+.framezj .rightsbox .guiz{
+    margin-top: 1.08rem;
+    height: 2.7rem;
+    overflow: hidden;
+}
+.framezj .rightsbox .guiz h4{
+    font-size:0.36rem;
+    line-height: 0.48rem;
+    text-align: center;
+    color:#fff;
+}
+.framezj .rightsbox .guiz  .kuang{float: right;
+    background:url(../images/mdpi/bg_my_prize_frame.png) left top no-repeat;
+    -webkit-background-size: contain;
+     -o-background-size: contain;background-size: contain;
+     width: 1.92rem;
+     height: 1.92rem;
+     position: absolute;
+     right: 0.54rem;
+     top: 1.884rem;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;padding: 0 0.24rem;
+    }
+
+.framezj .centersbox{float: right;background:url(../images/mdpi/bg_prize_list_frame.png) left top no-repeat;-webkit-background-size: contain;
+     -o-background-size: contain;
+     background-size: contain;
+     width: 6rem;
+     height: 5.22rem;
+     position: absolute;
+     right: 4.14rem;
+     top: 1.452rem;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 0.24rem;
+    }
+.framezj .centersbox .guiz{
+    margin-top: 1.08rem;
+    height: 2.7rem;
+    overflow: hidden;
+}
+.framezj .centersbox .guiz h4{
+    font-size:0.36rem;
+    line-height: 0.48rem;
+    text-align: center;
+    color:#fff;
+}
+.framezj .centersbox .guiz .pp{
+    font-size:0.24rem;
+    color:#FDF5E6;
+    line-height: 0.48rem;
+    text-align: center;
+}
+
+.framezj .leftsbox{
+    float: right;
+    background:url(../images/mdpi/background_rule.png) left top no-repeat;
+    -webkit-background-size: contain;
+     -o-background-size: contain;
+     background-size: contain;
+     width: 3.12rem;
+     height: 6.24rem;
+     position: absolute;
+     left: 0.684rem;
+     top: 1.284rem;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 0.24rem;}
+.framezj .leftsbox .guiz{
+    margin-top: 1.08rem;
+    overflow: hidden;
+}
+.framezj .leftsbox .guiz h4{
+    font-size:0.36rem;
+    line-height: 0.48rem;
+    text-align: center;
+    color:#fff;
+}
+.framezj .leftsbox .guiz .pp{
+    font-size:0.24rem;
+    color:#8B8682;
+    line-height: 0.31rem;
+    text-align: center;
+}
+#my_jiangpin div{
+    width:1.92rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+.framezj .leftsbox .guiz .pp :nth-child(odd){
+    margin-top: 0.12rem;
+}
+.framezj .leftsbox .guiz  .kuang{
+    float: right;
+    background:url(../images/mdpi/bg_activity_inside.png) left top no-repeat;
+    -webkit-background-size: contain;
+     -o-background-size: contain;
+     background-size: contain;
+     width: 2.64rem;
+     height: 3.6rem;
+     position: absolute;
+     left: 0.384rem;
+     top: 1.644rem;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;padding: 0 0.20rem;}
+.zho {
+	background: #D2691E;
+	width: 1.8rem;
+	height: 0.3rem;
+	margin-left: 2.50rem auto;
+}
+.subBtn{
+	width:0.48rem;
+	background: #999999;
+}
+.zhotable tr {
+	height:0.42rem;
+}
+
+/*活动规则*/
+.xxguize{
+    width:12rem;
+    /*height:6rem;*/
+    margin:0 auto;
+    margin-top: 0.5rem;
+}
+.iph_417{
+    margin:0 0 0 1rem;
+    font-size: 0.3rem;
+    color: white;
+}
+.iph_417_sec{
+    margin:0.2rem 0 0 1rem;
+    font-size: 0.3rem;
+    color: white;
+}
+/*抽奖结果*/
+.win_413{
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-left:1.975rem;
+}
+.win_413 img{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+#close_no_btn{
+    margin-top: -0.2rem;
+}
+
+#close_no_btn {
+    font-size:0.25rem;
+    color:#fff;
+    text-align: center;
+    display: inline-block;
+    width:2.36rem;
+    height:1.03rem;
+    line-height:1.03rem;
+    background:url(../images/mdpi/btn_yellow_normal.png) center no-repeat;
+    -webkit-background-size:2.36rem 1.03rem;
+     -o-background-size:2.36rem 1.03rem;
+        background-size:2.36rem 1.03rem;
+}

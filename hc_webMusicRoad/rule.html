@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>活动规则</title>
+    <link href="css/base.css" rel="stylesheet" />
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/base.js"></script>
+</head>
+<body>
+<div class="ruleBg" style="width: 12.8rem;height: 7.2rem;background-image: url('images/rule_prizeRecord/ruleBg.png');position: relative">
+    <img src="images/rule_prizeRecord/ruleSign.jpg" alt="" style="width: 12.8rem;height: 7.2rem;position: absolute;top:0;left: 0">
+    <img src="images/rule_prizeRecord/rulePrize.jpg" alt="" style="width: 12.8rem;height: 7.2rem;position: absolute;top:0;left: 0;display: none">
+    <img src="images/rule_prizeRecord/ruleExchange.jpg" alt="" style="width: 12.8rem;height: 7.2rem;position: absolute;top:0;left: 0;display: none">
+</div>
+</body>
+<script>
+    var focus=0;
+    document.onkeydown=function (e) {
+        e=window.event||e;
+        switch(e.keyCode){
+            case 37:
+                if(focus>0){
+                    focus--
+                    $(".ruleBg img").hide();
+                    $(".ruleBg").children().eq(focus).show();
+                };
+                break;
+            case 38:
+                if(focus>0){
+                    focus--
+                    $(".ruleBg img").hide();
+                    $(".ruleBg").children().eq(focus).show();
+                };
+                break;
+            case 39:
+                if(focus<2){
+                    focus++
+                    $(".ruleBg img").hide();
+                    $(".ruleBg").children().eq(focus).show();
+                };
+                break;
+            case 40:
+                if(focus<2){
+                    focus++
+                    $(".ruleBg img").hide();
+                    $(".ruleBg").children().eq(focus).show();
+                };
+                break;
+            case 13:
+                break;
+        }
+    }
+    window.onload=function () {
+        statistics(6);
+        getCursor();
+    };
+    function doBackPressed() {
+        window.location.href="http://"+ip_local+"/index.html?cursor="+cursor;
+    }
+    var cursor;
+    function getCursor() {
+        var url=window.location.href;
+        if(url.indexOf("cursor=")==-1){
+
+        }else{
+            url=url.split("cursor=")[1]
+            if(url.indexOf("&")==-1){
+                cursor=url
+            }else {
+                cursor=url.split("&")[0]
+            }
+        }
+    }
+</script>
+</html>

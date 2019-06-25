@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订购</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <link href="css/base.portal.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div style="background-image: url('images/ztNew/order_new.jpg');background-size: 100%;width: 12.8rem;height: 7.2rem;position: relative">
+        <!--<img id="sure" src="images/button/order-sure.png" alt="" style="height: 0.81rem;width: 2.53rem;position: absolute;top:4.9rem;left:5.18rem ;">-->
+        <!--<img id="back" src="images/button/order-back.png" alt="" style="height: 0.6rem;width: 0.57rem;position: absolute;top:6.42rem;left:12.03rem;display: none">-->
+        <div class="orderPrompt" style="display: none;position: absolute;width: 4rem;height:0.8rem;top:50%;left: 50%;margin-left:-2rem;margin-top: -0.4rem;background-image: url('images/ztNew/bg_toast1.png');background-size: 100% 100%">
+            <p class="orderPromptText" style="position: absolute;width: 4rem;height:0.8rem;top:0;left: 0;line-height: 0.8rem;font-size: 0.24rem;text-align: center;margin:0;">订购成功</p>
+        </div>
+    </div>
+</body>
+<!--<script src="js/WebViewJavascriptBridge.js"></script>-->
+<script src="js/all.js"></script>
+<script>
+
+    // function $(id) { return document.getElementById(id); }
+    // $("sure").style.display="none";
+    var x=0;
+    document.onkeydown=function(e){
+        e=window.event||e;
+        /**
+         * 37 左键盘
+         * 38 上键盘
+         * 39 右键盘
+         * 40 下键盘
+         * 13 回车键
+         * 27 返回键
+         */
+
+        switch(e.keyCode){
+
+            case 13:
+                if($('.orderPrompt').css("display")=="none"){
+                    function isOrderStyle(){
+                        $('.orderPrompt').show();
+                        $('.orderPromptText').html("您已订购该包月");
+                        setTimeout(function () {
+                            $('.orderPrompt').hide();
+                        },3000)
+                    }
+                    var musicName=encodeURIComponent("中九视频");
+                    authentication("8133e1cf8c424e49bbc165754b988e14","s100000707",musicName,isOrderStyle())
+
+                }else {
+                    $('.orderPrompt').css({display:"none"});
+                }
+            break;
+            case 4:
+                if($('.orderPrompt').css("display")=="none") {
+                    // statisticsOrder();
+
+                    var x = window.location.href;
+                    var y = x.split("html=");
+
+                    if (click_goback == false || x.indexOf("html=") == -1) {
+                        window.location.href = "http://" + ip_local + "/index.html?html=order.html";
+                    } else if (click_goback == true && x.indexOf("html=") != -1) {
+                        window.location.href = "http://" + ip_local + "/" + y[1];
+                    }
+
+                    responseCallback("true");
+                }else {
+                    $('.orderPrompt').css({display:"none"});
+                }
+                break;
+        }
+    }
+
+</script>
+
+<script>
+window.onload=function(){
+    // playerCore.stop();
+    isorder();
+    setTimeout(function () {
+        other_zte("订购页")
+    },1000);
+};
+
+
+
+    /*判断订购结果
+    订购返回码	说明
+    ORD-000	订购成功
+    ORD-300	频繁订购
+    ORD-320	DB处理异常
+    ORD-340	请求参数为空
+    ORD-343	订单未支付
+    ORD-350	本地数据校验异常
+    ORD-360	配置项未配置
+    ORD-670	运营商处理异常
+    ORD-680	运营商返回TOKEN失效
+    ORD-690	用户中心返回失败
+    ORD-999	系统异常
+    ORD-344	订单不存在
+    ORD-351	电子券不存在
+    ORD-352	手机号码不在范围内
+    ORD-353	消费金额超过限制
+    ORD-354	黑名单
+    ORD-671	运营商不支持退订
+    ORD-345	该用户已经购买该自动续订的包,无需再购买！*/
+    function isorder() {
+        var url=window.location.href;
+        console.log("isOrderUrl"+url);
+        if(url.indexOf("success=") != -1) {
+            var n = url.split("success=")[1].split("&productId=")[0];
+            if(n==1){
+                //    订购成功
+                $('.orderPrompt').show();
+                $('.orderPromptText').html("订购成功");
+            }else {
+                $('.orderPrompt').show();
+                $('.orderPromptText').html("订购失败");
+            }
+            setTimeout(function () {
+                $('.orderPrompt').hide();
+            },3000)
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2077e5b2-c13e-4a0e-a703-da924253860a" name="localHost" url="http://192.168.0.64:9090">
+        <fileTransfer port="0" mountedRoot="E:\dev\code\apache-tomcat-9.0.8\webapps\ROOT\projectAll\zte9frontend\hndj_vip0" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

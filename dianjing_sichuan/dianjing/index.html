@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="page-view-size" content="1280*720" />
+    <title>首页</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/core.portal.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="js/rem.js"></script>
+</head>
+<body style="background-image: url('images/bg/bg_index.png');background-size: 100% 100%;position:relative;width: 12.8rem;height: 7.2rem;">
+    <div class="title_first">
+        <img src="images/new/1.png" alt="" class="bg_select_always" style="left: 2.49rem;">
+        <img src="images/ztNew/tuijian.png" alt="" class="bg_select_one bg_select" style="display: block">
+        <img src="images/ztNew/saishi.png" alt="" class="bg_select_two bg_select">
+        <img src="images/ztNew/youxi.png" alt="" class="bg_select_three bg_select">
+        <img src="images/ztNew/zhubo.png" alt="" class="bg_select_four bg_select">
+        <img src="images/ztNew/zongyi.png" alt="" class="bg_select_five bg_select">
+        <!--<img src="images/ztNew/search.png" alt="" class="bg_select_six">-->
+        <img src="images/menu/order.png" alt="" class="bg_select_seven">
+    </div>
+    <div id="player" class="video" style="width:577px;height: 348px;position:absolute;top:151px;left: 330px;overflow: hidden;z-index: 99">
+        <!--audio-->
+        <embed id="radioPlayer" autostart="true" hidden="no" loop="true" width="577" height="348" style="width:577px;height: 348px;z-index: 999" type="application/yst-player"> </embed>
+    </div>
+    <img id="imgCont0" src="" style="position: absolute; top: 143px; left: 66px;" />
+    <img id="imgCont1" src="" style="position: absolute; top: 237px; left: 66px;" />
+    <img id="imgCont2" src="" style="position: absolute; top: 331px; left: 66px;" />
+    <img id="imgCont3" src="" style="position: absolute; top: 425px; left: 66px;" />
+    <img id="imgCont4" src="" style="position: absolute; top: 519px; left: 66px;" />
+    <img id="imgCont5" src="" style="position: absolute; top: 613px; left: 66px;" />
+    <img id="imgCont6" src="" style="position: absolute; top: 143px; left: 930px;" />
+    <img id="imgCont7" src="" style="position: absolute; top: 331px; left: 930px;" />
+    <img id="imgCont8" src="" style="position: absolute; top: 519px; left: 324px;" />
+    <img id="imgCont9" src="" style="position: absolute; top: 519px; left: 627px;" />
+    <img id="imgCont10" src="" style="position: absolute; top: 519px; left: 930px;" />
+    <img id="selSmall" src="images/01sy/sel_left.png" style="position: absolute; display:none;" />
+    <img id="selNomal" src="images/01sy/sel_right.png" style="position: absolute; display:none;" />
+    <img id="selBig" src="images/01sy/sel_lunbo.png" style="position: absolute; top: 143px; left: 324px; display: none;" />
+    <img id="Menu" src="images/01sy/bg_menu.png" style="position: absolute; top: 40px; left: 242px; display: none; " />
+
+    <div id="Retention" style="width: 100%; height: 100%; display: none; ">
+        <img src="images/01sy/bg_retention.png" style="position:absolute; left:0px; top:0px;" />
+        <img id="imgWL0" style="position: absolute; top: 250px; left: 45px;" />
+        <img id="imgWL1" style="position: absolute; top: 250px; left: 287px;" />
+        <img id="imgWL2" style="position: absolute; top: 250px; left: 529px;" />
+        <img id="imgWL3" style="position: absolute; top: 250px; left: 771px;" />
+        <img id="imgWL4" style="position: absolute; top: 250px; left: 1013px;" />
+        <div id="contDesc0" style="position: absolute; left: 51px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc1" style="position: absolute; left: 293px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc2" style="position: absolute; left: 535px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc3" style="position: absolute; left: 777px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc4" style="position: absolute; left: 1019px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <img id="selList" src="images/01sy/sel_list.png" style="position: absolute; display: none;" />
+        <img id="imgHold" src="images/01sy/btn_hold.png" style="position: absolute; top: 535px; left: 390px;" />
+        <img id="imgOut" src="images/01sy/btn_out.png" style="position: absolute; top: 535px; left: 685px;" />
+    </div>
+
+</body>
+<script src="js/all.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/Ysten.js"></script>
+<script type="text/javascript">
+    var url=window.location.href;
+    if(url.indexOf("from=") != -1){
+        //0 中兴 1 华为 2 烽火
+        var fromNum = url.split("from=")[1];
+        if(fromNum.indexOf("&")!=-1){
+            fromNum = fromNum.split("&")[0];
+        }
+        if(fromNum=="huawei"){
+            fromNum=1
+        }else if(fromNum=="zte"){
+            fromNum=0
+        }else if (fromNum=="fenghuo"){
+            fromNum=2
+        }
+        store.set("from",fromNum);
+        console.log("from platform:"+fromNum);
+        console.log("from platform cookie:"+store.get("from"));
+    };
+    var epgJson = InitShoYe();
+    var tuiJianJson = epgJson.musicRecommed;
+    window.onload = function () {
+        initPage();
+        playVideoHomePage();
+        category_zte(100110001000,"首页");
+        insertUser();
+    };
+    function insertUser() {
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://112.18.251.15:5400/scydGaming_pay/scyd/insertUser",
+            data: {
+                userId:userId
+            },
+            success:function (msg) {
+                console.log("insertUser success"+JSON.stringify(msg));
+            },
+            error:function (msg) {
+                console.log("insertUser error"+JSON.stringify(msg));
+            }
+        })
+    }
+    function initPage() {
+        for (var i = 0; i < tuiJianJson.length; i++) {
+            G("imgCont" + i).src = tuiJianJson[i].picUrl;
+            if (i > 9) { break; }
+        }
+    }
+</script>
+<script>
+var tops=[132,226,320,414,508,602,];
+var lefts=[54,311,614,917,324];
+var cuesorTitle=0,cuesorConcent=0,cuesorArea=true,cuesorPage=false,jsonData;
+function resetContentStyle(x){
+    if(cuesorConcent<=5){
+        $("#selSmall").show();
+        $("#selNomal").hide();
+        $("#selBig").hide();
+        $("#selSmall").css({top:tops[x] + "px",left:lefts[0]+"px"});
+    }else if(5<cuesorConcent && cuesorConcent<9){
+        console.log(1)
+        $("#selSmall").hide();
+        $("#selNomal").show();
+        $("#selBig").hide();
+        $("#selNomal").css({top:tops[4] + "px",left:lefts[x-5]+"px"});
+    }else if(cuesorConcent==9){
+        $("#selSmall").hide();
+        $("#selNomal").show();
+        $("#selBig").hide();
+        $("#selNomal").css({top: "320px",left:"917px"});
+    }else if(cuesorConcent==10){
+        $("#selSmall").hide();
+        $("#selNomal").show();
+        $("#selBig").hide();
+        $("#selNomal").css({top:"132px",left:"917px"});
+    }else if(cuesorConcent==11){
+        $("#selSmall").hide();
+        $("#selNomal").hide();
+        $("#selBig").show();
+        $("#selBig").css({top:"143px",left:"324px"});
+    }
+}
+function reset_fir(num){
+    $('.title_first').children().hide();
+    $('.title_first').children().eq(0).show();
+    $('.title_first').children().eq(num+1).show();
+}
+    function playVideoHomePage() {
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://" + ip + "/music/hot",
+            data: {
+                "typeCode": 100110001000,
+                "from":store.get("from")
+            },
+            success:function (massage) {
+                list=massage.data.musicVideo;
+                console.log("getMusiclistMsg"+JSON.stringify(massage));
+                console.log("getMusiclist"+JSON.stringify(list));
+                jsonData=massage.data.musicRecommed;
+                playVideoSm_homepage(list[playIndex].musicUrl);
+            }
+        })
+    };
+    document.onkeydown=function(e){
+        e=window.event||e;
+        /**
+         * 37 左键盘
+         * 38 上键盘
+         * 39 右键盘
+         * 40 下键盘
+         * 13 回车键
+         * 27 返回键
+         */
+
+        switch(e.keyCode){
+            case 37:
+                if(cuesorArea){
+                    cuesorTitle--;
+                    if(cuesorTitle<=0){
+                        cuesorTitle=0
+                    }
+                    reset_fir(cuesorTitle);
+                }else {
+                    if(cuesorConcent==11){
+                        cuesorConcent=0
+                    }else if(cuesorConcent==9 || cuesorConcent==10){
+                        cuesorConcent=11
+                    }else if(5<cuesorConcent<9){
+                        cuesorConcent--;
+                    }
+                    resetContentStyle(cuesorConcent);
+                }
+                break;
+            case 38:
+               if(cuesorArea==false) {
+                    if(cuesorConcent==0 || cuesorConcent==11 ||cuesorConcent==10){
+                        cuesorArea=true;
+                        $("#selSmall").hide();
+                        $("#selNomal").hide();
+                        $("#selBig").hide();
+                        reset_fir(cuesorTitle);
+                    }else if(cuesorConcent==6 || cuesorConcent==7){
+                        cuesorConcent=11
+                        resetContentStyle(cuesorConcent);
+                    }else if(cuesorConcent==8 || cuesorConcent==9){
+                        cuesorConcent++;
+                        resetContentStyle(cuesorConcent);
+                    }else if(cuesorConcent<6){
+                        cuesorConcent--;
+                        resetContentStyle(cuesorConcent);
+                    }
+
+                }
+
+                break;
+            case 39:
+                if(cuesorArea){
+                    cuesorTitle++;
+                    if(cuesorTitle>=5){
+                        cuesorTitle=5
+                    }
+                    reset_fir(cuesorTitle);
+                }else {
+                    if(cuesorConcent==11){
+                        cuesorConcent=10
+                    }else if(cuesorConcent==4 || cuesorConcent==5){
+                        cuesorConcent=6
+                    }else if(cuesorConcent<4){
+                        cuesorConcent=11;
+                    }else if(cuesorConcent==6 || cuesorConcent==7){
+                        cuesorConcent++;
+                    }
+                    resetContentStyle(cuesorConcent);
+                }
+
+                break;
+            case 40:
+                if(cuesorArea){
+                    cuesorArea=false;
+                    $('.title_first').children().hide();
+                    $('.title_first').children().eq(0).show();
+                    resetContentStyle(cuesorConcent);
+                }else {
+                    if(cuesorConcent==11){
+                        cuesorConcent=6
+                    }else if(cuesorConcent==9 || cuesorConcent==10){
+                        cuesorConcent--;
+                    }else if(cuesorConcent<5){
+                        cuesorConcent++;
+                    }
+                    resetContentStyle(cuesorConcent);
+                }
+
+                break;
+            case 13:
+                if(cuesorArea){
+                    if(cuesorTitle==0){
+                        window.location.href="http://" + ip_local + "/index.html";
+                    }else if(cuesorTitle==1){
+                        window.location.href="http://" + ip_local + "/saishi.html";
+                    }else if(cuesorTitle==2){
+                        window.location.href="http://" + ip_local + "/hotgame.html";
+                    }else if(cuesorTitle==3){
+                        window.location.href="http://" + ip_local + "/zhubo.html";
+                    }else if(cuesorTitle==4){
+                        window.location.href="http://" + ip_local + "/zongyi.html";
+                    }
+                    // else if(fir_x==5){
+                    //     window.location.href="http://" + ip_local + "/dianjing/search.html?html="+ html;
+                    // }
+                    else if(cuesorTitle==5){
+                        window.location.href="http://" + ip_local + "/order.html";
+                    }
+                }else {
+                    if(cuesorConcent==11){
+                        SlideGo();
+                    }else {
+                        jumpUrl(jsonData[cuesorConcent]);
+                    }
+                }
+                break;
+            case 27:
+
+            break;
+
+        }
+        console.log(cuesorConcent);
+    };
+    function jumpUrl(data) {
+        console.log("tuijianJumpUrl:"+ JSON.stringify(data));
+        playerCore.stop();
+        recClick_zte(data.id,data.specialName);
+        if (data.activityType == 6){
+            //专题
+            store.set("jumpLocalUrl",window.location.href);
+            window.location.href="http://"+ip_local+"/ztlist.html?recomId=" +  data.id;
+        }else if (data.activityType == 2){
+            //下载apk
+            // installPackageAndLaunch(data.packageNames,data.classNames);
+        }else if(data.activityType == 3){
+            //当地ktv广告位
+        }else if(data.activityType == 4){
+            //直接播放(全屏)
+            var musicName=encodeURIComponent(data.musicName);
+            authentication(data.serviceId,"s100000707",musicName,jumpPlayVideoPage());
+            function jumpPlayVideoPage() {
+                var list_rows=[data];
+                store.set("list_rows_zt", list_rows);
+                store.set("listNumNow_zt", 0);
+                store.set("localUrl",window.location.href);
+                window.location.href="http://" + ip_local + "/video.html"
+            }
+        }else if(data.activityType == 5){
+            //自己的activityType
+            //跳转活动页
+            console.log("jumpActivityUrl:"+data.onwClassName);
+            window.location.href=data.onwClassName;
+        }
+
+    }
+
+    //小窗口播放
+    var playIndex=0;
+    var list;
+    function playVideoSm_homepage(url) {
+        console.log("playVideoSm_homepage ready");
+        console.log("videoWindow：video_width:"+$("#radioPlayer").width()+"video_height:"+$("#radioPlayer").height() +
+            "video_top:"+$("#radioPlayer").css("top")+"video_left:"+$("#radioPlayer").css("left"));
+        console.log("musicUrl  sm url:"+url);
+        console.log("musicUrl  sm list:"+list);
+        var opt = {
+            id: "radioPlayer", //播放控件ID
+            url: url, //视频地址
+            beginTime: 0,//开始播放时间
+            onOver: catchStateOver //视频播放结束时的回调函数
+        };
+        playerCore.ready(opt);
+    }
+    function catchStateOver() {
+        playIndex++;
+        console.log("playIndex now:"+playIndex);
+        if(playIndex>=list.length){
+            playIndex=0;
+        }
+        playerCore.stop();
+        playVideoSm_homepage(list[playIndex].musicUrl);
+    }
+    //轮播跳转全屏
+    function SlideGo() {
+        playerCore.stop();
+        recClick_zte(list[playIndex].id,list[playIndex].specialName);
+        authentication(list[playIndex].serviceId,"s100000707",list[playIndex].musicName,jumpPlayVideoPage());
+        function jumpPlayVideoPage() {
+            var list_rows=list;
+            store.set("list_rows_zt", list_rows);
+            store.set("listNumNow_zt", playIndex);
+            store.set("localUrl",window.location.href);
+            window.location.href="http://" + ip_local + "/video.html"
+        }
+    }
+
+/*    //活动拦截页
+function dianjing_lottery(){
+    var url=window.location.href;
+    var urlIndex=url.indexOf("?html=");
+    console.log("activity url:"+url);
+    console.log("activity urlIndex:"+urlIndex);
+    if (urlIndex == -1) {
+        console.log("activity in");
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:"http://58.20.27.16:8080/hncj_api_v2/store/game/v3.1/user/activityStatus2",
+            data:{},
+            success:function(msg){
+                console.log("activity time:"+JSON.stringify(msg));
+                if(msg.code==1){
+                    playerCore.stop();
+                    window.location.href=msg.data.accessAddress;
+                    // window.location.href=msg.data.accessAddress+"?url="+url;
+                }else if(msg.code==2){
+                    console.log("activity end");
+                }
+            },
+            error:function (msg) {
+                console.log("activity time error:"+JSON.stringify(msg));
+            }
+        })
+    }
+
+}*/
+</script>
+</html>

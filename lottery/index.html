@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>index.html</h1>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+var x="123";
+x=x.indexOf("4");
+console.log(x);
+;(function(){
+	$.ajax({
+		type:"GET",
+		dataType:"json",
+		url:"http://192.168.0.64:8080/hncj_api_v2/store/game/v3.1/user/activityStatus",
+		data:{},
+		success:function(msg){
+			console.log("activity time:"+JSON.stringify(msg));
+			if(msg.data.status==0){
+				var jumpUrl=window.location.href;
+				window.location.href=msg.data.accessAddress+"?url="+jumpUrl;
+			}else{
+				alert("活动已结束")
+			}
+		}
+	})
+}());
+</script>
+</html>

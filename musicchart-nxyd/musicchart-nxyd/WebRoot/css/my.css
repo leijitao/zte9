@@ -1,0 +1,66 @@
+.hand{
+	font-size:32px;
+	text-align:center;
+	color:#00ae9d;
+	line-height:200%;
+	font-family:"ËÎÌו",Georgia,Serif;
+	height:35%;
+	width:100%;
+	border:1px gray solid;
+}
+#f{
+	color:#f36c21;
+	font-family:"ËÎÌו";
+}
+.center{
+	background-color: #87cefa;
+	height: 25%;
+	width: 100%
+	border:1px gray solid;
+}
+.foot{
+	height:40%;
+	width:100%;
+	border:1px gray solid;
+}
+.piao{
+	position: absolute;
+	left:340px;
+	top:100px;
+	margin:0px;
+	height:60%;
+	width:50%;
+	border:1px gray solid;
+}
+.piao_hand{
+	height:10%;
+	width:100%;
+	background-color:#00a6ac;
+	border:1px gray solid;
+}
+.piao_foot{
+	height:90%;
+	width:100%;
+	background-color:white;
+	border:1px gray solid;
+}
+table{
+	margin: 0px auto;
+	padding-top:100px;
+	line-height: 200%;
+}
+.hand_1{
+	height:20%;
+	width:	100%;
+	border:1px gray solid;
+}
+body{
+	height:100%;
+	width:100%
+}
+.mulu_hand{
+	height:60px;
+	width:800px;
+	border:1px red solid;
+	color: red;
+}

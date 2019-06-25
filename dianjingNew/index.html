@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>金鹰电竞</title>
+    <link href="css/base.portal.css" rel="stylesheet" />
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="js/WebViewJavascriptBridge.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        var list;
+        var msg;
+        window.onload = function () {
+            playVideoHomePage();
+
+        }
+
+        function jumpUrl(data) {
+            // alert(data.specialName);
+            stopPlayVideoHandler();
+            if (data.activityType == 6){
+                //专题
+                recClick_zte(data.id,data.specialName);
+                function newURl() {
+                    bridge.callHandler('newURlBridgeHandler', "http://"+ip_local+"/dianjing/ztlist.html?recomId=" +  data.id, function (response) {
+                        console.log("newURlBridgeHandler:" + response);
+                    })
+                }
+                newURl();
+
+            }else if (data.activityType == 2){
+            //下载apk
+                installPackageAndLaunch(data.packageNames,data.classNames);
+            }else if(data.activityType == 3){
+            //当地ktv广告位
+            }else if(data.activityType == 4){
+            //直接播放
+                playVideo(JSON.stringify(data));
+            }else if(data.activityType == 3){
+                //自己的activityType
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="homepage">
+        <div class="title_first">
+            <img src="images/new/1.png" alt="" class="bg_select_always" style="left: 2.49rem;">
+            <img src="images/ztNew/tuijian.png" alt="" class="bg_select_one bg_select" style="display: block">
+            <img src="images/ztNew/saishi.png" alt="" class="bg_select_two bg_select">
+            <img src="images/ztNew/youxi.png" alt="" class="bg_select_three bg_select">
+            <img src="images/ztNew/zhubo.png" alt="" class="bg_select_four bg_select">
+            <img src="images/ztNew/zongyi.png" alt="" class="bg_select_five bg_select">
+            <!--<img src="images/ztNew/search.png" alt="" class="bg_select_six">-->
+            <img src="images/menu/order.png" alt="" class="bg_select_seven">
+        </div>
+        <div class="homepageContent">
+                <img class="homepageContent0" src="" alt="">
+                <img class="homepageContent1" src="" alt="">
+                <img class="homepageContent2" src="" alt="">
+                <img class="homepageContent3" src="" alt="">
+                <img class="homepageContent4" src="" alt="">
+                <img class="homepageContent5" src="" alt="">
+                <img class="homepageContent6" src="" alt="">
+                <img class="homepageContent7" src="" alt="">
+                <img class="homepageContent8" src="" alt="">
+                <img class="homepageContent9" src="" alt="">
+                <img class="homepageContent10" src="" alt="">
+                <img class="homepageContent_focus_sm" src="" alt="">
+                <img class="homepageContent_focus_big" src="" alt="">
+                <img class="homepageContent_focus_video" src="" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    setTimeout(function () {
+        category_zte(100110001000,"首页");
+    },1000);
+
+    //挽留页
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.registerHandler('keyEventHandler', function (data,responseCallback) {
+            // console.log("keyEventHandler :"+data);
+            if(data==4){
+                showRecommend();
+                responseCallback("true");
+            }
+
+
+        });
+
+    });
+
+function getScreenWidth(list){
+    if(screen.width==1280){
+        msg={
+            // "x":324,
+            "x":330,
+            // "y":143,
+            "y":151,
+            // 'width':589,
+            'width':577,
+            // "height":364,
+            "height":348,
+            "data":list
+        }
+    }else if(screen.width==1920){
+        msg={
+            // "x":486,
+            "x":495,
+            // "y":214,
+            "y":226,
+            // 'width':883,
+            'width':865,
+            // "height":546,
+            "height":522,
+            "data":list
+        }
+    }
+
+}
+    function playVideoHomePage() {
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://" + ip + "/music/hot",
+            //http://58.20.27.16:8080/hnmgGaming_api/music/hot?typeCode=100110001000
+            data: {
+                typeCode: 100110001000,
+            },
+            success:function (massage) {
+                console.log("getMusiclist:"+JSON.stringify(massage));
+                list=massage.data.musicVideo;
+                getScreenWidth(list);
+                console.log("getMusiclist"+JSON.stringify(list));
+                console.log("getMusiclistMsg"+JSON.stringify(msg));
+                carouselFigureBridgeHandler(msg);
+                dianjing_lottery();
+            }
+        })
+    };
+
+
+    
+
+
+    //活动拦截页
+function dianjing_lottery(){
+    var url=window.location.href;
+    var urlIndex=url.indexOf("?html=");
+    console.log("activity url:"+url);
+    console.log("activity urlIndex:"+urlIndex);
+    if (urlIndex == -1) {
+        console.log("activity in");
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:"http://58.20.27.15:8080/hncj_api_v2/store/game/v3.1/user/activityStatus",
+            data:{},
+            success:function(msg){
+                console.log("activity time:"+JSON.stringify(msg));
+                if(msg.code==1){
+                    windowStopPlayVideo();
+                    window.location.href=msg.data.accessAddress;
+                    // window.location.href=msg.data.accessAddress+"?url="+url;
+                }else if(msg.code==2){
+                    console.log("activity end");
+                }
+            },
+            error:function (msg) {
+                console.log("activity time error:"+JSON.stringify(msg));
+            }
+        })
+    }
+
+};
+</script>
+</html>

@@ -1,0 +1,439 @@
+/*活动页*/
+*{
+    background-size: 100%;
+    margin:0;
+    padding: 0;
+}
+img{
+    display: block;
+}
+.interceptPage{
+    width: 19.2rem;
+    height: 10.8rem;
+    background-size: 100% 100%;
+    /*background-image: url(../images/activity/bg.jpg);*/
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.interceptPageLottery{
+    width: 19.2rem;
+    height: 10.8rem;
+    background-size: 100% 100%;
+    /*background-image: url(../images/activity/lottery/lottery.png);*/
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.interceptPageLottery_leftButton_rule{
+    width: 2.15rem;
+    height: 0.75rem;
+    position: absolute;
+    top:6.74rem;
+    left: 0.7rem;
+}
+.interceptPageLottery_leftButton_news{
+    width: 2.15rem;
+    height: 0.75rem;
+    position: absolute;
+    top:7.88rem;
+    left: 0.7rem;
+}
+.interceptPageLottery_leftButton_home{
+    width: 2.15rem;
+    height: 0.75rem;
+    position: absolute;
+    top:9.2rem;
+    left: 0.7rem;
+}
+.interceptPageLottery_leftButton1{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 2.15rem;
+    height: 0.75rem;
+}
+.interceptPageLottery_leftButton2{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 2.15rem;
+    height: 0.75rem; 
+    display: none;
+}
+.interceptPageLottery_RightButton_start{
+    width: 5.92rem;
+    height: 1.89rem;
+    position: absolute;
+    top:5.36rem;
+    left: 6.8rem;
+}
+.interceptPageLottery_RightButton_start img{
+    width: 5.92rem;
+    height: 1.89rem;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.masking{
+    width: 11.88rem;
+    height: 5.73rem;
+    position: absolute;
+    top:3.44rem;
+    left: 3.83rem;
+}
+.masking img{
+    width: 2.94rem;
+    height: 1.89rem;
+    position: absolute;
+    display: none;
+}
+.maskingNum1{
+    top:0;
+    left: 0;
+}
+.maskingNum2{
+    top:0;
+    left: 2.97rem;
+}
+.maskingNum3{
+    top:0;
+    left: 5.94rem;
+}
+.maskingNum4{
+    top:0;
+    left: 8.91rem;
+}
+.maskingNum5{
+    
+    top:1.92rem;
+    left: 8.91rem;
+}
+.maskingNum6{
+    
+    top:3.84rem;
+    left: 8.91rem;
+}
+.maskingNum7{
+    top:3.84rem;
+    left: 5.94rem;
+}
+.maskingNum8{
+    top:3.84rem;
+    left: 2.97rem;
+}
+.maskingNum9{
+    top:3.84rem;
+    left: 0rem;
+}
+.maskingNum10{
+    top:1.92rem;
+    left: 0;
+
+}
+.interceptPageJumpOrder{
+    width: 19.2rem;
+    height: 10.8rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url(../images/activity/order/bg.png);
+}
+.interceptPageJumpOrderGo{
+    width: 2.43rem;
+    height: 0.85rem;
+    position: absolute;
+    top:8.2rem;
+    left: 6.1rem;
+}
+.interceptPageJumpOrderBack{
+    width: 2.43rem;
+    height: 0.85rem;
+    position: absolute;
+    top:8.2rem;
+    left: 10.68rem;
+}
+.interceptPageJumpOrderImg1{
+    width: 2.43rem;
+    height: 0.85rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.interceptPageJumpOrderImg2{
+    width: 2.43rem;
+    height: 0.85rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.interceptPageRule{
+    width: 19.2rem;
+    height: 10.8rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    /*background-image: url(../images/activity/ruler/bg.png);*/
+}
+.interceptPageSubmitPhone{
+    width:19.2rem;
+    height: 10.8rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url(../images/activity/submitPhone/bg.png);
+}
+.interceptPageSubmitPhone_num{
+    width: 3.34rem;
+    height:0.58rem;
+    line-height: 0.58rem;
+    font-size: 0.34rem;
+    position: absolute;
+    top:4.44rem;
+    left: 11.69rem;
+    margin:0;
+    color:#2b2b2b;
+}
+.key_number{
+    width: 0.84rem;
+    height: 0.62rem;
+    position: absolute;
+    /*overflow: hidden;*/
+}
+.key_number img{
+    width: 0.84rem;
+    height: 0.62rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.key_number :first-child + img{
+    display: none;
+}
+.key_number1{
+    left:11.85rem;
+    top: 5.71rem;
+}
+.key_number2{
+    left:12.76rem;
+    top: 5.71rem;
+}
+.key_number3{
+    left:13.65rem;
+    top: 5.71rem;
+}
+.key_number4{
+    left:11.85rem;
+    top: 6.38rem;
+}
+.key_number5{
+    left:12.76rem;
+    top: 6.38rem;
+}
+.key_number6{
+    left:13.65rem;
+    top: 6.38rem;
+}
+.key_number7{
+    left:11.85rem;
+    top: 7.05rem;
+}
+.key_number8{
+    left:12.76rem;
+    top: 7.05rem;
+}
+.key_number9{
+    left:13.65rem;
+    top: 7.05rem;
+}
+.key_number0{
+    left:12.76rem;
+    top: 7.72rem;
+}
+.key_delete{
+    left:11.85rem;
+    top: 7.72rem; 
+}
+.key_empty{
+    left:13.65rem;
+    top: 7.72rem; 
+}
+.prizePic{
+   position:absolute;
+   top:4rem;
+   left:4.2rem;
+   width: 5.18rem;
+   height: 5.13rem;
+}
+.submitButton{
+    width: 1.61rem;
+    height: 0.57rem;
+    overflow: hidden;
+    position: absolute;
+    left:11.41rem;
+    top:8.62rem;
+}
+.submitButton img{
+    width: 1.61rem;
+    height: 0.57rem;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.backButton{
+    width: 1.61rem;
+    height: 0.57rem;
+    overflow: hidden;
+    position: absolute;
+    left:13.32rem;
+    top:8.62rem;
+}
+.backButton img{
+    width: 1.61rem;
+    height: 0.57rem;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.submitPhoneError{
+    font-size: 0.26rem;
+    width: 3rem;
+    height: 0.26rem;
+    line-height: 0.26rem;
+    font-size: 0.22rem;
+    color: red;
+    position: absolute;
+    top:5.4rem;
+    left:11.54rem;
+}
+.interceptPageSubmitSuccess{
+    width:19.2rem;
+    height: 10.8rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url(../images/activity/submitSuccess/bg.png);
+}
+.interceptPagelotteryNum0{
+    width:19.2rem;
+    height: 10.8rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url(../images/activity/lottery_num0/bg.png);
+}
+.interceptPageWinningMessage{
+    width:19.2rem;
+    height: 10.8rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-image: url(../images/activity/news/bg.png);
+}
+.interceptPageWinningMessage_leftButton{
+    width: 0.28rem;
+    height: 0.84rem;
+    position: absolute;
+    top:6.25rem;
+    left: 3.76rem;
+}
+.interceptPageWinningMessage_leftButton img{
+    width: 0.28rem;
+    height: 0.84rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.interceptPageWinningMessage_rightButton{
+    width: 0.28rem;
+    height: 0.84rem;
+    position: absolute;
+    top:6.25rem;
+    left: 15.49rem;
+}
+.interceptPageWinningMessage_rightButton img{
+    width: 0.28rem;
+    height: 0.84rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.interceptPageWinningMessage_news{
+    width: 10.89rem;
+    height: 2.5rem;
+    position: absolute;
+    top:5.2rem;
+    left: 4.26rem;
+    overflow: hidden;
+}
+.interceptPageWinningMessage_news div{
+    width: 10.89rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.34rem;
+    color: #fff263;
+    overflow: hidden;
+    float: left;
+}
+.interceptPageWinningMessage_news div p{
+    float: left;
+    height: 0.5rem;
+    margin:0;
+}
+.interceptPageWinningMessage_news div :first-child{
+    width:3.66rem;
+}
+.interceptPageWinningMessage_news div :first-child + p{
+    width:2.73rem;
+}
+.interceptPageWinningMessage_news div :first-child + p + p{
+    width:4.5rem;
+    text-align: right;
+}
+.interceptPageWinningMessage_sureButton{
+    width: 2.15rem;
+    height: 0.75rem;
+    position: absolute;
+    top:8.61rem;
+    left: 8.64rem;
+    overflow: hidden;
+}
+.interceptPageWinningMessage_sureButton img{
+    width: 2.15rem;
+    height: 0.75rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.interceptPageWinningMessage_me{
+    width: 10.89rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.34rem;
+    color: #fff263;
+    overflow: hidden; 
+    position: absolute;
+    top:7.9rem;
+    left: 4.26rem;
+}
+.interceptPageWinningMessage_me p{
+    float: left;
+    margin-right: 20px;
+}
+.interceptPageWinningMessage_me_new{
+    width:7rem;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    height: 0.5rem;
+}
+
+.interceptPageWinningMessage_me_new div{
+    overflow: hidden;
+    position: absolute;
+    height: 0.5rem;
+    top:0;
+    left:0;
+    width: 8rem;
+}

@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="page-view-size" content="1280*720" />
+    <title>首页</title>
+    <link href="css/base.portal.css" rel="stylesheet" />
+    <script src="js/core.portal.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/store.min.js"></script>
+    <!--<script src="js/rem.js"></script>-->
+    <!--<script src="js/cookie.js"></script>-->
+    <script src="js/WebViewJavascriptBridge.js"></script>
+    <script src="js/all.js"></script>
+    <script type="text/javascript">
+        var epgJson = InitShoYe();
+        // console.log('tuiJianJson22222'+ JSON.stringify(epgJson));
+        var tuiJianJson = epgJson.musicRecommed;
+        var lunBoJson = epgJson.musicVideo;
+        var leftT = [143, 237, 331, 425, 519, 613];
+        var dtMenu;
+        var dt;
+        var dtWL;
+        var ip=58+"."+20+"."+27+"."+15+":"+8080+"/hnmgGaming_api";
+        var ip_local=58+"."+20+"."+27+"."+15+":"+8080;
+        // var ip_local=192+"."+168+"."+1+"."+112+":"+8080;
+
+        var list;
+        var msg;
+
+        // Box.ZERO = Box.BACK = "javascript:showWanLiu()";
+
+        window.onload = function () {
+            // checkCookie();
+            //sessionStorage.setItem('userId', 'jsUser');
+            //initMedia();
+            InitNav();
+            RecomBigPictur();
+            initPage();
+            initBtn();
+            // initWanLiu();
+            setTimeout(function () {
+                carouselFigureBridgeHandler(msg);
+            },500)
+            // carouselFigureBridgeHandler(msg);
+        }
+
+
+
+        function initPage() {
+            for (var i = 0; i < tuiJianJson.length; i++) {
+                G("imgCont" + i).src = tuiJianJson[i].picUrl;
+                // console.log('tuiJianJson'+ tuiJianJson.length);
+                // console.log('tuiJianJson111'+ JSON.stringify(tuiJianJson));
+                if (i > 9) { break; }
+            }
+        }
+
+        function initBtn() {
+            dtMenu = zte9.btn.init(1, 7);
+            InitHead(dtMenu);
+            for (var i = 0; i < 7; i++) {
+                dtMenu[0][i].MoveDown = "javascript:changeFocus('rows')";
+            }
+            dt = zte9.btn.init(6, 4);
+            for (var i = 0; i < 6; i++) {
+                dt[i][0] = setBtnForPos("javascript:jumpUrl(" + JSON.stringify(tuiJianJson[i]) + ")", "selSmall", leftT[i] - 11, 54);
+            }
+            // dt[0][0].MoveRight=dt[1][0].MoveRight="javascript:zte9.btn.change(2, 3)";
+			// dt[2][0].MoveRight=dt[3][0].MoveRight="javascript:zte9.btn.change(3, 3)";
+            dt[0][1] = setBtnForMy("javascript:SlideGo()", "", "javascript:OnFocusBigPicture()", "javascript:OnblurBigPicture()");
+            dt[2][3] = setBtnForPos("javascript:jumpUrl(" + JSON.stringify(tuiJianJson[6]) + ")", "selNomal", 132, 917);
+            dt[3][3] = setBtnForPos("javascript:jumpUrl(" + JSON.stringify(tuiJianJson[7]) + ")", "selNomal", 320, 917);
+            dt[4][1] = setBtnForPos("javascript:jumpUrl(" + JSON.stringify(tuiJianJson[8]) + ")", "selNomal", 508, 311);
+            dt[4][2] = setBtnForPos("javascript:jumpUrl(" + JSON.stringify(tuiJianJson[9]) + ")", "selNomal", 508, 614);
+            dt[4][3] = setBtnForPos("javascript:jumpUrl(" + JSON.stringify(tuiJianJson[10]) + ")", "selNomal", 508, 917);
+            dt[0][1].MoveRight = "javascript:zte9.btn.change(2, 3)";
+            dt[0][1].MoveDown = "javascript:zte9.btn.change(4, 1)";
+            // dt[2][3].MoveLeft =  "javascript:zte9.btn.change(0, 0)";
+            // dt[3][3].MoveLeft = "javascript:zte9.btn.change(2, 0)";
+            // dt[4][1].MoveUp = dt[4][2].MoveUp = "javascript:zte9.btn.change(0, 1)";
+            // dt[0][0].MoveUp = dt[2][3].MoveUp = "javascript:changeFocus('menu')";
+            // zte9.btn.load(dtMenu, 0, 0);
+            dt[2][3].MoveLeft = dt[3][3].MoveLeft = "javascript:zte9.btn.change(0, 1)";
+            dt[4][1].MoveUp = dt[4][2].MoveUp = "javascript:zte9.btn.change(0, 1)";
+            dt[0][0].MoveUp = dt[0][1].MoveUp = dt[2][3].MoveUp = "javascript:changeFocus('menu')";
+            zte9.btn.load(dtMenu, 0, 0);
+
+        }
+
+        //变更焦点
+        function changeFocus(_flag) {
+            if (_flag == "rows") {
+                H("Menu");
+                zte9.btn.load(dt, 0, 0);
+            }
+            if (_flag == "menu") {
+                H("Menu");
+                zte9.btn.load(dtMenu, 0, 0);
+            }
+        }
+
+        function jumpUrl(data) {
+            // alert(data.specialName);
+            stopPlayVideoHandler();
+            if (data.activityType == 6){
+                //专题
+                recClick_zte(data.id,data.specialName);
+                function newURl() {
+                    bridge.callHandler('newURlBridgeHandler', "http://"+ip_local+"/dianjing/ztlist.html?recomId=" +  data.id, function (response) {
+                        console.log("newURlBridgeHandler:" + response);
+                    })
+                }
+                newURl();
+                // alert(data.id);
+                // J("ztlist.html?recomId=" + data.id);
+
+                // J("http://192.168.1.112:8080/dianjing/ztlist.html?recomId=" + data.id);
+
+                // alert(data.id)
+
+            }else if (data.activityType == 2){
+            //下载apk
+                installPackageAndLaunch(data.packageNames,data.classNames);
+            }else if(data.activityType == 3){
+            //当地ktv广告位
+            }else if(data.activityType == 4){
+            //直接播放
+                playVideo(JSON.stringify(data));
+            }else if(data.activityType == 3){
+                //自己的activityType
+            }
+
+        }
+
+    </script>
+</head>
+<body style="background: transparent;">
+    <img src="images/bg/bg_index.jpg" style="position: absolute; top: 0px; left: 0px;" />
+    <img src="images/new/1.png" alt="" class="bg_select_always" style="left: 249px;top:48px;z-index: 0;width: 123px;height: 43px;">
+    <script src="js/head.js"></script>
+    <div style="position: absolute; left: 324px; top: 143px; padding: 0;width:589px;height: 364px;">
+        <img id="imgLB" style='display: none'>
+    </div>
+    <div style="position: absolute; top: 470px; left: 810px;padding:0;display: none">
+        <ul id="nav"></ul>
+    </div>
+    <img id="imgCont0" src="" style="position: absolute; top: 143px; left: 66px;" />
+    <img id="imgCont1" src="" style="position: absolute; top: 237px; left: 66px;" />
+    <img id="imgCont2" src="" style="position: absolute; top: 331px; left: 66px;" />
+    <img id="imgCont3" src="" style="position: absolute; top: 425px; left: 66px;" />
+    <img id="imgCont4" src="" style="position: absolute; top: 519px; left: 66px;" />
+    <img id="imgCont5" src="" style="position: absolute; top: 613px; left: 66px;" />
+    <img id="imgCont6" src="" style="position: absolute; top: 143px; left: 930px;" />
+    <img id="imgCont7" src="" style="position: absolute; top: 331px; left: 930px;" />
+    <img id="imgCont8" src="" style="position: absolute; top: 519px; left: 324px;" />
+    <img id="imgCont9" src="" style="position: absolute; top: 519px; left: 627px;" />
+    <img id="imgCont10" src="" style="position: absolute; top: 519px; left: 930px;" />
+    <img id="selSmall" src="images/01sy/sel_left.png" style="position: absolute; display:none;" />
+    <img id="selNomal" src="images/01sy/sel_right.png" style="position: absolute; display:none;" />
+    <img id="selBig" src="images/01sy/sel_lunbo.png" style="position: absolute; top: 143px; left: 324px; display: none;" />
+    <img id="Menu" src="images/01sy/bg_menu.png" style="position: absolute; top: 40px; left: 242px; display: none; " />
+
+    <div id="Retention" style="width: 100%; height: 100%; display: none; ">
+        <img src="images/01sy/bg_retention.png" style="position:absolute; left:0px; top:0px;" />
+        <img id="imgWL0" style="position: absolute; top: 250px; left: 45px;" />
+        <img id="imgWL1" style="position: absolute; top: 250px; left: 287px;" />
+        <img id="imgWL2" style="position: absolute; top: 250px; left: 529px;" />
+        <img id="imgWL3" style="position: absolute; top: 250px; left: 771px;" />
+        <img id="imgWL4" style="position: absolute; top: 250px; left: 1013px;" />
+        <div id="contDesc0" style="position: absolute; left: 51px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc1" style="position: absolute; left: 293px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc2" style="position: absolute; left: 535px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc3" style="position: absolute; left: 777px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <div id="contDesc4" style="position: absolute; left: 1019px; top: 382px; font-size: 21px; color: #82f2fc; width: 210px; height: 65px; line-height: 32px; "></div>
+        <img id="selList" src="images/01sy/sel_list.png" style="position: absolute; display: none;" />
+        <img id="imgHold" src="images/01sy/btn_hold.png" style="position: absolute; top: 535px; left: 390px;" />
+        <img id="imgOut" src="images/01sy/btn_out.png" style="position: absolute; top: 535px; left: 685px;" />
+    </div>
+</body>
+
+<script>
+    setTimeout(function () {
+        category_zte(100110001000,"首页");
+    },1000);
+
+    //拦截页
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.registerHandler('keyEventHandler', function (data,responseCallback) {
+            // console.log("keyEventHandler :"+data);
+            if(data==4){
+                showRecommend();
+                responseCallback("true");
+            }
+
+
+        });
+
+    });
+
+    // 外部推荐位
+    //     1 跳转订购及各个主页面 需要传递网页地址
+    //     2 专题详情页 需要传递id
+    //     3 视频播放  需要传递contentId typeCode serviceId musicName playerName checkAutho
+    //     4 下载apk 需要传递url 和packageName
+    // *   传递时，除了该type需要字段，别的可以传递空字符串
+    // function gameHandler(data) {
+    //     if(data.type==1){
+    //         window.location.href = data.jumpUrl;
+    //
+    //     }else if (data.type==2){
+    //         J("ztlist.html?recomId=" + data.id);
+    //     }else if (data.type==3){
+    //         playVideo({
+    //             "musicName":data.musicName,
+    //             "playerName":data.playerName,
+    //             "typeCode":data.typeCode,
+    //             "contentId":data.contentId,
+    //             "serviceId":data.serviceId,
+    //             "checkAutho":data.checkAutho,//0表示播放几十秒后检查是否是会员，如果不是则跳订购，1表示不检查
+    //         });
+    //     }else if (data.type==4){
+    //         installPackageAndLaunch(data.packageName,data.url)
+    //     }
+    // }
+
+    // var data={
+    //     "type":1,
+    //     "jumpUrl":'http://58.20.27.15:8080/dianjing/order.html',
+    //     "id":497,
+    //     "musicName":'滑板鞋',
+    //     "playerName":'网络歌手',
+    //     "typeCode":100110001000,
+    //     "contentId":'a8b34a12d3184140986f45abc3d67a59',
+    //     "serviceId":'19920fb331544578b0a54fa3d73b19d3',
+    //     "checkAutho":0,
+    //     "packageName":'com.zte9.music',
+    //     "url":'http://58.20.27.15:8080/down/apktest/music.apk',
+    //
+    // }
+
+    (function() {
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://" + ip + "/music/hot",
+            data: {
+                typeCode: 100110001000,
+            },
+            success:function (massage) {
+                list=massage.data.musicVideo;
+                console.log(list);
+            }
+        })
+    }());
+
+
+    if(screen.width==1280){
+        msg={
+            // "x":324,
+            "x":330,
+            // "y":143,
+            "y":151,
+            // 'width':589,
+            'width':577,
+            // "height":364,
+            "height":348,
+            "data":list,
+        }
+    }else if(screen.width==1920){
+        msg={
+            // "x":486,
+            "x":495,
+            // "y":214,
+            "y":226,
+            // 'width':883,
+            'width':865,
+            // "height":546,
+            "height":522,
+            "data":list,
+        }
+    }
+
+    // setTimeout(function () {
+    //     authenticationGetUrl(100110001000,"2439ac13d38f459fb3549ac1a146ec98",0,20,"YYS.8.0.0.Y28.0.HNLT.0.0_Pre_Release",20,1,"7ad81debf5f7423d875d2ce12b1a2b14");
+    //
+    // },1000)
+    // carouselFigureBridgeHandler(msg);
+
+</script>
+</html>

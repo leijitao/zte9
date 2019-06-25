@@ -1,0 +1,1588 @@
+/*首页*/
+*{
+	background-size: 100%;
+}
+.homepage{
+	width: 19.2rem;
+	height: 10.8rem;
+	background-image: url(../images/homepage/0.jpg);
+	background-size:100%;
+	overflow: hidden;
+}
+.but{
+	width: 3.08rem;
+	height: 1.31rem;
+	position: absolute;
+}
+.but div{
+	width: 3.08rem;
+	height: 1.31rem;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.but :first-child + div{
+	-webkit-transform: scale(1.2,1.2);
+}
+.homepage1{
+	top:4.19rem;
+	left: 1.14rem;
+}
+.homepage2{
+	top:4.19rem;
+	left: 14.97rem;
+}
+.homepage3{
+	top:6.36rem;
+	left: 1.14rem;
+}
+.homepage4{
+	top:6.36rem;
+	left: 14.97rem;
+}
+.homepage1 :first-child{
+	display: none;
+	background-image: url(../images/homepage/1.png);
+}
+.homepage1 :first-child + div{
+
+	background-image: url(../images/homepage/1x.png);
+}
+.homepage2 :first-child{
+	background-image: url(../images/homepage/2.png);
+}
+.homepage2 :first-child + div{
+	display:none;
+	background-image: url(../images/homepage/2x.png);
+}
+.homepage3 :first-child{
+
+	background-image: url(../images/homepage/3.png);
+}
+.homepage3 :first-child + div{
+	display: none;
+	background-image: url(../images/homepage/3x.png);
+}
+.homepage4 :first-child{
+
+	background-image: url(../images/homepage/4.png);
+}
+.homepage4 :first-child + div{
+	display: none;
+	background-image: url(../images/homepage/4x.png);
+}
+.homepage_t{
+	width:6.2rem;
+	height:2rem;
+	position: absolute;
+	top:6.6rem;
+	left: 6.55rem;
+	overflow: hidden;
+}
+.homepage_top{
+	width:6.2rem;
+	height:4rem;
+	position: absolute;
+	top:0;
+	left: 0;
+	overflow: hidden;
+}
+.homepage_top div{
+	overflow: hidden;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	font-size: 0.3rem;
+	text-align: center;
+}
+.homepage_top div p{
+	float: left;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	color: white;
+}
+.homepage_top div :first-child{
+	width:2.8rem;
+}
+.homepage_top div :first-child + p{
+	width:3.2rem;
+	margin-left: 0.2rem;
+}
+
+.homepage_close{
+    width: 1.96rem;
+    height: 0.88rem;
+    position: absolute;
+    top:7.7rem;
+    left: 8.6rem;
+
+}
+.homepage_close > div{
+    width: 1.96rem;
+    height: 0.88rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.homepage_close :first-child{
+    background-image:url(../images/homepage/start0.png);
+}
+.homepage_close :first-child + div{
+    display: none;
+    background-image:url(../images/homepage/start1.png);
+}
+.homepage_leave{
+    width: 19.2rem;
+    height: 10.8rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+    background-image:url(../images/homepage/leave.png);
+}
+.homepage_leave2{
+    width: 1.96rem;
+    height: 0.88rem;
+    position: absolute;
+    top:7.78rem;
+    left: 10.33rem;
+
+}
+.homepage_leave2 > div{
+    width: 1.96rem;
+    height: 0.88rem;
+    position: absolute;
+    top:0rem;
+    left: 0rem;
+}
+.homepage_leave2 :first-child{
+    background-image:url(../images/homepage/leave0.png);
+}
+.homepage_leave2 :first-child + div{
+    display: none;
+    background-image:url(../images/homepage/leave1.png);
+}
+.homepage_leave1{
+    width: 1.96rem;
+    height: 0.88rem;
+    position: absolute;
+    top:7.78rem;
+    left: 6.89rem;
+}
+.homepage_leave1 > div{
+    width: 1.96rem;
+    height: 0.88rem;
+    position: absolute;
+    top:0rem;
+    left: 0rem;
+}
+.homepage_leave1 :first-child{
+    display: none;
+    background-image:url(../images/answer/go.png);
+}
+.homepage_leave1 :first-child + div{
+
+    background-image:url(../images/answer/go1.png);
+}
+
+
+.rule_left{
+	width:1rem;
+	height: 1.84rem;
+	top:5rem;
+	left:1.8rem;
+	position: absolute;
+	display: none;
+	background-image: url(../images/duihuan/left.png);
+}
+.rule_right{
+	width:1rem;
+	height: 1.84rem;
+	top:5rem;
+	right:1.8rem;
+	position: absolute;
+	background-image: url(../images/duihuan/right.png);
+}
+
+
+/*积分排行榜*/
+.top{
+	width:19.2rem;
+	height: 10.8rem;
+	position: relative;
+	overflow: hidden;
+	overflow: hidden;
+	background-size:100%;
+	background-image:url(../images/top/bg.jpg);
+}
+.top_num{
+	position: absolute;
+	top:2.75rem;
+	left: 13.55rem;
+	width:0.6rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+	font-size: 0.4rem;
+	color: white;
+}
+.top_list{
+	width: 9.38rem;
+	height: 5.15rem;
+	position: absolute;
+	overflow: hidden;
+	left:2.11rem;
+	top:4.12rem;
+	overflow: hidden;
+}
+.top_list1_con,.top_list2_con{
+	height:4.57rem;
+}
+.top_list1_bottom,.top_list2_bottom{
+	height:0.45rem;
+	line-height: 0.45rem;
+	text-align: center;
+	overflow: hidden;
+	font-size: 0.3rem;
+}
+.top_list1,.top_list2{
+	position: absolute;
+	overflow: hidden;
+	top:0;
+	left: 0;
+	width: 9.38rem;
+	height: 5.15rem;
+}
+.top_list1{
+	color: white;
+}
+.top_list2{
+	color: #ffd303;;
+}
+.top_list1_bottom p{
+	float: left;
+	width:4.69rem;
+}
+.top_list2_bottom p{
+	float: left;
+	width:3.12rem;
+}
+.top_list1_con div,.top_list2_con div{
+	height: 0.36rem;
+	line-height: 0.36rem;
+	font-size: 0.24rem;
+	text-align: center;
+	overflow: hidden;
+}
+.top_list1_con div p{
+	float: left;
+	width:3rem;
+	padding: 0 0.06rem; 
+}
+.top_list2_con div p{
+	float: left;
+	width:2.145rem;
+	padding: 0 0.1rem; 
+
+}
+.top_list1_con div:first-child,.top_list2_con div:first-child{
+	height: 0.87rem;
+	line-height: 0.87rem;
+	font-size: 0.3rem;
+	text-align: center;
+}
+.top_list p{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.top_but{
+	width: 9.2rem;
+	height:1.056rem; 
+	position: absolute;
+	overflow: hidden;
+	top:9.6rem;
+	left: 2.2rem;
+	overflow: hidden;
+}
+.top_but > div{
+	width: 2.3rem;
+	height: 1.056rem;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.top_but > div > div{
+	position: absolute;
+	overflow: hidden;
+	top:0.088rem;
+	left: 0;
+	width: 2.3rem;
+	height: 0.88rem;
+	background-repeat:no-repeat;
+	background-size:1.96rem 0.88rem;
+	background-position: center; 
+
+overflow: hidden;}
+.top_but10{
+	background-image: url(../images/top/but10.png);
+}
+.top_but11{
+	display: none;
+	background-image: url(../images/top/but11.png);
+}
+.top_but20{
+	background-image: url(../images/top/but20.png);
+}
+.top_but21{
+	display: none;
+	background-image: url(../images/top/but21.png);
+}
+.top_but30{
+	background-image: url(../images/top/but30.png);
+}
+.top_but31{
+	display: none;
+	background-image: url(../images/top/but31.png);
+}
+.top_but50{
+	background-image: url(../images/lottery/lott.png);
+}
+.top_but51{
+	display: none;
+	background-image: url(../images/lottery/lott1.png);
+}
+.top_but4{
+	width: 2.112rem;
+	height: 2.112rem;
+	position: absolute;
+	overflow: hidden;
+	top:7.794rem;
+	left: 14.454rem;
+}
+.top_but40{
+	position: absolute;
+	overflow: hidden;
+	top:0.176rem;
+	left:0.176rem;
+	width: 1.76rem;
+	height: 1.76rem;
+	background-image: url(../images/top/star0.png);
+	background-size:100%;
+	display: none;
+}
+.top_but41{
+	position: absolute;
+	overflow: hidden;
+	top:0.176rem;
+	left:0.176rem;
+	width: 1.76rem;
+	height: 1.76rem;
+	background-image: url(../images/top/star1.png);
+	background-size:100%;
+}
+.top_award{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+	background-image: url(../images/duihuan/lott_kuang.png);
+}
+.top_award_no{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+	background-image: url(../images/top/no.png);
+}
+.top_award_success{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+	background-image: url(../images/duihuan/jf1.png);
+}
+.top_award_no_d{
+	width:1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:7rem;
+	left:9rem;
+	background-image:url(../images/lottery/sure.png);
+}
+.top_award > div{
+	width: 9.19rem;
+	height: 6.31rem;
+	position: absolute;
+	top:2.51rem;
+	left: 5.03rem;
+	overflow: hidden;
+}
+.top_award53{
+	width: 3.55rem;
+	height: 1.74rem;
+	margin:1.3rem 0 0 3rem;
+}
+.top_award > div img{
+	width: 2.96rem;
+	height: 1.45rem;
+}
+.top_award > div p{
+	width: 9.19rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	font-size: 0.3rem;
+	color: white;
+	text-align: center;
+}
+.top_awardi1{
+	width:6rem;
+	height: 0.54rem;
+	line-height: 0.54rem;
+	font-size: 0.4rem;
+	color: white;
+	margin:0.04rem 0 0 2.3rem;
+} 
+.top_awardi2{
+	width:6rem;
+	height: 0.54rem;
+	line-height: 0.54rem;
+	font-size: 0.4rem;
+	color: white;
+	margin:0.24rem 0 0 2.3rem;
+}
+.top_awardd{
+	width:1.96rem;
+	height: 0.88rem;
+	margin:0.2rem 0 0 4rem;
+	position: relative;
+} 
+.top_awardd div{
+	width:1.96rem;
+	height: 0.88rem; 
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.top_awardd :first-child{
+	
+	background-image:url(../images/lottery/sure.png);
+}
+.top_awardd :first-child + div{
+	display: none;
+	background-image:url(../images/lottery/sure1.png);
+}
+
+/*答题页*/
+.answer{
+	width: 19.2rem;
+	height: 10.8rem;
+	background-size:100%;
+	background-image:url(../images/answer/bg.jpg);
+	position: relative;
+	overflow: hidden;
+	overflow: hidden;
+}
+.answer_num{
+	width: 1.9rem;
+	height: 0.5rem;
+	text-align: center;
+	line-height: 0.5rem;
+	color: white;
+	position: absolute;
+	overflow: hidden;
+	top:2.09rem;
+	left: 10.96rem;
+	font-size: 0.5rem;
+}
+.answer_tit1,.answer_tit2,.answer_tit3,.answer_tit4{
+	position: absolute;
+	overflow: hidden;
+	left: 7.95rem;
+	width: 3rem;
+	height: 0.42rem;
+	line-height: 0.42rem;
+	font-size: 0.3rem;
+	color: white;
+	overflow: hidden;    
+	text-overflow:ellipsis;    
+	white-space: nowrap;
+}
+.answer_tit0{
+	position: absolute;
+	overflow: hidden;
+	left: 7.05rem;
+	width: 10rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	font-size: 0.38rem;
+	color: white;
+	overflow: hidden;    
+	text-overflow:ellipsis;    
+	white-space: nowrap;
+	top:3.3rem;
+	text-align: center;
+}
+.answer_tit1{
+	top:4.33rem;
+}
+.answer_tit2{
+	top:5.65rem;
+}
+.answer_tit3{
+	top:6.94rem;
+}
+.answer_tit4{
+	top:8.29rem;
+}
+.answer_hand{
+	width:0.94rem;
+	height: 0.76rem;
+	background-image:url(../images/answer/hand.png);
+	background-size: 100%;
+	position: absolute;
+	overflow: hidden;
+	top:4.36rem;
+	left: 10.5rem;
+}
+.answer_tim{
+	width: 2rem;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	position: absolute;
+	overflow: hidden;
+	top:6.12rem;
+	left: 13.21rem;
+	font-size: 0.8rem;
+	color: white;
+}
+.answer_success_end{
+	width: 19.2rem;
+	height: 10.8rem;
+	display: none;
+	background-image: url(../images/answer/success_bg.png);
+	background-size: 100%;
+	position: absolute;
+	overflow: hidden;
+	top:0;
+	left: 0;
+}
+.answer_success_end_but{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	overflow: hidden;
+	top:7.78rem;
+	left: 8.62rem;
+	background-image: url(../images/answer/choujiang.png);
+}
+.answer_success{
+	width: 19.2rem;
+	height: 10.8rem;
+	display: none;
+	background-image: url(../images/answer/success0_bg.png);
+	background-size: 100%;
+	position: absolute;
+	overflow: hidden;
+	top:0;
+	left: 0;
+}
+.answer_success_p1{
+	position: absolute;
+	overflow: hidden;
+	top:6.80rem;
+	left: 7.67rem;
+	width:0.85rem;
+	height: 0.3rem;
+	font-size: 0.3rem;
+	line-height: 0.3rem;
+	color: white;
+	text-align: center;
+}
+.answer_success_p2{
+	position: absolute;
+	overflow: hidden;
+	top:6.80rem;
+	left: 11.15rem;
+	width:0.85rem;
+	height: 0.3rem;
+	font-size: 0.3rem;
+	line-height: 0.3rem;
+	color: white;
+	text-align: center;
+}
+.answer_success_but1{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	overflow: hidden;
+	top:7.78rem;
+	left: 8.6rem;
+	background-image:url(../images/answer/jixu.png);
+}
+.answer_success_but1 div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.answer_success_but1 div:first-child{
+	
+	background-image:url(../images/answer/jixu.png);
+}
+.answer_success_but1 div:first-child + div{
+	display: none;
+	background-image:url(../images/answer/jixu1.png);
+}
+/*.answer_success_but2{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	overflow: hidden;
+	top:7.78rem;
+	left: 10.51rem;
+}
+.answer_success_but2 div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.answer_success_but2 div:first-child{	
+	background-image:url(../images/answer/fangqi.png);
+}
+.answer_success_but2 div:first-child + div{
+	display: none;
+	background-image:url(../images/answer/fangqi1.png);
+}*/
+.answer_error{
+	width: 19.2rem;
+	height: 10.8rem;
+	display: none;
+	background-image: url(../images/answer/error_bg0.png);
+	position: absolute;
+	overflow: hidden;
+	top:0;
+	left: 0; 
+}
+.answer_error_p{
+	position: absolute;
+	overflow: hidden;
+	top:6.8rem;
+	left: 8.75rem;
+	width: 4rem;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	font-size: 0.3rem;
+	color: white;
+	overflow: hidden;    
+	text-overflow:ellipsis;    
+	white-space: nowrap;
+}
+.answer_error_but1{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:7.78rem;
+	left: 6.6rem;
+}
+.answer_error_but1 div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.jump_vip,.jump_lis{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+}
+.jump_vip{
+	background-image: url(../images/answer/jump_v.jpg);
+}
+.jump_lis{
+	background-image: url(../images/answer/jump.jpg);
+}
+.answer_error_but1 :first-child{
+	
+	background-image:url(../images/answer/ting.png);
+}
+.answer_error_but1 :first-child+div{
+	display: none;
+	background-image:url(../images/answer/ting1.png);
+}
+.answer_error_but2{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:7.78rem;
+	left: 10.51rem;
+}
+.answer_error_but2 div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.answer_error_but2 :first-child{
+	display: none;
+	background-image:url(../images/answer/jixu.png);
+}
+.answer_error_but2 :first-child+div{
+	background-image:url(../images/answer/jixu1.png);
+}
+.answer_error_end{
+	width: 19.2rem;
+	height: 10.8rem;
+	display: none;
+	background-image: url(../images/answer/error_bg.png);
+	position: absolute;
+	overflow: hidden;
+	top:0;
+	left: 0; 
+}
+.answer_error_end1{
+	width: 3.92rem;
+	height: 3.58rem;
+	position: absolute;
+	top:4.3rem;
+	left:9.8rem;
+}
+.answer_error_end1 > div{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 3.92rem;
+	height: 3.58rem;
+}
+.answer_error_end1 :first-child{
+
+	background-image: url(../images/answer/huanchang0.png);
+}
+.answer_error_end1 :first-child + div{
+    display: none;
+	background-image: url(../images/answer/huanchang1.png);
+}
+.answer_error_end2{
+	width: 3.92rem;
+	height: 3.58rem;
+	position: absolute;
+	top:4.3rem;
+	left:5.7rem;
+}
+.answer_error_end2 > div{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 3.92rem;
+	height: 3.58rem;
+}
+.answer_error_end2 :first-child{
+    display: none;
+	background-image: url(../images/answer/sing.png);
+}
+.answer_error_end2 :first-child + div{
+
+	background-image: url(../images/answer/sing1.png);
+}
+.answer_error_end3{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:7.78rem;
+	left: 8.86rem;
+}
+.answer_error_end3 > div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.answer_error_end3 :first-child{
+	background-image: url(../images/answer/jixu.png);
+}
+.answer_error_end3 :first-child + div{
+	display: none;
+	background-image: url(../images/answer/jixu1.png);
+}
+
+
+.answer_no{
+	width: 19.2rem;
+	height: 10.8rem;
+	background-image:url(../images/answer/no.png);
+	position: absolute;
+	top:0;
+	left:0;
+	overflow: hidden;
+	display: none;
+}
+.answer_no > div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:7.7rem;
+	left: 8.6rem;
+	background-image:url(../images/answer/home.png); 
+}
+.answer_no_vip{
+	width: 19.2rem;
+	height: 10.8rem;
+	background-image:url(../images/answer/no3.png);
+	position: absolute;
+	top:0;
+	left:0;
+	overflow: hidden;
+	display: none;
+}
+/*.answer_no_vip1,.answer_no_vip2{*/
+	/*width: 3.92rem;*/
+	/*height: 3.58rem;*/
+	/*position: absolute;*/
+	/*top:3.85rem;*/
+/*}*/
+/*.answer_no_vip1{*/
+	/*left:5.74rem;*/
+/*}*/
+/*.answer_no_vip1 :first-child{*/
+	/*position: absolute;*/
+	/*top:0;*/
+	/*left: 0;*/
+	/*display:none;*/
+	/*width: 3.92rem;*/
+	/*height: 3.58rem;*/
+	/*background-image: url(../images/answer/huanchang0.png);*/
+/*}*/
+/*.answer_no_vip1 :first-child + div{*/
+	/*position: absolute;*/
+	/*top:0;*/
+	/*left: 0;*/
+	/*width: 3.92rem;*/
+	/*height: 3.58rem;*/
+	/*background-image: url(../images/answer/huanchang1.png);*/
+/*}*/
+/*.answer_no_vip2{*/
+	/*left:9.66rem;*/
+/*}*/
+/*.answer_no_vip2 :first-child{*/
+	/*position: absolute;*/
+	/*top:0;*/
+	/*left: 0;*/
+	/*width: 3.92rem;*/
+	/*height: 3.58rem;*/
+	/*background-image: url(../images/answer/mangguo0.png);*/
+/*}*/
+/*.answer_no_vip2 :first-child + div{*/
+	/*position: absolute;*/
+	/*top:0;*/
+	/*left: 0;*/
+	/*width: 3.92rem;*/
+	/*display:none;*/
+	/*height: 3.58rem;*/
+	/*background-image: url(../images/answer/mangguo1.png);*/
+/*}*/
+.answer_no_vip3{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:7.78rem;
+	left: 10.33rem;
+	
+}
+
+.answer_no_vip3 > div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0rem;
+	left: 0rem;
+}
+.answer_no_vip3 :first-child{
+	background-image:url(../images/answer/home.png);
+}
+.answer_no_vip3 :first-child + div{
+	display: none;
+	background-image:url(../images/lottery/home1.png);
+}
+.answer_no_vip4{
+    width: 1.96rem;
+    height: 0.88rem;
+    position: absolute;
+    top:7.78rem;
+    left: 6.89rem;
+}
+.answer_no_vip4 > div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0rem;
+	left: 0rem;
+}
+.answer_no_vip4 :first-child{
+    display: none;
+	background-image:url(../images/answer/go.png);
+}
+.answer_no_vip4 :first-child + div{
+
+	background-image:url(../images/answer/go1.png);
+}
+
+/*抽奖 lottery.html*/
+.lottery_bg{
+	width: 19.2rem;
+	height: 10.8rem;
+	background-image:url(../images/lottery/bg.jpg);
+	position: relative;
+	overflow: hidden;
+
+}
+.lottery_star{
+	width:3rem;
+	height: 3rem;
+	position: absolute;
+	top:3.78rem;
+	left: 8.08rem;
+}
+.lottery_star div{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 3rem;
+	height: 3rem;
+}
+.lottery_star0{
+	display: none;
+	background-image: url(../images/lottery/star.png);
+}
+.lottery_star1{
+	
+	background-image: url(../images/lottery/star1.png);
+}
+.lottery_but1{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:4.7rem;
+	left: 14.9rem;
+}
+.lottery_but1 div,.lottery_but2 div,.lottery_but3 div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left:0; 
+}
+.lottery_but10{
+	background-image:url(../images/lottery/reset1.png); 
+
+}
+.lottery_but11{
+	display: none;
+	background-image:url(../images/lottery/reset2.png); 
+}
+.lottery_but2{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:5.8rem;
+	left: 14.9rem;
+}
+.lottery_but20{
+	background-image:url(../images/lottery/zj.png); 
+
+}
+.lottery_but21{
+	display: none;
+	background-image:url(../images/lottery/zj1.png); 
+}
+.lottery_but3{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:6.9rem;
+	left: 14.9rem;
+}
+.lottery_but30{
+	background-image:url(../images/lottery/home.png); 
+
+}
+.lottery_but31{
+	display:none;
+	background-image:url(../images/lottery/home1.png); 
+}
+.lottery_num{
+	width: 0.6rem;
+	height: 0.4rem;
+	line-height:0.4rem;
+	color: white;
+	font-size: 0.3rem;
+	position: absolute;
+	top:8.25rem;
+	left: 15.25rem;
+	text-align:center;
+}
+.lottery_t1,.lottery_t514,.lottery_t2,.lottery_t3,.lottery_t4,.lottery_t512,.lottery_t513,.lottery_reset{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+}
+.lottery_t1{
+	background-image:url(../images/lottery/1.png);
+
+}
+.lottery_t2{
+	background-image:url(../images/lottery/2.png);
+}
+.lottery_t3{
+	background-image:url(../images/lottery/3.png);
+}
+.lottery_t512{
+	background-image:url(../images/lottery/512.png);
+}
+.lottery_t513{
+	background-image:url(../images/lottery/513.png);
+}
+.lottery_t514{
+	background-image:url(../images/duihuan/jf1.png);
+}
+.lottery_t4{
+	
+	background-image:url(../images/duihuan/lott_kuang.png);
+}
+.lottery_reset{
+	background-image:url(../images/lottery/reset.png);
+}
+.lottery_t4 > div{
+	width: 9.19rem;
+	height: 6.31rem;
+	position: absolute;
+	top:2.51rem;
+	left: 5.03rem;
+	overflow: hidden;
+}
+.lottery_reset_old{
+	position: absolute;
+	top:4.58rem;
+	left: 9.1rem;
+	height: 0.35rem;
+	line-height: 0.35rem;
+	font-size: 0.35rem;
+	color: white;
+}
+.lottery_reset > input{
+	width: 5rem;
+	height: 0.54rem;
+	line-height: 0.54rem;
+	font-size: 0.5rem;
+	position: absolute;
+	top:5.86rem;
+	left: 7.3rem;
+	color: white;
+}
+.lottery_reset_txt{
+	position: absolute;
+	top:6.8rem;
+	left: 8rem;
+	color: red;
+	font-size: 0.3rem;
+}
+.lottery_reset_d{
+	width:1.96rem;
+	height: 0.88rem;
+	position:absolute;
+	top:7.7rem;
+	left:8.62rem; 
+}
+.lottery_reset_d > div{
+	width:1.96rem;
+	height: 0.88rem;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.lottery_reset_d :first-child{
+	background-image: url(../images/lottery/sure.png);
+}
+.lottery_reset_d :first-child + div{
+	display: none;
+	background-image: url(../images/lottery/sure1.png);
+}
+/*.lottery_t4_p53{
+	width: 9.19rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	font-size: 0.3rem;
+	color: white;
+	text-align: center;
+}*/
+.lottery_p55{
+	font-size: 0.3rem;
+	line-height: 0.3rem;
+	height: 0.3rem;
+	color:red;
+	position: absolute;
+	top:4.5rem;
+	left: 2.2rem; 
+	
+}
+.lottery_ti1{
+	width:6rem;
+	height: 0.54rem;
+	line-height: 0.54rem;
+	font-size: 0.4rem;
+	color: white;
+	position: absolute;
+	top:3.5rem;
+	left: 2.2rem;
+} 
+
+.lottery_t4d{
+	width:1.96rem;
+	height: 0.88rem;
+	position:absolute;
+	top:5.2rem;
+	left: 4rem;
+} 
+.lottery_t4d div{
+	width:1.96rem;
+	height: 0.88rem; 
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.lottery_t4d :first-child{
+	
+	background-image:url(../images/lottery/sure.png);
+}
+.lottery_t4d :first-child + div{
+	display: none;
+	background-image:url(../images/lottery/sure1.png);
+}
+.lottery_t1 input,.lottery_t2 input,.lottery_t3 input{
+	width:1.96rem;
+	height: 0.88rem; 
+	position: absolute;
+	top:7.7rem;
+	left:8.62rem; 
+	background-image:url(../images/lottery/sure.png);
+}
+/*积分兑换*/
+.jf_buy_bg{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: relative;
+	overflow: hidden;
+	background-image:url(../images/lottery/dh_bg.jpg);
+}
+.jf_buy_bg_d1{
+	width: 1.7rem;
+	height: 0.35rem;
+	line-height: 0.35rem;
+	font-size: 0.3rem;
+	color: white;
+	text-align: center;
+	position: absolute;
+	top:2.29rem;
+	left: 4.16rem;
+}
+.jf_buy_bg_d2{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:1.74rem;
+	left: 13.4rem;
+}
+.jf_buy_bg_d2 div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.jf_buy_bg_d2 :first-child{
+
+	background-image: url(../images/lottery/home.png);
+}
+.jf_buy_bg_d2 :first-child +div{
+	display: none;
+	background-image: url(../images/lottery/home1.png);
+}
+.jf_buy_bg_d3,.jf_buy_bg_d4,.jf_buy_bg_d5,
+.jf_buy_bg_d6,.jf_buy_bg_d7,.jf_buy_bg_d8,
+.jf_buy_bg_d9,.jf_buy_bg_d10,.jf_buy_bg_d11,
+.jf_buy_bg_d12,.jf_buy_bg_d13,.jf_buy_bg_d14{
+	position: absolute;
+	width: 1.89rem;
+	height: 3.31rem;
+	display: none;
+	background-image: url(../images/lottery/dh_k.png);
+}
+.jf_buy_bg_d3{
+	top:3.19rem;
+	left: 3.61rem;
+	display: block;
+}
+.jf_buy_bg_d4{
+	top:3.19rem;
+	left: 5.62rem;
+}
+.jf_buy_bg_d5{
+	top:3.19rem;
+	left: 7.63rem;
+}
+.jf_buy_bg_d6{
+	top:3.19rem;
+	left: 9.65rem;
+}
+.jf_buy_bg_d7{
+	top:3.19rem;
+	left: 11.661rem;
+}
+.jf_buy_bg_d8{
+	top:3.19rem;
+	left: 13.67rem;
+}
+.jf_buy_bg_d9{
+	top:6.54rem;
+	left: 3.61rem;
+}
+.jf_buy_bg_d10{
+	top:6.54rem;
+	left: 5.62rem;
+}
+.jf_buy_bg_d11{
+	top:6.54rem;
+	left: 7.63rem;
+}
+.jf_buy_bg_d12{
+	top:6.54rem;
+	left: 9.65rem;
+}
+.jf_buy_bg_d13{
+	top:6.54rem;
+	left: 11.66rem;
+}
+.jf_buy_bg_d14{
+	top:6.54rem;
+	left:13.67rem;
+}
+.jf_buy_t4{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+	background-image:url(../images/duihuan/jf4.png); 
+}
+.jf_buy_t4 > div{
+	width: 9.19rem;
+	height: 6.31rem;
+	position: absolute;
+	top:2.51rem;
+	left: 5.03rem;
+	overflow: hidden;
+}
+
+/*.jf_buy_t4_p53{
+	width: 4rem;
+	height: 0.52rem;
+	line-height: 0.52rem;
+	font-size: 0.3rem;
+	color: white;
+	text-align: center;
+	position:absolute;
+	top:3.35rem;
+	left:2.4rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap; 
+}*/
+.jf_buy_ti1{
+	width:6rem;
+	height: 0.54rem;
+	line-height: 0.54rem;
+	font-size: 0.4rem;
+	color: white;
+	position: absolute;
+	top:4rem;
+	left: 2.2rem;
+}
+.jf_buy_t4i511{
+	width:3.552rem;
+	height: 1.74rem;
+	position: absolute;
+	top:2rem;
+	left: 3rem; 
+}
+
+
+#jf_buy_red{
+	font-size: 0.3rem;
+	line-height: 0.3rem;
+	height: 0.3rem;
+	color:red;
+	position: absolute;
+	top:4.6rem;
+	left: 2.2rem;
+}
+.jf_buy_t4d2{
+	width:1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:5.27rem;
+	left: 1.93rem;
+} 
+.jf_buy_t4d{
+	width:1.96rem;
+	height: 0.88rem;
+	position:absolute;
+	top:5.27rem;
+	left: 5.71rem;
+} 
+.jf_buy_t4d div,.jf_buy_t4d2 div{
+	width:1.96rem;
+	height: 0.88rem; 
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.jf_buy_t4d :first-child{
+	
+	background-image:url(../images/duihuan/reset.png);
+}
+.jf_buy_t4d2 :first-child{
+	
+	background-image:url(../images/duihuan/sure.png);
+}
+.jf_buy_t4d :first-child + div{
+	display: none;
+	background-image:url(../images/duihuan/reset1.png);
+}
+.jf_buy_t4d2 :first-child + div{
+	display: none;
+	background-image:url(../images/duihuan/sure1.png);
+}
+.jf_buy_t5{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left:0;
+	display: none;
+	overflow: hidden;
+	background-image:url(../images/lottery/5.png);
+}
+.jf_buy_t5 > div{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:7.5rem;
+}
+.jf_buy_t5 > div > div{
+	width: 1.96rem;
+	height: 0.88rem;
+}
+.jf_buy_t51{
+	left:6.5rem;
+}
+.jf_buy_t51 div:first-child{
+	background-image: url(../images/lottery/jx.png);
+}
+.jf_buy_t51 div:first-child + div{
+	display: none;
+	background-image: url(../images/lottery/jx1.png);
+}
+.jf_buy_t52{
+	left:11rem;
+}
+.jf_buy_t52 div:first-child{
+	background-image: url(../images/lottery/lott.png);
+}
+.jf_buy_t52 div:first-child + div{
+	display: none;
+	background-image: url(../images/lottery/lott1.png);
+}
+.jf_buy_t6,.jf_buy_t7,.jf_buy_t8{
+	width:19.2rem;
+	height: 10.8rem;
+	position: absolute;
+	top:0;
+	left:0;
+	display: none;
+}
+.jf_buy_t6{
+	background-image: url(../images/duihuan/jf0.png);
+}
+.jf_buy_t7{
+	background-image: url(../images/duihuan/jf1.png);
+}
+.jf_buy_t8{
+	background-image: url(../images/duihuan/jf2.png);
+}
+
+
+/*规则 rule.html*/
+.rule_bg{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: relative;
+	overflow: hidden;
+	background-image: url(../images/top/rule_bg1.jpg);
+}
+
+.rule_but{
+	width: 1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:1.8rem;
+	left: 13rem;
+	background-image: url(../images/lottery/home1.png);
+}
+.rule_text{
+	width: 12.12rem;
+	height: 6.5rem;
+	position: absolute;
+	top:3.2rem;
+	left:3.54rem;
+}
+.rule_text img{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 12.12rem;
+	height: 6.5rem;
+}
+
+/*中奖纪录*/
+.record_bg{
+	width: 19.2rem;
+	height: 10.8rem;
+	position: relative;
+	overflow: hidden;
+	background-image: url(../images/lottery/zj_bg.jpg);
+}
+.record_all{
+	width: 11.71rem;
+	height: 4.02rem;
+	position: absolute;
+	top:3.60rem;
+	left: 3.74rem;
+}
+.record_all > div :first-child + p{
+	text-align: left;
+}
+.record_me2 > div :first-child + p{
+	text-align: left;
+}
+.record_me{
+	width: 11.71rem;
+	height: 1.68rem;
+	position: absolute;
+	top:8.17rem;
+	left: 3.74rem;
+	overflow: hidden;
+}
+.record_me1{
+	position: absolute;
+	top:0;
+	left: 0;
+	height:1.68rem;
+	overflow: hidden;
+	width: 30rem;
+}
+.record_me2{
+	width: 11.71rem;
+	height: 1.68rem;
+	float: left;
+}
+.record_all > div,.record_me2 > div{
+	overflow: hidden;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+}
+.record_all > div p,.record_me2 > div p{
+	float: left;
+	color: white;
+	font-size: 0.3rem;
+	overflow: hidden;    
+	text-overflow:ellipsis;    
+	white-space: nowrap;
+}
+.record_all > div :first-child{
+	width: 2.6rem;
+	padding: 0 0.2rem;
+}
+.record_all > div :first-child + p{
+	width: 3.51rem;
+	padding-left:1.5rem;
+}
+.record_all > div :first-child + p + p{
+	width: 3.3rem;
+	padding: 0 0.2rem;
+}
+.record_me2 > div p{
+	width: 3.9rem
+}
+.record_me2 > div :first-child{
+	padding:0 0.2rem 0 1.75rem
+}
+.record_me2 > div :first-child + p{
+	padding-left:1rem;
+	width: 3rem; 
+}
+.record_home{
+	width:1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:1.75rem;
+	left: 13.2rem;
+}
+.record_home > div{
+	width:1.96rem;
+	height: 0.88rem;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.record_home0{
+	display: none;
+	background-image: url(../images/lottery/home.png);
+}
+.record_home1{
+	background-image: url(../images/lottery/home1.png);
+}
+.record_left,.record_right{
+	width:0.5rem;
+	height: 0.92rem;
+	position: absolute;
+	top:8.58rem;
+	left: 3.37rem;	
+}
+.record_left{
+	/*transform:scale(1.2,1.2);*/
+	background-image: url(../images/lottery/left.png);
+}
+.record_right{
+	left: 15.31rem;
+	background-image: url(../images/lottery/right.png);
+}

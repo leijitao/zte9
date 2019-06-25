@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+}
+#container{
+    width: 19.2rem;
+    height: 10.8rem;
+    position: relative;
+    background-size: 100%;
+    background-image: url("../images/bg.jpg");
+}
+#con_game img{
+    width: 2.81rem;
+    height: 4.36rem;
+    position: absolute;
+    top:5.75rem;
+}
+#gameFocus{
+    width: 3.11rem;
+    height: 4.66rem;
+    position: absolute;
+    top:5.5rem;
+    left: 8.23rem;
+    transform: scale(1.2,1.2);
+}

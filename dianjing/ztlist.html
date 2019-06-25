@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/base.portal.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="ztlist_box">
+    <div class="ztlist_box1" style="position: absolute;top:0;left: 0;width: 12.8rem;height: 7.2rem">
+        <p class="ztlist_title" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"></p>
+        <div class="ztlist_pageNum"></div>
+        <div class="ztlist_con_sm">
+            <div class="ztlist_con_big">
+
+            </div>
+        </div>
+        <img src="images/ztNew/up.png" class="ztlist_pageUp" alt="">
+        <img src="images/ztNew/down.png" class="ztlist_pageDown" alt="">
+    </div>
+    <div class="ztlist_box2" style="display: none;position: absolute;top:0;left: 0;width: 12.8rem;height: 7.2rem">
+        <p class="ztlist2_title" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"></p>
+        <p class="ztlist2_con_left_synopsis"></p>
+        <div class="ztlist2_con_left">
+            <img src="images/01sy/sel_lunbo.png" alt="" class="ztList2_con_focus">
+
+        </div>
+        <div class="ztlist2_con_right">
+            <div class="ztlist2_con_rightBig">
+
+            </div>
+        </div>
+        <img src="images/ztNew/up.png" class="ztlist2_pageUp" alt="">
+        <img src="images/ztNew/down.png" class="ztlist2_pageDown" alt="">
+    </div>
+</div>
+</body>
+<script src="js/rem.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/store.min.js"></script>
+<script src="js/WebViewJavascriptBridge.js"></script>
+<script src="js/all.js"></script>
+<script src="js/ajax.js"></script>
+<script>
+    var ztlist_con_big_len1;
+    var ztlist_con_big_len2;
+    var pageAll;
+    var list_musicRecommed;
+    var list_rows;
+    var recomId;
+    function resetStyleList1() {
+        if(ztlist_con_big_len1%8==0){
+            pageAll=ztlist_con_big_len1/8;
+        }else {
+            pageAll=Math.ceil(ztlist_con_big_len1/8);
+        }
+        $('.ztlist_pageNum').html(1+'/'+ pageAll);
+        $(".ztlist_con_bigPic").css({width: '2.2rem',height: '1.24rem',position: 'absolute',top:'0.09rem',left: '0.09rem'})
+        $(".ztlist_con_bigDescribe").css({fontSize:'0.22rem',width: '2.04rem',height: '0.6rem',lineHeight: '0.3rem',position: 'absolute',top:'1.4rem',left: '0.17rem',color: '#93def5',overflow : 'hidden',textOverflow: 'ellipsis'})
+        $(".ztlist_con_bigPlay").css({position: 'absolute',top:0,left: 0,width: '2.38rem',height: '2.19rem',display:'none'})
+        $(".ztlist_con_bigFocus").css({position: 'absolute',top:0,left: 0,width: '2.38rem',height: '2.19rem',display:'none'})
+        $(".ztlist_con_big").children().eq(0).children(".ztlist_con_bigFocus").show();
+    }
+    function resetStyleList2() {
+        $(".ztList2_con_focus").hide();
+        $(".ztlist2_con_rightBig_img1").css({width:"2.2rem",height:"1.24rem",position:"absolute",top:"0.08rem",left:"0.08rem"})
+        $(".ztlist2_con_rightBig_p").css({width:"2.38rem",height:"0.8rem",position:"absolute",top:"0.3rem",left:"2.46rem",color: '#93def5',overflow : 'hidden',textOverflow: 'ellipsis',lineHeight:"0.26rem",fontSize:"0.24rem"})
+        $(".ztlist2_con_rightBig_img2").css({width:"5.08rem",height:"1.4rem",position:"absolute",top:0,left:0,display:"none"})
+        $(".ztlist2_con_rightBig_img3").css({width:"5.08rem",height:"1.4rem",position:"absolute",top:0,left:0,display:"none"})
+    }
+
+var jumpx;
+
+
+    function getList_zt() {
+
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:"http://"+ip+"/music/getSpecial",
+            // url:"http://"+ip+"/musicRecommd/detail/musicList",
+            data:{
+                recomId:recomId,
+            },
+            success:function(msg){
+                console.log("getList_zt success:"+ JSON.stringify(msg));
+                // var list_bottom=msg.data.recommedList;
+                // store.set("list_top",list_bottom);
+                store.set("list_musicRecommed",msg);
+                list_musicRecommed=store.get("list_musicRecommed");
+                var list=msg.data.musicRecommed;
+                ztlist_con_big_len1=list.length;
+                if(ztlist_con_big_len1==1){
+                    fla=true;
+                    list1=false;
+                    list2=true;
+                    leftOrRight=false;
+                    list2_num=0;
+                    $(".ztlist_box1").css({display:"none"});
+                    $(".ztlist_box2").css({display:"block"});
+                    palyVideoAndList(list[0].id);
+                    $(".ztList2_con_focus").hide();
+                    $(".ztlist2_con_rightBig_img3").hide();
+                    $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img3").show();
+                    $(".ztlist2_con_rightBig_img2").hide();
+                    $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img2").show();
+                }else {
+                    if(ztlist_con_big_len1>8){
+                        $(".ztlist_pageDown").show();
+                    }
+                    $(".ztlist_title").html(msg.data.specialName);
+                    $(".ztlist_con_big").html('');
+                    for(var integra in list){
+                        var lis_all='<div><img src='+ list[integra].picUrl +' alt="" class="ztlist_con_bigPic"><div class="ztlist_con_bigDescribe" style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;word-break:break-all;">'+ list[integra].specialName +'</div><img src="images/ztNew/play1.png" alt="" class="ztlist_con_bigPlay"><img src="images/ztNew/focus1.png" alt="" class="ztlist_con_bigFocus"></div>';
+                        $(".ztlist_con_big").append(lis_all);
+                    }
+                    resetStyleList1();
+                }
+
+            },
+            error:function (msg) {
+                console.log("getList_zt error:"+msg);
+            }
+        })
+    }
+
+var list1=true;
+var list2=false;
+var list2_left;
+var list2_right;
+var list1_num=0;
+var list2_num=0;
+var leftOrRight=false;
+var fla=true; //用来判断当前小窗口播放视频来自list1（true）还是list2（false）
+
+    //播放所需参数
+    var x,y,width,height,contentId,typeCode,type,serviceId;
+    if(screen.width==1280){
+        x=60;
+        y=135;
+        width=663;
+        height=406;
+    }else if(screen.width==1920){
+        x=90;
+        y=202;
+        width=994;
+        height=609;
+    }
+    //end
+    document.onkeydown=function(e) {
+        e = window.event || e;
+        /**
+         * 37 左键盘
+         * 38 上键盘
+         * 39 右键盘
+         * 40 下键盘
+         * 13 回车键
+         */
+
+        switch (e.keyCode) {
+            case 37:
+                if(list1==true){
+                    list1_num--;
+                    if(list1_num<=0){
+                        list1_num=0;
+                    }
+                    if((list1_num+1)%8==0){
+                        $(".ztlist_con_big").stop().animate({top:Math.floor(list1_num/8)*4.5 +"rem"},300)
+                    }
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigFocus").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigFocus").show();
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigPlay").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigPlay").show();
+
+                }else if(list2==true) {
+                    if(leftOrRight==false){
+                        leftOrRight=true;
+                        $(".ztList2_con_focus").show();
+                        $(".ztlist2_con_rightBig").children().children(".ztlist2_con_rightBig_img3").hide();
+                    }
+                }
+                break;
+            case 38:
+                if(list1==true){
+                    list1_num-=4;
+                    if(list1_num<=0){
+                        list1_num=0;
+                    }
+                    if(4<=list1_num%8<=7){
+                        $(".ztlist_con_big").stop().animate({top:-Math.floor(list1_num/8)*4.5 +"rem"},300);
+                    }
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigFocus").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigFocus").show();
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigPlay").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigPlay").show();
+                }else if(list2==true) {
+                    if(leftOrRight==false){
+                        list2_num--;
+                        if(list2_num<=0){
+                            list2_num=0;
+                        }
+                        if(list2_num>3){
+                            $(".ztlist2_pageUp").show();
+                        }else {
+                            $(".ztlist2_pageUp").hide();
+                        }
+                        if(ztlist_con_big_len2 - list2_num >ztlist_con_big_len2 % 4){
+                            $(".ztlist2_pageDown").show();
+                        }else {
+                            $(".ztlist2_pageDown").hide();
+                        }
+                        $(".ztlist2_con_rightBig").stop().animate({top:- Math.floor((list2_num)/4)*5.6+"rem"},300);
+                        $(".ztlist2_con_rightBig").children().children(".ztlist2_con_rightBig_img3").hide();
+                        $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img3").show();
+
+                    }
+                }
+                break;
+            case 39:
+                if(list1==true){
+                    list1_num++;
+                    if(list1_num>=ztlist_con_big_len1-1){
+                        list1_num=ztlist_con_big_len1-1;
+                    }
+                    if((list1_num)%8==0 && list1_num<$(".ztlist_con_big").children().length){
+                        $(".ztlist_con_big").stop().animate({top:-Math.floor(list1_num/8)*4.5 +"rem"},300)
+                    }
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigFocus").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigFocus").show();
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigPlay").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigPlay").show();
+                }else if(list2==true) {
+                    if(leftOrRight==true){
+                        leftOrRight=false;
+                        $(".ztList2_con_focus").hide();
+                        $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img3").show();
+                    }
+
+                }
+                break;
+            case 40:
+                if(list1==true){
+                    list1_num+=4;
+                    if(list1_num>=ztlist_con_big_len1-1){
+                        list1_num=ztlist_con_big_len1-1;
+                    }
+                    if(0<=list1_num%8<=3){
+                        $(".ztlist_con_big").stop().animate({top:-Math.floor(list1_num/8)*4.5 +"rem"},300);
+                    }
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigFocus").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigFocus").show();
+                    $(".ztlist_con_big").children().children(".ztlist_con_bigPlay").hide();
+                    $(".ztlist_con_big").children().eq(list1_num).children(".ztlist_con_bigPlay").show();
+                }else if(list2==true) {
+                    if(leftOrRight==false){
+                        list2_num++;
+                        if(list2_num>=ztlist_con_big_len2-1){
+                            list2_num=ztlist_con_big_len2-1;
+                            $(".ztlist2_pageDown").hide();
+                        }
+                        if(list2_num>3){
+                            $(".ztlist2_pageUp").show();
+                        }else {
+                            $(".ztlist2_pageUp").hide();
+                        }
+                        if(ztlist_con_big_len2 - list2_num >ztlist_con_big_len2 % 4){
+                            $(".ztlist2_pageDown").show();
+                        }else {
+                            $(".ztlist2_pageDown").hide();
+                        }
+                        if(list2_num==ztlist_con_big_len2-1){
+                            $(".ztlist2_pageDown").hide();
+                        }
+                        $(".ztlist2_con_rightBig").stop().animate({top:- Math.floor((list2_num)/4)*5.6+"rem"},300);
+                        $(".ztlist2_con_rightBig").children().children(".ztlist2_con_rightBig_img3").hide();
+                        $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img3").show();
+
+                    }
+                }
+                break;
+            case 13:
+                if(list1==true){
+                    fla=true;
+                        list1=false;
+                        list2=true;
+                        leftOrRight=false;
+                        // list2_num=list1_num;
+                        list2_num=0;
+
+                        $(".ztlist_box1").css({display:"none"});
+                        $(".ztlist_box2").css({display:"block"});
+                        palyVideoAndList(list_musicRecommed.data.musicRecommed[list1_num].id);
+
+                }else if(list2==true){
+                    if(leftOrRight==true){
+                    //    全屏播放
+                        windowStopPlayVideo();
+                        // if(fla==true){
+                        //     // playVideo(msg.data.rows[list1_num]);
+                        //     var dataList={
+                        //         "data":list_musicRecommed.data.rows,
+                        //         "index":0
+                        //     };
+                        //     playVideoList(dataList);
+                        // }else {
+                            // playVideo(msg.data.rows[list2_num]);
+                            var dataList={
+                                "data":list_rows.data.rows,
+                                "index":list2_num
+                            };
+                            playVideoList(dataList);
+                        // }
+
+                    }else{
+                        // fla=false;
+                        $(".ztlist2_con_rightBig_img2").hide();
+                        $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img2").show();
+                        windowStopPlayVideo();
+                    //    左边小窗口播放
+                        var playList={
+                            "x":x,
+                            "y":y,
+                            "width":width,
+                            "height":height,
+                            "typeCode":list_rows.data.rows[list2_num].typeCode,
+                            "contentId":list_rows.data.rows[list2_num].contentId,
+                            "serviceId":list_rows.data.rows[list2_num].serviceId,
+                            "checkAutho":0,//0表示播放几十秒后检查是否是会员，如果不是则跳订购，1表示不检查
+                        };
+
+                        windowPlayVideo(playList);
+                        $(".ztlist2_con_left_synopsis").html(list_rows.data.rows[list2_num].musicDesc);
+                    }
+
+                }
+                break;
+        }
+        if(list1_num+1%8==0){
+            $('.ztlist_pageNum').html((list1_num+1)/8 + '/'+ pageAll)
+        }else {
+            $('.ztlist_pageNum').html(Math.ceil((list1_num+1)/8) + '/'+ pageAll)
+        }
+        if(list1_num>7){
+            $(".ztlist_pageUp").show();
+        }else{
+            $(".ztlist_pageUp").hide();
+        }
+        if(ztlist_con_big_len1 - list1_num > ztlist_con_big_len1 % 8 && ztlist_con_big_len1!=8){
+            $(".ztlist_pageDown").show();
+        }else{
+            $(".ztlist_pageDown").hide();
+        }
+    }
+
+    //小窗口播放及列表
+    function palyVideoAndList(recomId) {
+        $(".ztlist2_con_rightBig").css({top:0});
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            // url:"http://"+ip+"/music/getSpecial",
+            url: "http://" + ip + "/musicRecommd/detail/musicList",
+            data: {
+                recomId: recomId,
+            },
+            success: function (msg) {
+                console.log("getList_zt success:" + JSON.stringify(msg));
+                // var list_bottom=msg.data.recommedList;
+                // store.set("list_top",list_bottom);
+                store.set("list_rows", msg);
+                list_rows = store.get("list_rows");
+
+                var list = msg.data.rows;
+                ztlist_con_big_len2 = list.length;
+                if (ztlist_con_big_len2 > 4) {
+                    $(".ztlist2_pageDown").show();
+                }
+                $(".ztlist2_title").html(list_rows.data.specialName);
+                $(".ztlist2_con_left_synopsis").html(msg.data.rows[0].musicDesc);
+                $(".ztlist2_con_rightBig").html('');
+                for (var integra in list) {
+                    var lis_all = '<div><img src=' + list[integra].bigPic + ' alt="" class="ztlist2_con_rightBig_img1"><div class="ztlist2_con_rightBig_p" style="display: -webkit-box;-webkit-line-clamp:3;-webkit-box-orient: vertical;word-break:break-all;">' + list[integra].musicName + '</div><img src="images/ztNew/play2.png" alt="" class="ztlist2_con_rightBig_img2"><img src="images/ztNew/focus2.png" alt="" class="ztlist2_con_rightBig_img3"></div>';
+                    $(".ztlist2_con_rightBig").append(lis_all);
+                }
+                resetStyleList2();
+                leftOrRight=false;
+                $(".ztList2_con_focus").hide();
+                $(".ztlist2_con_rightBig_img3").hide();
+                $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img3").show();
+                $(".ztlist2_con_rightBig_img2").hide();
+                $(".ztlist2_con_rightBig").children().eq(list2_num).children(".ztlist2_con_rightBig_img2").show();
+                var playList = {
+                    "x": x,
+                    "y": y,
+                    "width": width,
+                    "height": height,
+                    "typeCode": list[0].typeCode,
+                    "contentId": list[0].contentId,
+                    "serviceId": list[0].serviceId,
+                    "checkAutho": 0
+                    //0表示播放几十秒后检查是否是会员，如果不是则跳订购，1表示不检查
+                };
+                console.log("x:"+x+"y:"+y+"width:"+width+"height:"+height);
+                windowPlayVideo(playList);
+            },
+            error: function (msg) {
+                console.log("getList_zt error:" + msg);
+            }
+        });
+    }
+
+//外部推荐位跳转视频列表
+        function outJumplist() {
+            fla=true;
+            list1=false;
+            list2=true;
+            leftOrRight=false;
+            // list2_num=list1_num;
+            list2_num=0;
+            $(".ztlist_box1").css({display:"none"});
+            $(".ztlist_box2").css({display:"block"});
+            palyVideoAndList(recomId);
+        }
+
+        ;(function () {
+            jumpx=window.location.href;
+            jumpx=jumpx.split("recomId=");
+            console.log("ztlistJumpUrl:"+jumpx.length);
+            recomId=jumpx[1];
+            if (jumpx.length==2) {
+                getList_zt()
+            }else if(jumpx.length==3){
+
+                outJumplist();
+            }
+        }());
+//返回适配
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.registerHandler('keyEventHandler', function (data, responseCallback) {
+            // console.log("keyEventHandler :"+data);
+            if (data == 4) {
+                if(ztlist_con_big_len1==1){
+                    exit();
+                }
+               if(jumpx.length==2) {
+                   if (list1 == true && list2 == false) {
+                       // goback();
+                       exit();
+                   } else if (list2 == true && list1 == false) {
+                       list2 = false;
+                       list1 = true;
+                       windowStopPlayVideo();
+                       $(".ztlist_box1").show();
+                       $(".ztlist_box2").hide();
+
+                   }
+               }else {
+                   exit();
+               }
+                responseCallback("true");
+
+            }
+
+        })
+    });
+
+
+</script>
+</html>
+
+
